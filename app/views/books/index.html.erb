@@ -3,7 +3,7 @@
     <div class ="search-bar form-inline"> -->
 
 
-      <h1 id="titreindexbook"> Available Books </h1>
+      <h1 id="titreindexbook" class="text-center"> Available Books </h1>
 
       <p class="text-center"> Find the right book for your needs.</p>
 
@@ -24,15 +24,12 @@
               <p>Price: <%= book.price %> EUR</p>
               <p>Edition year: <%= book.edition_year %></p>
 
-
-              <%= link_to 'More details', book_path(book)%>
-
             </div>
           </div>
           <% end %>
         </div>
       </div>
-
+<%= link_to 'Back to Homepage', root_path %>
 
 
 <!--   <div class="footer">
