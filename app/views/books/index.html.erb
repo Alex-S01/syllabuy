@@ -20,9 +20,9 @@
               <div class="card-title">
                 <h3><%= book.title %></h3>
               </div>
-              <p>Owner: <%= book.user.first_name %></p>
+              <p>Owner: <%= book.user_id %></p>
               <p>Price: <%= book.price %> EUR</p>
-              <p>Edition year: <%= book.address %></p>
+              <p>Edition year: <%= book.edition_year %></p>
 
 
               <%= link_to 'More details', book_path(book)%>
