@@ -1,17 +1,17 @@
 
  <!--  <div class="search" style="border: none;">
     <div class ="search-bar form-inline"> -->
-      <h1 id="titreindexbook>
-        <br><br>Available Books</span>
-      </h1>
 
-      <p class="text-center">Find the right book for your needs.</p>
+
+      <h1 id="titreindexbook"> Available Books </h1>
+
+      <p class="text-center"> Find the right book for your needs.</p>
 
 
 
       <div class="indexbook-container">
         <div class="cards">
-          <% @books.each do |bike| %>
+          <% @books.each do |book| %>
           <div class="card">
 
             <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap" style="border-radius:8px;">
@@ -20,10 +20,9 @@
               <div class="card-title">
                 <h3><%= book.title %></h3>
               </div>
-              <p>Owner: <%= book.user.first_name %></p>
-              <p>Condition: <%= bike.condition %> </p>
+              <p>Owner: <%= book.user_id %></p>
               <p>Price: <%= book.price %> EUR</p>
-              <p>Edition year: <%= book.address %></p>
+              <p>Edition year: <%= book.edition_year %></p>
 
 
               <%= link_to 'More details', book_path(book)%>
@@ -36,7 +35,7 @@
 
 
 
-  <div class="footer">
+<!--   <div class="footer">
     <div class="footer-copyright">
       <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex</div>
     </div>
@@ -52,5 +51,5 @@
       <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-</div>
+</div> -->
 
