@@ -1,0 +1,4 @@
+<%= simple_form_for [ @book, @purchase ] do |f| %>
+  <%= f.input :payment_method %>
+  <%= f.submit "Buy a book", class: "btn btn-primary" %>
+<% end %>
