@@ -4,5 +4,5 @@ class Book < ApplicationRecord
   validates :edition_year, presence: true
   validates :author, presence: true
   belongs_to :user
-  belongs_to :purchases
+  has_one :purchase
 end

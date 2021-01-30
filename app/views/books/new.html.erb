@@ -19,6 +19,9 @@
 
           <%= f.label :summary, "Enter the book's bio or short summary:"%>
           <%= f.text_field :summary, :class => "form-control" %>
+
+          <%= f.label :topic, "Booking topic:"%>
+          <%= f.text_field :topic, :class => "form-control" %>
           
           <%= f.label :language, "Enter the book's language:"%>
           <%= f.text_field :language, :class => "form-control" %>
@@ -47,6 +50,7 @@
 
           <%= f.label :price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
           <%= f.number_field :price, :class => "form-control" %>
+
         </div>
 
         <div class="form-actions">
