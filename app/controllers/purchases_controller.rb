@@ -13,10 +13,19 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new
   end
 
-end
+  def create
+    @purchase = Purchase.new(purchase_params)
+    # we need `restaurant_id` to associate review with corresponding restaurant
+    @book = Book.find(params[:book_id])
+    @purchase.book = @book
+    @purchase.save
+    redirect_to book_path(@book)
+  end
 
+  private
 
-
-
+  def review_params
+    params.require(:purchase).permit(:payment_method, :purchase_date_time, :clsoing_date_time)
+  end
 
 end
