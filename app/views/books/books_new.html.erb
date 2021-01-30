@@ -1,0 +1,74 @@
+<div class="container-newbook" >
+  <div class="row justify-content-around">
+    <!-- <div class ="description-new">
+
+      <br/>
+      <div class = "description-onedetail" style="font-size:32px;color:white;opacity:0.9;"><h2 ><br/><br/><br/>Want to RentYourBike ?</h2>
+        <p style="font-size:24px; opacity:0.8"><br/>Enter your bike's details <br/>to start renting your bike<br/> to other members <br/>of Rentabike's community <br/>and start earning <span id="dollar">💲💲💲
+        </span></p>
+      </div>   <br/><br/>
+    </div> -->
+
+    <div class="form">
+      <div class="container-new-form">
+        <h2 class="imperatif" style="font-size: 35px; background:black;text-transform: uppercase; font-weight: 700; color: #ffc001;
+        margin: 0px; font-family: Montserrat, sans-serif;">Add your bike to the platform </h2>
+        <br/><br/>
+        <%= simple_form_for(@book) do |f| %>
+
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <%= f.label :title, "Enter the title of your book"%>
+          <%= f.text_field :title, :class => "form-control" %>
+
+          <br/>
+
+
+          <br/>
+          <%= f.label :price, "Enter the rental price per month for your bike"%>
+          <%= f.number_field :price, :class => "form-control" %>
+
+          <br/>
+
+
+          <%= f.label :edition_year, "What condition is your bike in?"%>
+          <%= f.text_field :edition_year, :class => "form-control" %>
+
+          <br/>
+
+          <%= f.label :address, "Where can we buy your book?"%>
+          <%= f.text_field :address, :class => "form-control", :id => "book_address" %>
+
+          <br/>
+
+
+        </div>
+
+        <div class="form-actions">
+          <%= f.button :submit, class: "btn btn-info" %>
+
+        </div>
+        <% end %>
+        <br/>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- <div class="footer">
+  <div class="footer-copyright">
+    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div> -->
