@@ -15,7 +15,15 @@ puts "database is clean"
     user = User.create!(
         email: Faker::Internet.email,
         password: "123456",
-
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        date_of_birth: Faker::Date.between(from: '1900-01-01' to: Date.today),
+        email: Faker::Internet.email,
+        gender: Faker::Gender.type,
+        university: Faker::University.name,
+        year_of_study: Faker::Number.between(from: 2010, to: 2021),
+        phone_number: Faker::PhoneNumber.phone_number,
+        about_me: Faker::Lorem.paragraph(sentence_count: 5)
     )
 
     puts "User #{user.id} is created"
