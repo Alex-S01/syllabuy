@@ -1,0 +1,56 @@
+
+ <!--  <div class="search" style="border: none;">
+    <div class ="search-bar form-inline"> -->
+      <h1 id="titreindexbook" style="color:white;">
+        <br><br>Available Books</span>
+      </h1>
+
+      <p class="text-center" style="color:white;">Find the right book for your needs.</p>
+
+
+
+      <div class="indexbook-container">
+        <div class="cards">
+          <% @bikes.each do |bike| %>
+          <div class="card">
+
+            <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap" style="border-radius:8px;">
+
+            <div class="card-body" style="background: rgba(250,250,250,0.9);color:black;  width:100%;">
+              <div class="card-title">
+                <h3><%= book.title %></h3>
+              </div>
+              <p>Owner: <%= book.user.first_name %></p>
+              <p>Condition: <%= bike.condition %> </p>
+              <p>Price: <%= book.price %> EUR</p>
+              <p>Edition year: <%= book.address %></p>
+
+
+              <%= link_to 'More details', book_path(book)%>
+
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+
+
+
+  <!-- <div class="footer">
+    <div class="footer-copyright">
+      <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex</div>
+    </div>
+  </div>
+
+  <div class="footer-links">
+
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+ -->

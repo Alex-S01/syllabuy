@@ -10,10 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_26_203139) do
+ActiveRecord::Schema.define(version: 2021_01_30_093326) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "summary"
+    t.integer "pages"
+    t.integer "price"
+    t.integer "edition_year"
+    t.string "ISBN"
+    t.string "language"
+    t.string "publisher"
+    t.boolean "status"
+    t.string "delivery_method"
+    t.string "selling_address"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "topic"
+    t.index ["user_id"], name: "index_books_on_user_id"
+  end
+
+  create_table "purchases", force: :cascade do |t|
+    t.string "payment_method"
+    t.date "purchase_date_time"
+    t.date "closing_date_time"
+    t.bigint "book_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["book_id"], name: "index_purchases_on_book_id"
+    t.index ["user_id"], name: "index_purchases_on_user_id"
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "rating"
+    t.string "content"
+    t.date "creation_date"
+    t.bigint "purchases_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["purchases_id"], name: "index_reviews_on_purchases_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +69,8 @@ ActiveRecord::Schema.define(version: 2021_01_26_203139) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "books", "users"
+  add_foreign_key "purchases", "books"
+  add_foreign_key "purchases", "users"
+  add_foreign_key "reviews", "purchases", column: "purchases_id"
 end
