@@ -28,3 +28,26 @@ puts "database is clean"
 
     puts "User #{user.id} is created"
 end
+
+
+20.times do |i|
+    book = Book.create!(
+      # user: User.find(rand(1..10)),
+        user: User.find(rand((User.first.id)..(User.last.id))),
+        title: Faker::Book.title,
+        author: Faker::Book.author,
+        summary: Faker::Lorem.paragraph(sentence_count: 10),
+        pages: Faker::Number.between(from: 150, to: 500),
+        price: Faker::Number.between(from: 10, to: 500),
+        ISBN: Faker::Code.isbn(base: 13),
+        edition_year: Faker::Number.between(from: 1950, to: 2021),
+        language: %w[English French Dutch].sample,
+        publisher: Faker::Book.publisher,
+        status: Faker::Boolean.boolean,
+        delivery_method: %w[F2F Post].sample,
+        selling_address: Faker::Address.full_address
+    )
+    puts "Book #{book.id} is created"
+end
+
+puts "done"
