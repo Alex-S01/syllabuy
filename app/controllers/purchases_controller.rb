@@ -25,7 +25,7 @@ class PurchasesController < ApplicationController
   private
 
   def purchase_params
-    params.require(:purchase).permit(:payment_method, :purchase_date_time, :clsoing_date_time)
+    params.require(:purchase).permit(:payment_method, :purchase_date_time, :closing_date_time)
   end
 
 end
