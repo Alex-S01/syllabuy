@@ -12,7 +12,7 @@ class BooksController < ApplicationController
   end
 
   def new
-    @bike = Book.new
+    @book = Book.new
   end
 
   def create
