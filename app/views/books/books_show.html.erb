@@ -1,0 +1,35 @@
+<div class="container-book-show">
+  <div class="card-product">
+
+    <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap">
+
+    <div class="card-product-infos">
+      <h2><%= @book.title%> </h2>
+
+      <p>Price: <%= @book.price %> EUR</p>
+      <p>Edition year : <%= @book.edition_year %></p>
+      <p>Address: <%= @bike.address %></p>
+    </div>
+  </div>
+
+
+
+  <%= link_to "Back to homepage", books_path,:class  => "btn btn-light", :style => "font-size: 20px; border-radius:10px; display:inline; width:100px"%>
+  <br>
+</div>
+
+<!-- <div class="footer">
+  <div class="footer-copyright">
+    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div> -->
