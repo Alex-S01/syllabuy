@@ -24,7 +24,7 @@ class PurchasesController < ApplicationController
 
   private
 
-  def review_params
+  def purchase_params
     params.require(:purchase).permit(:payment_method, :purchase_date_time, :clsoing_date_time)
   end
 
