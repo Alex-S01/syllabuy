@@ -8,10 +8,10 @@
 require 'faker'
 
 puts "cleaning up database"
-User.destroy_all
-Book.destroy_all
 Purchase.destroy_all
 Review.destroy_all
+Book.destroy_all
+User.destroy_all
 puts "database is clean"
 
 20.times do
@@ -74,4 +74,3 @@ end
 #     )
 #     puts "Review #{review.id} is created"
 # end
-
