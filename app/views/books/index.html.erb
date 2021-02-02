@@ -29,6 +29,9 @@
           <p>Sold by: <%= book.user.email %> </p>
           </div>
 
+<%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+
+
           </div>
         </div>
       <% end %>
