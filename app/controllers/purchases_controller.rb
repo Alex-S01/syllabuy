@@ -4,6 +4,7 @@ class PurchasesController < ApplicationController
   end
 
   def show
+      @user = current_user
       @purchase = Purchase.find(params[:id])
   end
 

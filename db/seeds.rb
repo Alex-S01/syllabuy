@@ -8,8 +8,8 @@
 require 'faker'
 
 puts "cleaning up database"
-Purchase.destroy_all
 Review.destroy_all
+Purchase.destroy_all
 Book.destroy_all
 User.destroy_all
 puts "database is clean"
