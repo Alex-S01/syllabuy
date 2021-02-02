@@ -1,0 +1,69 @@
+<div  class="container">
+  <div class="form">
+    <h1>Something to change ? Edit your existing book to the platform </h1>
+
+      <%= simple_form_for(@book) do |f| %>
+
+        <%= f.error_notification %>
+
+        <div class="form-inputs">
+          <br>
+
+          <h2>Enter your book's details:</h2>
+
+          <%= f.label :title, "Title of your book (required):"%>
+          <%= f.text_field :title, :class => "form-control" %>
+
+          <%= f.label :author, "Author(s) of this book (required):"%>
+          <%= f.text_field :author, :class => "form-control" %>
+
+          <%= f.label :summary, "Enter the book's bio or short summary:"%>
+          <%= f.text_field :summary, :class => "form-control" %>
+
+          <%= f.label :topic, "Booking topic:"%>
+          <%= f.text_field :topic, :class => "form-control" %>
+
+          <%= f.label :language, "Enter the book's language:"%>
+          <%= f.text_field :language, :class => "form-control" %>
+
+          <%= f.label :edition_year, "Book edition year (required):"%>
+          <%= f.text_field :edition_year, :class => "form-control" %>
+
+          <%= f.label :publisher, "Name of book publisher:"%>
+          <%= f.text_field :publisher, :class => "form-control" %>
+
+          <%= f.label :pages, "Number of Book pages:"%>
+          <%= f.text_field :pages, :class => "form-control" %>
+
+          <%= f.label :ISBN, "Book ISBN number:"%>
+          <%= f.text_field :ISBN, :class => "form-control" %>
+
+          <br>
+
+          <h2>Your selling details </h2>
+
+          <%= f.label :delivery_method, "Book delivery method:"%>
+          <%= f.text_field :delivery_method, :class => "form-control" %>
+
+          <%= f.label :selling_address, "After payment, where can the buyer pick up this book?"%>
+          <%= f.text_field :selling_address, :class => "form-control" %>
+
+          <%= f.label :price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
+          <%= f.number_field :price, :class => "form-control" %>
+
+        </div>
+
+        <div class="form-actions">
+
+          <br>
+
+          <%= f.button :submit, class: "btn-lg btn-primary" %>
+
+        </div>
+
+      <% end %>
+
+      <br>
+
+  </div>
+</div>
