@@ -1,9 +1,15 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+
   resources :users do
+    member do
+      get 'my-books', action: :my_books, controller: 'books'
+    end
     resources :purchases, only: [:index, :show]
+    
   end
+
   resources :books do
     resources :purchases, only: [:new, :create]
   end
