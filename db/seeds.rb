@@ -65,12 +65,12 @@ end
     puts "Purchase #{purchase.id} is created"
 end
 
-# 3.times do |i|
-#     review = Review.create!(
-#       # user: User.find(rand(1..10)),
-#         purchase: Purchase.find(rand((Purchase.first.id)..(Purchase.last.id))),
-#         rating: Faker::Number.between(from: 0, to: 5),
-#         content: Faker::Lorem.paragraph(sentence_count: 3)
-#     )
-#     puts "Review #{review.id} is created"
-# end
+3.times do |i|
+    review = Review.create!(
+      # user: User.find(rand(1..10)),
+        purchase: Purchase.find(rand((Purchase.first.id)..(Purchase.last.id))),
+        rating: Faker::Number.between(from: 0, to: 5),
+        content: Faker::Lorem.paragraph(sentence_count: 3)
+    )
+    puts "Review #{review.id} is created"
+end
