@@ -26,7 +26,7 @@ class BooksController < ApplicationController
   end
 
   def my_books
-    @bikes = Book.where(user_id: current_user.id)
+    @books = Book.where(user_id: current_user.id)
   end
 
   private
