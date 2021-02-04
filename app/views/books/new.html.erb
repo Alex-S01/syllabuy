@@ -22,7 +22,7 @@
 
           <%= f.label :topic, "Booking topic:"%>
           <%= f.text_field :topic, :class => "form-control" %>
-          
+
           <%= f.label :language, "Enter the book's language:"%>
           <%= f.text_field :language, :class => "form-control" %>
 
@@ -37,6 +37,10 @@
 
           <%= f.label :ISBN, "Book ISBN number:"%>
           <%= f.text_field :ISBN, :class => "form-control" %>
+
+          <%= f.label :photo, "Picture of your book:"%>
+          <%= f.input :photo, as: :file, :class => "form-control" %>
+
 
           <br>
 
