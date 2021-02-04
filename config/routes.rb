@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get '/dashboard/', to: 'users#dashboard'
+
   resources :users do
     member do
       get 'my-books', action: :my_books, controller: 'books'
