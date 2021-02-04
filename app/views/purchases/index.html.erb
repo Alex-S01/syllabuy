@@ -1,6 +1,16 @@
+<div class="container">
+  <h1 id="titreindexbook" class="text-center"> My purchases</h1>
+  <p class="text-center"> See your existing purchases.</p>
+
+<%= link_to 'Back to your dashboard', dashboard_path %>
+
 <ul>
   <% @purchases.each do |purchase| %>
     <li><%= purchase.payment_method %></li>
     <%= link_to "Details about this purchase", user_purchase_path(current_user.id, purchase) %>
   <% end %>
 </ul>
+
+
+</div>
+
