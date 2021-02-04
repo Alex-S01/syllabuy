@@ -2,6 +2,15 @@ class PagesController < ApplicationController
   skip_before_action :authenticate_user!, only: [ :home ]
 
   def home
-    @books = Book.all
+    if params[:query].present?
+        sql_query = "\
+        title @@ :query \
+        OR author @@ :query \
+        OR publisher @@ :query \
+        "
+        @books = Book.where(sql_query, query:  "%#{params[:query]}%")
+      else
+        @books = Book.all
+      end
   end
 end
