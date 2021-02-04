@@ -13,7 +13,7 @@ class ReviewsController < ApplicationController
 
     if @review.save
       redirect_to purchase_reviews_path
-    
+
     else
       render :new
 
