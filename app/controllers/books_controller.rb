@@ -9,9 +9,23 @@ class BooksController < ApplicationController
         OR publisher @@ :query \
         "
         @books = Book.where(sql_query, query:  "%#{params[:query]}%")
+        @markers = @books.geocoded.map do |book|
+          {
+            lat: book.latitude,
+            lng: book.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { book: book })
+          }
+        end
       else
         @books = Book.all
+        @markers = @books.geocoded.map do |book|
+          {
+            lat: book.latitude,
+            lng: book.longitude,
+            infoWindow: render_to_string(partial: "info_window", locals: { book: book })
+          }
       end
+    end
   end
 
   def show
@@ -61,4 +75,5 @@ class BooksController < ApplicationController
   def book_params
     params.require(:book).permit(:title, :author, :summary, :topic, :subtopic, :language, :edition_year, :publisher, :pages, :ISBN, :delivery_method, :selling_address, :price, :created_at, :updated_at, :photo)
   end
+
 end
