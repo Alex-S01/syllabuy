@@ -20,6 +20,10 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def index
+    @my_reviews = current_user.reviews
+  end
+
 
   private
 
