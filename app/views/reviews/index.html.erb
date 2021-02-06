@@ -1,8 +1,11 @@
 <div class="container">
-  <h1>My reviews</h1>
 
-  <h3>Reviews you wrote:</h3>
-
-  <h3>Reviews written about you:</h3>
+  <% if @reviews.empty? == true %>
+    <p>You don't have any reviews written on you at the moment</p>
+  <% else %>
+    <% @reviews.each do |review| %>
+      <li><%= review.content%></li>
+    <% end %>
+  <% end %>
 
 </div>

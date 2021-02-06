@@ -3,21 +3,21 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/dashboard/', to: 'users#dashboard'
-  get '/my-reviews/', to: 'reviews#index'
+  # get '/my-reviews/', to: 'reviews#index'
 
   resources :users do
     member do
       get 'my-books', action: :my_books, controller: 'books'
     end
-    resources :purchases, only: [:index, :show]
-    
+    resources :purchases, only: [:show]
+    get '/my-reviews/', to: 'reviews#index'
   end
 
   resources :books do
     resources :purchases, only: [:new, :create]
   end
   resources :purchases, only: [:index, :show] do
-    resources :reviews, only: [:new, :create]
+    resources :reviews, only: [:new, :create, :show]
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

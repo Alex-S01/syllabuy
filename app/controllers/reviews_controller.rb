@@ -8,11 +8,10 @@ class ReviewsController < ApplicationController
   def create
     @purchase = Purchase.find(params[:purchase_id])
     @review = Review.new(review_params)
-
-    @review.purchase = @review
+    @review.purchase = @purchase
 
     if @review.save
-      redirect_to purchase_reviews_path
+      redirect_to user_my_reviews_path(current_user)
 
     else
       render :new
@@ -20,8 +19,15 @@ class ReviewsController < ApplicationController
     end
   end
 
+  def show
+    @purchase = Purchase.find(params[:purchase_id])
+    @review = Review.find(params[:id])
+  end
+
   def index
-    @my_reviews = current_user.reviews
+    @purchase = Purchase.find(params[:purchase_id])
+    @reviews.purchase = @purchase
+    @reviews = Purchase.where(purchase_id: purchase.id)
   end
 
 
