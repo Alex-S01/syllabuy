@@ -6,13 +6,12 @@ Rails.application.routes.draw do
   # get '/my-reviews/', to: 'reviews#index'
 
   resources :users do
-    member do
-      get 'my-books', action: :my_books, controller: 'books'
-    end
-    resources :purchases, only: [:show]
-    get '/my-reviews/', to: 'reviews#index'
+    resources :books, only: [:index], module: :users
+    resources :purchases, only: [:index], module: :users
+    resources :reviews, only: [:index], module: :users
   end
 
+  resources :purchases, only: [:show]
   resources :books do
     resources :purchases, only: [:new, :create]
   end

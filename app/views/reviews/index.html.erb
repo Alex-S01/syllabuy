@@ -1,11 +1,9 @@
 <div class="container">
-
-  <% if @reviews.empty? == true %>
+  <% if @reviews.blank? %>
     <p>You don't have any reviews written on you at the moment</p>
   <% else %>
     <% @reviews.each do |review| %>
       <li><%= review.content%></li>
     <% end %>
   <% end %>
-
 </div>

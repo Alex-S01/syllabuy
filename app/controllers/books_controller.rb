@@ -66,10 +66,6 @@ class BooksController < ApplicationController
     end
   end
 
-  def my_books
-    @books = Book.where(user_id: current_user.id)
-  end
-
   private
 
   def book_params
