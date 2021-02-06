@@ -10,7 +10,7 @@ class PagesController < ApplicationController
         "
         @books = Book.where(sql_query, query:  "%#{params[:query]}%")
       else
-        @books = Book.all
+        @books = Book.limit(4)
       end
   end
 end

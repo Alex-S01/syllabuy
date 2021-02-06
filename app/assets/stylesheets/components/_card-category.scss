@@ -1,0 +1,38 @@
+.categories {
+  margin: 80px 0px;
+}
+
+.categories h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+
+.category-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+
+}
+
+
+.card-category {
+  background-image: url('books-stack.jpg');
+  background-size: cover;
+  background-position: center;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-shadow: 0 10px 30px rgba(0,0,0,1);
+  height: 120px;
+  width: 300px;
+  border-radius: 4px;
+
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.card-category:hover {
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+}
