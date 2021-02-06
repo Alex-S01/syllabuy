@@ -9,3 +9,6 @@ class Book < ApplicationRecord
   geocoded_by :selling_address
   after_validation :geocode, if: :will_save_change_to_selling_address?
 end
+
+
+
