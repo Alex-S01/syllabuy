@@ -72,11 +72,7 @@ class BooksController < ApplicationController
 
       redirect_to my_books_user_path
  end
-
-  def my_books
-    @books = Book.where(user_id: current_user.id)
-  end
-
+ 
   private
 
   def book_params

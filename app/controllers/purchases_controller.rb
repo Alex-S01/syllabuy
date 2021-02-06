@@ -18,9 +18,14 @@ class PurchasesController < ApplicationController
     @purchase = Purchase.new(purchase_params)
     # we need `restaurant_id` to associate review with corresponding restaurant
     @book = Book.find(params[:book_id])
+    @user = current_user
     @purchase.book = @book
-    @purchase.save
-    redirect_to book_path(@book)
+    @purchase.user = current_user
+    if @purchase.save
+      redirect_to user_purchases_path(current_user)
+    else
+      render :new
+    end
   end
 
   private

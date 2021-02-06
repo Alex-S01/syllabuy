@@ -1,4 +1,6 @@
+<div class = "container">
 <%= simple_form_for [ @book, @purchase ] do |f| %>
   <%= f.input :payment_method %>
-  <%= f.submit "Buy a book", class: "btn btn-primary" %>
+  <%= f.submit "Pay now", class: "btn btn-primary" %>
 <% end %>
+</div>
