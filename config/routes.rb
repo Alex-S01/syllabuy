@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   get '/dashboard/', to: 'users#dashboard'
+  get '/my-reviews/', to: 'reviews#index'
 
   resources :users do
     member do
