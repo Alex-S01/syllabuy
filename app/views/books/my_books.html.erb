@@ -3,13 +3,13 @@
   <h1 id="titreindexbook" class="text-center"> My books</h1>
   <p class="text-center"> See which books you added to the platform.</p>
 
-  <%= link_to 'Back to Homepage', root_path %>
+
 
   <div class="indexbook-container">
     <div class="cards">
       <% @books.each do |book| %>
       <div class="card">
-      
+
       <img src="https://picsum.photos/300/400" alt="#" height= "320px">
 
         <div class="card-body">
@@ -25,9 +25,12 @@
           </div>
 
           </div>
+
+           <%= link_to 'View my book', book_path(book) %>
         </div>
       <% end %>
       </div>
     </div>
+
 
 </div>
