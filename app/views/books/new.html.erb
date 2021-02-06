@@ -1,76 +1,89 @@
 <div  class="container">
-  <div class="form">
-    <h1>Add a new book to the platform </h1>
+       <h1 class="text-center">Add a new book to the platform </h1>
+       <br/>
+  <div class="add-form">
+    <div class="d-flex">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12 col-xs-12">
+          <div class="books-details">
 
-      <%= simple_form_for(@book) do |f| %>
+             <%= simple_form_for(@book) do |f| %>
 
-        <%= f.error_notification %>
-
-        <div class="form-inputs">
-          <br>
-
-          <h2>Enter your book's details:</h2>
-
-          <%= f.label :title, "Title of your book (required):"%>
-          <%= f.text_field :title, :class => "form-control" %>
-
-          <%= f.label :author, "Author(s) of this book (required):"%>
-          <%= f.text_field :author, :class => "form-control" %>
-
-          <%= f.label :summary, "Enter the book's bio or short summary:"%>
-          <%= f.text_field :summary, :class => "form-control" %>
-
-          <%= f.label :topic, "Booking topic:"%>
-          <%= f.text_field :topic, :class => "form-control" %>
-
-          <%= f.label :subtopic, "Book subtopic:"%>
-          <%= f.text_field :subtopic, :class => "form-control" %>
-
-          <%= f.label :language, "Enter the book's language:"%>
-          <%= f.text_field :language, :class => "form-control" %>
-
-          <%= f.label :edition_year, "Book edition year (required):"%>
-          <%= f.text_field :edition_year, :class => "form-control" %>
-
-          <%= f.label :publisher, "Name of book publisher:"%>
-          <%= f.text_field :publisher, :class => "form-control" %>
-
-          <%= f.label :pages, "Number of Book pages:"%>
-          <%= f.text_field :pages, :class => "form-control" %>
-
-          <%= f.label :ISBN, "Book ISBN number:"%>
-          <%= f.text_field :ISBN, :class => "form-control" %>
-
-          <%= f.label :photo, "Picture of your book:"%>
-          <%= f.input :photo, as: :file, :class => "form-control" %>
+    <%= f.error_notification %>
 
 
-          <br>
 
-          <h2>Your selling details </h2>
+            <%= f.label :title, "Title of your book (required):"%>
+            <%= f.text_field :title, :class => "form-control" %>
 
-          <%= f.label :delivery_method, "Book delivery method:"%>
-          <%= f.text_field :delivery_method, :class => "form-control" %>
+            <%= f.label :author, "Author(s) of this book (required):"%>
+            <%= f.text_field :author, :class => "form-control" %>
 
-          <%= f.label :selling_address, "After payment, where can the buyer pick up this book?"%>
-          <%= f.text_field :selling_address, :class => "form-control", :id => "selling_address" %>
+            <%= f.label :summary, "Enter the book's bio or short summary:"%>
+            <%= f.text_field :summary, :class => "form-control" %>
 
-          <%= f.label :price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
-          <%= f.number_field :price, :class => "form-control" %>
+            <%= f.label :topic, "Booking topic:"%>
+            <%= f.text_field :topic, :class => "form-control" %>
+
+            <%= f.label :subtopic, "Book subtopic:"%>
+            <%= f.text_field :subtopic, :class => "form-control" %>
+
+            <%= f.label :language, "Enter the book's language:"%>
+            <%= f.text_field :language, :class => "form-control" %>
+
+            <%= f.label :edition_year, "Book edition year (required):"%>
+            <%= f.text_field :edition_year, :class => "form-control" %>
+
+  <%= f.label :publisher, "Name of book publisher:"%>
+            <%= f.text_field :publisher, :class => "form-control" %>
+<%= f.label :pages, "Number of Book pages:"%>
+            <%= f.text_field :pages, :class => "form-control" %>
+
+            <%= f.label :ISBN, "Book ISBN number:"%>
+            <%= f.text_field :ISBN, :class => "form-control" %>
+
+
+          </div>
+</div>
+
+<div class="col-lg-6 col-sm-12 col-xs-12">
+<br/>
+          <div class="selling-details">
+
+
+
+            <%= f.label :photo, "Picture of your book:"%>
+            <%= f.input :photo, as: :file, :class => "form-control" %>
+
+<br/>
+            <h2>Your selling details </h2>
+
+            <%= f.label :delivery_method, "Book delivery method:"%>
+            <%= f.text_field :delivery_method, :class => "form-control" %>
+
+            <%= f.label :selling_address, "*Only in case of pick-up: After payment, where can the buyer pick up this book?"%>
+            <%= f.text_field :selling_address, :class => "form-control", :id => "selling_address" %>
+
+            <%= f.label :price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
+            <%= f.number_field :price, :class => "form-control" %>
+
+            <br/><br/>
+<div class="text-center">
+<%= f.button :submit, class: "btn-lg btn-primary", :style =>"margin:0 auto;" %>
+
+</div>
+            <br>
+          </div>
 
         </div>
 
-        <div class="form-actions">
-
-          <br>
-
-          <%= f.button :submit, class: "btn-lg btn-primary" %>
-
         </div>
+      </div>
+    </div>
 
-      <% end %>
-
-      <br>
+    <% end %>
 
   </div>
 </div>
+
+
