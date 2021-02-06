@@ -10,13 +10,20 @@
 
   <%= link_to 'Back to Homepage', root_path %>
 
+  <div
+     id="map"
+     style="width: 100%; height: 500px;"
+     data-markers="<%= @markers.to_json %>"
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+  </div>
+
   <div class="indexbook-container">
     <div class="cards">
       <% @books.each do |book| %>
       <div class="card">
 
       <% if book.photo.attached? %>
-            <%= cl_image_tag book.photo.key, height: 320, width: 264, crop: :fill, :style => 'border-radius: 8px;' %>
+          <%= cl_image_tag book.photo.key, height: 320, width: 264, crop: :fill, :style => 'border-radius: 8px;' %>
       <% else %>
           <img src="https://picsum.photos/300/400" alt="#" height= "320px">
       <% end %>
@@ -29,8 +36,8 @@
           </div>
 
           <div>
-          <p>Price: <%= book.price %> EUR</p>
-          <p>Sold by: <%= book.user.email %> </p>
+            <p>Price: <%= book.price %> EUR</p>
+            <p>Sold by: <%= book.user.email %> </p>
           </div>
 
 <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
