@@ -8,6 +8,7 @@
       <% @books.each do |book| %>
       <div class="card" style="width:300px;">
 
+
      <% if book.photo.attached? %>
             <%= cl_image_tag book.photo.key, height: 400, width: 300, crop: :fill, :style => 'border-radius: 8px;' %>
           <% else %>
