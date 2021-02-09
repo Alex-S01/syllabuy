@@ -7,7 +7,7 @@
 <ul>
   <% @purchases.each do |purchase| %>
     <li><%= purchase.payment_method %></li>
-    <%= link_to "Details about this purchase", purchase_path(purchase) %>
+    <%= link_to "Details about this purchase", user_purchase_path(current_user, purchase) %>
   <% end %>
 </ul>
 
