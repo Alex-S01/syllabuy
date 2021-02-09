@@ -1,6 +1,9 @@
 <div  class="container">
-       <h1 class="text-center">Add a new book to the platform </h1>
-       <br/>
+       <h1 class="text-center">Add a new book to the platform!</h1>
+       <%= link_to "Go back", books_path, class: "btn btn-primary" %>
+       <br>
+       <br>
+       
   <div class="add-form">
     <div class="d-flex">
       <div class="row">
@@ -10,8 +13,6 @@
              <%= simple_form_for(@book) do |f| %>
 
     <%= f.error_notification %>
-
-
 
             <%= f.label :title, "Title of your book (required):"%>
             <%= f.text_field :title, :class => "form-control" %>
@@ -50,8 +51,6 @@
 <br/>
           <div class="selling-details">
 
-
-
             <%= f.label :photo, "Picture of your book:"%>
             <%= f.input :photo, as: :file, :class => "form-control" %>
 
@@ -69,6 +68,7 @@
             <br/><br/>
 <div class="text-center">
 <%= f.button :submit, class: "btn-lg btn-primary", :style =>"margin:0 auto;" %>
+
 
 </div>
             <br>
