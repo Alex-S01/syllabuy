@@ -7,6 +7,7 @@ class BooksController < ApplicationController
         title @@ :query \
         OR author @@ :query \
         OR publisher @@ :query \
+        OR topic @@ :query \
         "
         @books = Book.where(sql_query, query:  "%#{params[:query]}%")
         @markers = @books.geocoded.map do |book|

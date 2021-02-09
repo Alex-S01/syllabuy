@@ -59,18 +59,25 @@
     
       <div class="category-cards">
 
+        <%= link_to "/books?query=business" do %>
         <div class="card-category">
           <h3>Business</h3>
         </div>
+        <% end %>
 
+        <%= link_to "/books?query=law" do %>
         <div class="card-category">
           <h3>Law</h3>
         </div>
+        <% end %>
+        
 
+        <%= link_to "/books?query=art" do %>
         <div class="card-category">
           <h3>Art</h3>
         </div>
-      
+        <% end %>
+        
       </div>
     
     </div>
