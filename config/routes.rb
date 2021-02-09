@@ -7,11 +7,11 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :books, only: [:index], module: :users
-    resources :purchases, only: [:index], module: :users
+    resources :purchases, only: [:index, :show], module: :users do
+      resources :reviews, only: [:new, :create]
+    end
     resources :reviews, only: [:index], module: :users
   end
-
-  resources :purchases, only: [:show]
   resources :books do
     resources :purchases, only: [:new, :create]
   end
