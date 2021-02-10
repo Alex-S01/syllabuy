@@ -1,7 +1,9 @@
 class BooksController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :set_book, only: [:show, :edit, :update, :destroy]
 
   def index
+
       if params[:query].present?
         sql_query = "\
         title @@ :query \
@@ -27,6 +29,8 @@ class BooksController < ApplicationController
           }
       end
     end
+
+    @books = policy_scope(Book).order(created_at: :desc)
   end
 
   def show
@@ -35,14 +39,16 @@ class BooksController < ApplicationController
 
   def new
     @book = Book.new
+    authorize @book
   end
 
   def create
     @book = Book.new(book_params)
     @book.user = current_user
+    authorize @book
 
     if @book.save
-      redirect_to books_path
+      redirect_to books_path, notice: 'Book was successfully created.'
 
     else
       render :new
@@ -50,6 +56,7 @@ class BooksController < ApplicationController
   end
 
   def edit
+
     @book = Book.find(params[:id])
 
   end
@@ -59,7 +66,7 @@ class BooksController < ApplicationController
 
     if @book.update(book_params)
 
-      redirect_to books_path
+      redirect_to books_path, notice: 'Book was successfully updated.'
 
     else
 
@@ -71,10 +78,22 @@ class BooksController < ApplicationController
       @book = Book.find(params[:id])
       @book.destroy
 
-      redirect_to my_books_user_path
+      redirect_to books_path, notice: 'Book was successfully destroyed.'
+
  end
- 
+
+
+ # def mybooks (afficher nos bouquins que nous avons créés) -> A ameliorer !
+ #  @books = user.records scope.where (user: user)
+
+ # end
+
   private
+
+  def set_book
+    @book = Book.find(params[:id])
+    authorize @book
+  end
 
   def book_params
     params.require(:book).permit(:title, :author, :summary, :topic, :subtopic, :language, :edition_year, :publisher, :pages, :ISBN, :delivery_method, :selling_address, :price, :created_at, :updated_at, :photo)
