@@ -7,20 +7,28 @@ class BookPolicy < ApplicationPolicy
   end
 
   def create?
-     true
+    true
   end
 
   def show?
-       true
+    true
   end
 
-
   def update?
-   user == record.user || user.admin?
+
+    # If the user is the owner of the current book => true
+    # Otherwise => false
+    # user => current_user
+    # record => @book (argument passed to 'authorize')
+    # user == record.user || user.admin?
+
+    user == record.user
+
   end
 
   def destroy?
-   user == record.user || user.admin?
+    # user == record.user || user.admin?
+    user == record.user
   end
 
 private
