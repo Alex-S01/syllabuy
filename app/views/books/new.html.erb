@@ -1,6 +1,9 @@
 <div  class="container">
-       <h1 class="text-center">Add a new book to the platform </h1>
-       <br/>
+       <h1 class="text-center">Add a new book to the platform!</h1>
+       <%= link_to "Go back", books_path, class: "btn btn-primary" %>
+       <br>
+       <br>
+       
   <div class="add-form">
     <div class="d-flex">
       <div class="row">
@@ -11,8 +14,6 @@
 
     <%= f.error_notification %>
 
-
-
             <%= f.label :title, "Title of your book (required):"%>
             <%= f.text_field :title, :class => "form-control" %>
 
@@ -22,8 +23,7 @@
             <%= f.label :summary, "Enter the book's bio or short summary:"%>
             <%= f.text_field :summary, :class => "form-control" %>
 
-            <%= f.label :topic, "Booking topic:"%>
-            <%= f.text_field :topic, :class => "form-control" %>
+            <%= f.input :topic, label: 'Book topic:', collection: ['Business', 'Science', 'History', 'Art', 'Engineering'].sort %>
 
             <%= f.label :subtopic, "Book subtopic:"%>
             <%= f.text_field :subtopic, :class => "form-control" %>
@@ -34,9 +34,10 @@
             <%= f.label :edition_year, "Book edition year (required):"%>
             <%= f.text_field :edition_year, :class => "form-control" %>
 
-  <%= f.label :publisher, "Name of book publisher:"%>
+            <%= f.label :publisher, "Name of book publisher:"%>
             <%= f.text_field :publisher, :class => "form-control" %>
-<%= f.label :pages, "Number of Book pages:"%>
+
+            <%= f.label :pages, "Number of Book pages:"%>
             <%= f.text_field :pages, :class => "form-control" %>
 
             <%= f.label :ISBN, "Book ISBN number:"%>
@@ -50,16 +51,13 @@
 <br/>
           <div class="selling-details">
 
-
-
             <%= f.label :photo, "Picture of your book:"%>
             <%= f.input :photo, as: :file, :class => "form-control" %>
 
 <br/>
             <h2>Your selling details </h2>
 
-            <%= f.label :delivery_method, "Book delivery method:"%>
-            <%= f.text_field :delivery_method, :class => "form-control" %>
+            <%= f.input :delivery_method, label: 'Book delivery method:', collection: ['Pickup on location', 'Send by Post'].sort %>
 
             <%= f.label :selling_address, "*Only in case of pick-up: After payment, where can the buyer pick up this book?"%>
             <%= f.text_field :selling_address, :class => "form-control", :id => "selling_address" %>
@@ -70,6 +68,7 @@
             <br/><br/>
 <div class="text-center">
 <%= f.button :submit, class: "btn-lg btn-primary", :style =>"margin:0 auto;" %>
+
 
 </div>
             <br>

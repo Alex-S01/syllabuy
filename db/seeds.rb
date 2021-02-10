@@ -46,7 +46,9 @@ puts "database is clean"
         publisher: Faker::Book.publisher,
         status: Faker::Boolean.boolean,
         delivery_method: %w[F2F Post].sample,
-        selling_address: Faker::Address.full_address
+        selling_address: Faker::Address.full_address,
+        topic: %w[Architecture Business Economics Art Computer Education Biology Design History].sample,
+        subtopic: Faker::Lorem.word
     )
     puts "Book #{book.id} is created"
 

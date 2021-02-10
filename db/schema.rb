@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+
 ActiveRecord::Schema.define(version: 2021_02_09_193026) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_193026) do
     t.string "ISBN"
     t.string "language"
     t.string "publisher"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.string "delivery_method"
     t.string "selling_address"
     t.bigint "user_id", null: false
