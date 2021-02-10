@@ -12,12 +12,15 @@ class PurchasesController < ApplicationController
     # we need @restaurant in our `simple_form_for`
     @book = Book.find(params[:book_id])
     @purchase = Purchase.new
+
+    authorize @purchase
   end
 
   def create
     @purchase = Purchase.new(purchase_params)
     # we need `restaurant_id` to associate review with corresponding restaurant
     @book = Book.find(params[:book_id])
+
     @user = current_user
     @purchase.book = @book
     @purchase.user = current_user
