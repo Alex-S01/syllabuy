@@ -29,24 +29,19 @@ class BooksController < ApplicationController
           }
       end
     end
-
-    @books = policy_scope(Book).order(created_at: :desc)
   end
 
   def show
     @book = Book.find(params[:id])
-    authorize @book
   end
 
   def new
     @book = Book.new
-    authorize @book
   end
 
   def create
     @book = Book.new(book_params)
     @book.user = current_user
-    authorize @book
 
     if @book.save
       redirect_to books_path, notice: 'Book was successfully created.'
@@ -58,12 +53,10 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-    authorize @book
   end
 
   def update
     @book = Book.find(params[:id])
-    authorize @book
 
     if @book.update(book_params)
 
@@ -93,7 +86,6 @@ class BooksController < ApplicationController
 
   def set_book
     @book = Book.find(params[:id])
-    authorize @book
   end
 
   def book_params
