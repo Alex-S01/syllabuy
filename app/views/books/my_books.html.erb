@@ -32,9 +32,9 @@
       <%= link_to 'View my book', book_path(book) %>
       <%= link_to 'Delete book', book_path(book), method: :delete, data: { confirm: "Are you sure you want to delete this book ?" } %>
 
-      <% if policy(Book).create? %>
+    
       <%= link_to "New book", new_book_path %>
-      <% end %>
+  
     </div>
     <% end %>
   </div>

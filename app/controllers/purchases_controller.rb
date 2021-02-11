@@ -12,8 +12,6 @@ class PurchasesController < ApplicationController
     # we need @restaurant in our `simple_form_for`
     @book = Book.find(params[:book_id])
     @purchase = Purchase.new
-
-    authorize @purchase
   end
 
   def create
