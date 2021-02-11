@@ -1,25 +1,119 @@
-<div class="container-book-show">
-  <div class="card-product">
-
-    <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap">
-
-    <div class="card-product-infos">
-      <h2><%= @book.title%> </h2>
-
-      <p>Price: <%= @book.price %> EUR</p>
-      <p>Edition year : <%= @book.edition_year %></p>
-      <p>Address: <%= @book.selling_address %></p>
-    </div>
+<div class="container">
+  <div class="row">
+    <%= link_to "Back to homepage", books_path %>
   </div>
 
+  <div class="row">
+      <div class="mt-3">
+        <h1><%= @book.title%> (<%= @book.edition_year %>) </h1>
+      </div>
+  </div>
 
+  <div class="row">
+    <p>Author: <%= @book.author %></p>
+  </div>
 
-  <%= link_to "Back to homepage", books_path,:class  => "btn btn-light", :style => "font-size: 20px; border-radius:10px; display:inline; width:100px"%>
-     <%= link_to 'Edit my book', edit_book_path %>
-     <% if policy(Book).create? %>
-  <%= link_to "New book", new_book_path %>
-<% end %>
-  <br>
+  <div class="row">
+    <div class="col-12 col-md-6 col-lg-8">
+      <div id="title-image" class="my-3" >
+
+        <div class="rounded">
+          <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap">
+        </div>
+
+        <div class="more-details my-3">
+          <h3>Book details:</h3>
+          <p>Summary: <%= @book.summary %></p>
+
+          <table>
+            <tr>
+              <th>Publisher:</th>
+              <td> <%= @book.publisher %></td>
+            </tr>
+
+            <tr>
+              <th>Edition:</th>
+              <td> <%= @book.edition_year %></td>
+            </tr>
+
+            <tr>
+              <th>Language:</th>
+              <td> <%= @book.language %></td>
+            </tr>
+
+            <tr>
+              <th>ISBN:</th>
+              <td> <%= @book.ISBN %></td>
+            </tr>
+
+            <tr>
+              <th>Topic:</th>
+              <td> <%= @book.topic %></td>
+            </tr>
+
+            <tr>
+              <th>Subtopic:</th>
+              <td> <%= @book.subtopic %></td>
+            </tr>
+
+            <tr>
+              <th>Pages:</th>
+              <td> <%= @book.pages %></td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="seller-profile my-5">
+          <h3>This book is being sold by:</h3>
+          <p>Name: <%= @book.user.first_name  %></p>
+          <p>Seller's message: <%= @book.user.about_me %></p>
+          <p>University: <%= @book.user.university %></p>
+          <p>Year of study: <%= @book.user.year_of_study %></p>
+        </div>
+
+        <div class="reviews my-5">
+          <h3>Reviews about the Seller:</h3>
+                
+        </div>
+
+        <div class="location my-5">
+          <h3>Location:</h3>
+          <p>Delivery method: <%= @book.delivery_method %></p>
+          <p>Pickup this book at: <%= @book.selling_address %></p>
+
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="col-12 col-md-6 col-lg-4">
+
+      <div id="buy-form" class="border rounded p-3 my-3">
+        <h2>About the book:</h2>
+        <p>Title: <%= @book.title %> </p>
+        <p>Author(s): <%= @book.author %></p>
+        <p>Edition: <%= @book.edition_year %></p>
+        <p>Language: <%= @book.language %></p>
+
+        <p>Delivery method: <%= @book.delivery_method %></p>
+        <p>Delivery address: <%= @book.selling_address %></p>
+
+        <h2>Price: <%= @book.price %> EUR</h2>
+
+      <% if @book.user == current_user %>
+        <%= link_to 'Edit my book', edit_book_path %>
+
+      <% else %>
+        <%= link_to 'Buy Now', new_book_purchase_path(@book), class: 'btn btn-primary w-100' %>
+
+      <% end %>
+
+      </div>
+
+    </div>
+  
+  
+  </div>
 </div>
 
 <!-- <div class="footer">
