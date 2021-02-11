@@ -3,7 +3,7 @@
       <h1>Find your university textbooks from students near you.</h1>
 
     <div class="search-fields">
-    
+
       <div class="search-bar">
         <%= form_tag books_path, method: :get do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
@@ -13,7 +13,7 @@
         <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
         <% end %>
       </div>
-    
+
     </div>
 
   </div>
@@ -46,7 +46,10 @@
               </div>
 
               <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-
+                  <% if book.user == current_user %>
+                  <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+                  <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+                  <% end %>
             </div>
           </div>
         <% end %>
@@ -54,9 +57,9 @@
     </div>
 
     <div class="categories">
-    
+
       <h2>Find books on many topics</h2>
-    
+
       <div class="category-cards">
 
         <%= link_to "/books?query=business" do %>
@@ -70,16 +73,16 @@
           <h3>Law</h3>
         </div>
         <% end %>
-        
+
 
         <%= link_to "/books?query=art" do %>
         <div class="card-category">
           <h3>Art</h3>
         </div>
         <% end %>
-        
+
       </div>
-    
+
     </div>
 
   </div>
