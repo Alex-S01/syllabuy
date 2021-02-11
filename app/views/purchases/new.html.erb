@@ -1,6 +1,45 @@
 <div class = "container">
-<%= simple_form_for [ @book, @purchase ] do |f| %>
-  <%= f.input :payment_method %>
-  <%= f.submit "Pay now", class: "btn btn-primary" %>
-<% end %>
+  <div class="row">
+    <h1>Order Summary</h1>
+  </div>
+
+  <div class="row">
+
+    <div class="col-12 col-md-6 cl-lg-8 mt-5">
+    
+      
+      <%= simple_form_for [ @book, @purchase ] do |f| %>
+
+        <%= f.input :payment_method, label: 'Payment method:', collection: ['Bancontact', 'Visa', 'Mastercard', 'Paypal'].sort %>
+
+        <%= f.submit "Pay now", class: "btn btn-primary w-100" %>
+      <% end %>
+    
+    </div>
+
+
+
+    <div class="col-12 col-md-6 col-lg-4 mt-5">
+      <h3>Title: <%= @book.title %></h3>
+      <p>Author: <%= @book.author %></p>
+      <p>Pages: <%= @book.pages %></p>
+      <p>Publisher: <%= @book.publisher %></p>
+      <p>Edition: <%= @book.edition_year %></p>
+
+      <p>Topic: <%= @book.topic %></p>
+      <p>Subtopic <%= @book.subtopic %></p>
+
+      <br>
+
+      <h3>Seller's information</h3>
+      <p>Name: <%= @book.user.first_name  %></p>
+      <p>Seller's message: <%= @book.user.about_me %></p>
+      <p>University: <%= @book.user.university %></p>
+      <p>Year of study: <%= @book.user.year_of_study %></p>
+
+    
+    </div>
+  </div>
+  
+
 </div>
