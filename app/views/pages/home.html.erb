@@ -1,6 +1,6 @@
 <div class="banner">
-  <div class="container">
-      <h1>Find your university textbooks from students near you.</h1>
+
+      <h1 class="text-center">Find your university textbooks from students near you.</h1>
 
     <div class="search-fields">
 
@@ -16,20 +16,21 @@
 
     </div>
 
-  </div>
+
 </div>
 
 <div class="container">
 
   <div class="container">
 
-    <h1 class="text-center"> Some of our Community's Books </h1>
-    <p class="text-center"> Find the right book for your needs.</p>
+    <h1 class="text-center"> <br/>Some of our Community's Books </h1>
+    <p class="text-center"> Find the right book for your needs.<br/><br/></p>
 
-    <div class="container">
+
+
       <div class="cards">
         <% @books.each do |book| %>
-          <div class="card">
+          <div class="card" style="margin:0 auto">
 
             <img src="https://picsum.photos/300/400" alt="#" height= "320px">
 
@@ -54,7 +55,12 @@
           </div>
         <% end %>
       </div>
-    </div>
+
+
+
+     </div>
+
+
 
     <div class="categories">
 
@@ -85,6 +91,4 @@
 
     </div>
 
-  </div>
 
-</div>
