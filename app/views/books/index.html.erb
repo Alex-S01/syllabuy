@@ -1,23 +1,32 @@
-<div class="container">
+<div class="containerindexbook" style="margin-top:50px;">
+ <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed; z-index:2030">
 
   <h1 id="titreindexbook" class="text-center"> Available Books </h1>
-  <p class="text-center"> Find the right book for your needs.</p>
+  <p class=""> Find the right book for your needs.</p>
 
-  <%= form_tag books_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book" %>
-          <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
+
+      <%= form_tag books_path, method: :get do %> <br/>
+         <div> <%= text_field_tag :query, params[:query],:style=>"height:5vh;border-radius:50px;width:80%;margin:0 auto;", class: "form-control", placeholder: "Search for a book" %></div>
+          <!-- <div><%= submit_tag "Search", class: "btn-lg btn-primary", id:"search-button" %></div> -->
   <% end %>
+  <br/>
+</div>
 
-  <%= link_to 'Back to Homepage', root_path %>
+
+
+<div class="container3 justify-content-space-evenly">
+<div class="d-flex">
 
   <div
      id="map"
-     style="width: 100%; height: 500px;"
+     style="width: 50%; height: 100vh;border:15px solid white;"
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
-  <div class="indexbook-container">
+
+  <div class="indexbook-container" style="margin-top:210px;padding:24px;">
+
     <div class="cards">
       <% @books.each do |book| %>
       <div class="card">
@@ -54,4 +63,6 @@
       </div>
     </div>
 
+</div>
+</div>
 </div>
