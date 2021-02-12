@@ -16,7 +16,7 @@ class BooksController < ApplicationController
           {
             lat: book.latitude,
             lng: book.longitude,
-            # infoWindow: render_to_string(partial: "info_window", locals: { book: book })
+            infoWindow: { content: render_to_string(partial: "/books/map_info_window", locals: { book: book }) }
           }
         end
       else
@@ -25,7 +25,7 @@ class BooksController < ApplicationController
           {
             lat: book.latitude,
             lng: book.longitude,
-            # infoWindow: render_to_string(partial: "info_window", locals: { book: book })
+            infoWindow: { content: render_to_string(partial: "/books/map_info_window", locals: { book: book }) }
           }
       end
     end
