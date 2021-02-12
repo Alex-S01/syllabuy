@@ -20,7 +20,11 @@
 
 .search-fields {
   display: flex;
-} 
+  margin:0 auto;
+  max-width:600px;
+  border-radius:50px;
+
+}
 
 .search-bar {
   width: 600px;
@@ -37,5 +41,10 @@
 
 .search-button #search-button {
   height: 50px;
-  width: 100%;
+
 }
+
+// .categories {
+
+//   margin-left:79px;
+// }
