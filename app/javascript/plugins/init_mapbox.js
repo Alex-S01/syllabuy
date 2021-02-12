@@ -10,6 +10,7 @@ const initMapbox = () => {
       style: 'mapbox://styles/mapbox/streets-v10'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
+    addMarkersToMap(map, markers)
     console.log(mapElement.dataset.markers)
     markers.forEach((marker) => {
       new mapboxgl.Marker()
