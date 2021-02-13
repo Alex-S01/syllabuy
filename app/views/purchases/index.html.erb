@@ -1,15 +1,30 @@
 <div class="container">
-  <h1 id="titreindexbook" class="text-center"> My purchases</h1>
+  <h1 class="text-center"> My purchases</h1>
   <p class="text-center"> See your existing purchases.</p>
 
-<%= link_to 'Back to your dashboard', dashboard_path %>
+  <%= link_to 'Back to your dashboard', dashboard_path %>
 
-<ul>
   <% @purchases.each do |purchase| %>
-    <li><%= purchase.payment_method %></li>
-  <%= link_to "Add a review on that purchase", new_user_purchase_review_path(current_user, purchase),:class  => "btn btn-light"%>
+    <div class="row mt-3">
+
+      <div class="card w-100 p-3">
+        <div class="card-text">
+          <h3><%= purchase.book.title %></h3>
+          <h5><%= purchase.book.author %></h5>
+          <p>Purchase date & time: <%= purchase.created_at %></p>
+          <p>Payment method: <%= purchase.payment_method %></p>
+          <h4>Purchase ID: <%= purchase.id %></h4>
+          <%= link_to "Add a review on your purchase", new_user_purchase_review_path(current_user, purchase), class: "btn btn-primary" %>
+        </div>
+
+      </div>
+    </div>
+
+
   <% end %>
-</ul>
+
+  </div>
+
 
 
 </div>
