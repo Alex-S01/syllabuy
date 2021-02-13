@@ -1,15 +1,12 @@
 <div class="containerindexbook" style="margin-top:50px;">
  <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed; z-index:2030">
 
-  <h1 id="titreindexbook" class="text-center"> Available Books </h1>
-  <p class="text-center"> Find the right book for your needs.</p>
+    <h1 id="titreindexbook" class="text-center"> Available Books </h1>
+    <p class="text-center"> Find the right book for your needs.</p>
 
+    <br/>
 
-
-  <br/>
-
-<div class="search-fields" style="margin:0 auto;"">
-
+    <div class="search-fields" style="margin:0 auto;"">
       <div class="search-bar">
         <%= form_tag books_path, method: :get do %>
         <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
@@ -22,62 +19,54 @@
 
     </div>
 
-</div>
-
-
-
-
-
-
-<div class="container3 justify-content-space-evenly">
-<div class="d-flex">
-
-  <div
-     id="map"
-     style="width: 50%; height: 100vh;border:15px solid white;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
 
+  <div class="container3 justify-content-space-evenly">
+    <div class="d-flex">
 
-  <div class="indexbook-container" style="margin-top:175px;padding:24px;">
+      <div
+        id="map"
+        style="width: 50%; height: 100vh;border:15px solid white;"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+      </div>
 
-    <div class="cards">
-      <% @books.each do |book| %>
-      <div class="card">
 
-      <% if book.photo.attached? %>
-          <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
-      <% else %>
-          <img src="https://picsum.photos/180/250" alt="#" height= "250px">
-      <% end %>
+      <div class="indexbook-container" style="margin-top:175px;padding:24px;">
 
-        <div class="card-body">
-          <div class="card-title">
-            <h3><%= book.title %></h3>
-            <p>Author: <%= book.author %></p>
-            <p>Edition year: <%= book.edition_year %></p>
-          </div>
+        <div class="cards">
+          <% @books.each do |book| %>
+            <div class="card">
 
-          <div>
-            <p>Price: <%= book.price %> EUR</p>
-            <p>Sold by: <%= book.user.email %> </p>
-          </div>
+              <% if book.photo.attached? %>
+                  <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
+              <% else %>
+                  <img src="https://picsum.photos/180/250" alt="#" height= "250px">
+              <% end %>
 
-<%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-<%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+              <div class="card-body">
+                <div class="card-title">
+                  <h3><%= book.title %></h3>
+                  <p>Author: <%= book.author %></p>
+                  <p>Edition year: <%= book.edition_year %></p>
+                </div>
 
-<% if book.user == current_user %>
-<%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-<%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-<% end %>
+                <div>
+                  <p>Price: <%= book.price %> EUR</p>
+                  <p>Sold by: <%= book.user.first_name %> </p>
+                </div>
 
-          </div>
+                <% if current_user == book.user %>
+                  <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
+                <% else %>
+                  <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
+                <% end %>
+
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
       </div>
     </div>
-
-</div>
-</div>
+  </div>
 </div>
