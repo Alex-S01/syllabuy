@@ -61,7 +61,7 @@ class BooksController < ApplicationController
 
     if @book.update(book_params)
 
-      redirect_to books_path, notice: 'Book was successfully updated.'
+      redirect_to book_path, notice: 'Book was successfully updated.'
 
     else
 
