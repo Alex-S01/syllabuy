@@ -32,7 +32,11 @@
         <% @books.each do |book| %>
           <div class="card" style="margin:0 auto">
 
-            <img src="https://picsum.photos/300/400" alt="#" height= "320px">
+            <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
+            <% else %>
+              <img src="https://picsum.photos/180/250" alt="#" height= "250px">
+            <% end %>
 
             <div class="card-body">
               <div class="card-title">
