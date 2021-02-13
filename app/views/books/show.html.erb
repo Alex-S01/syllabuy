@@ -85,7 +85,7 @@
           <h3>Location:</h3>
           <p>Delivery method: <%= @book.delivery_method %></p>
           <p>Pickup this book at: <%= @book.selling_address %></p>
-            <div id="map-show" style="width: 100%; height: 50vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+            <div id="map" style="width: 100%; height: 50vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
             </div>
         </div>
 
