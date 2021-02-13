@@ -1,0 +1,17 @@
+
+<div class="map-info-window">
+
+  <%= link_to book_path(book) do %>
+  <h5 style="font-weight: bold;">Title: <%= book.title %></h5>
+  <% end %>
+  
+  <p>Pick-up this book at: <%= book.selling_address %> (<%= book.author %>)</p>
+
+  <div class="seller-info">
+      <p>Sold by: <%= book.user.first_name  %></p>
+    <div class="avatar-map">
+      <%= image_tag("books-curved") %>
+    </div>
+  </div>
+
+</div>

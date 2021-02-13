@@ -7,13 +7,18 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/mapbox/streets-v10',
+      center: [4.379710, 50.990340],
+      zoom: 0
     });
     const markers = JSON.parse(mapElement.dataset.markers);
+    addMarkersToMap(map, markers)
     console.log(mapElement.dataset.markers)
     markers.forEach((marker) => {
       new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
+        .setPopup(new mapboxgl.Popup({ offset: 25}) // add popups
+        .setHTML(marker.infoWindow.content))
         .addTo(map);
     });
   fitMapToMarkers(map, markers);

@@ -32,25 +32,40 @@ puts "database is clean"
 
     puts "User #{user.id} is created"
 
-    book = Book.create!(
-      # user: User.find(rand(1..10)),
-        user: user,
-        title: Faker::Book.title,
-        author: Faker::Book.author,
-        summary: Faker::Lorem.paragraph(sentence_count: 10),
-        pages: Faker::Number.between(from: 150, to: 500),
-        price: Faker::Number.between(from: 10, to: 500),
-        ISBN: Faker::Code.isbn(base: 13),
-        edition_year: Faker::Number.between(from: 1950, to: 2021),
-        language: %w[English French Dutch].sample,
-        publisher: Faker::Book.publisher,
-        status: Faker::Boolean.boolean,
-        delivery_method: %w[F2F Post].sample,
-        selling_address: Faker::Address.full_address,
-        topic: %w[Architecture Business Economics Art Computer Education Biology Design History].sample,
-        subtopic: Faker::Lorem.word
-    )
-    puts "Book #{book.id} is created"
+    addresses = [
+  'Kantersteen 12, 1000 Brussel',
+  'Tweedekkerstraat 126, 1130 Brussel',
+  'Sint-Lambertusstraat 200, 1200 Sint-Lambrechts-Woluwe',
+  'Boondaalsesteenweg 418, 1050 Elsene',
+  'Rogierlaan 51, 1030 Schaarbeek',
+  'Jean Joseph Crocqlaan 15, 1020 Brussel',
+  'Rue Marie Depage 1, 1180 Uccle',
+  'Wayezstraat 160-162, 1070 Anderlecht',
+  'Ter Platen 12, 9000 Gent',
+  'Gebroeders de Smetstraat 6, 9000 Gent'
+]
+
+  3.times do |i|
+      book = Book.create!(
+        # user: User.find(rand(1..10)),
+          user: user,
+          title: Faker::Book.title,
+          author: Faker::Book.author,
+          summary: Faker::Lorem.paragraph(sentence_count: 10),
+          pages: Faker::Number.between(from: 150, to: 500),
+          price: Faker::Number.between(from: 10, to: 500),
+          ISBN: Faker::Code.isbn(base: 13),
+          edition_year: Faker::Number.between(from: 1950, to: 2021),
+          language: %w[English French Dutch].sample,
+          publisher: Faker::Book.publisher,
+          status: Faker::Boolean.boolean,
+          delivery_method: %w[F2F Post].sample,
+          selling_address: addresses[i],
+          topic: %w[Architecture Business Economics Art Computer Education Biology Design History].sample,
+          subtopic: Faker::Lorem.word
+      )
+      puts "Book #{book.id} is created"
+  end
 
 end
 
