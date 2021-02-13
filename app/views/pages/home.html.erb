@@ -47,14 +47,15 @@
 
               <div>
                 <p>Price: <%= book.price %> EUR</p>
-                <p>Sold by: <%= book.user.email %> </p>
+                <p>Sold by: <%= book.user.first_name %> </p>
               </div>
 
-              <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-                  <% if book.user == current_user %>
-                  <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-                  <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-                  <% end %>
+              <% if current_user == book.user %>
+                  <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
+                <% else %>
+                  <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
+              <% end %>
+            
             </div>
           </div>
         <% end %>
