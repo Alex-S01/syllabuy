@@ -1,6 +1,5 @@
 <div class="container">
   <h2>Edit <%= resource_name.to_s.humanize %></h2>
-
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
     <%= f.error_notification %>
 
@@ -11,10 +10,6 @@
         <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
       <% end %>
 
-      <%= f.input :gender,
-                  required: true,
-                  autofocus: true,
-                  input_html: { autocomplete: "gender" }%>
       <%= f.input :first_name,
                   required: true,
                   autofocus: true,
@@ -25,10 +20,25 @@
                   autofocus: true,
                   input_html: { autocomplete: "last_name" }%>
 
+      <%= f.input :date_of_birth,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "date of birth" }%>
+
+      <%= f.input :about_me,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "about me", placeholder: "Describe yourself and why you are using Syllabuy..." }%>
+
+      <%= f.input :gender,
+                  required: false,
+                  autofocus: true,
+                  input_html: { autocomplete: "gender" }%>
+
       <%= f.input :phone_number,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "phone_number" }%>
+                  input_html: { autocomplete: "phone_number", placeholder: '+32 400 00 00 00' }%>
 
       <%= f.input :email,
                   required: true,
@@ -38,15 +48,13 @@
       <%= f.input :university,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "university" }%>
+                  input_html: { autocomplete: "university", placeholder: 'e.g. KU Leuven' }%>
 
-      <%= f.input :password,
-                  hint: "leave it blank if you don't want to change it",
+      <%= f.input :year_of_study,
                   required: false,
-                  input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
-                  required: false,
-                  input_html: { autocomplete: "new-password" } %>
+                  autofocus: true,
+                  input_html: { autocomplete: "year of study" }%>
+
       <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
