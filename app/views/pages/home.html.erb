@@ -33,7 +33,7 @@
           <div class="card" style="margin:0 auto">
 
             <% if book.photo.attached? %>
-              <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
+              <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
             <% else %>
               <img src="https://picsum.photos/180/250" alt="#" height= "250px">
             <% end %>

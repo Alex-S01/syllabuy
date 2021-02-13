@@ -18,8 +18,12 @@
       <div id="title-image" class="my-3" >
 
         <div class="rounded">
-          <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap">
-        </div>
+          <% if book.photo.attached? %>
+            <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
+          <% else %>
+            <img src="app/assets/images/marketing-kotler.jpg" alt="#" height= "250px">
+          <% end %>
+      <% end %>
 
         <div class="more-details my-3">
           <h3>Book details:</h3>
@@ -73,7 +77,7 @@
 
         <div class="reviews my-5">
           <h3>Reviews about the Seller:</h3>
-                
+
         </div>
 
         <div class="location my-5">
@@ -82,7 +86,7 @@
           <p>Pickup this book at: <%= @book.selling_address %></p>
 
         </div>
-      
+
       </div>
     </div>
 
@@ -111,8 +115,8 @@
       </div>
 
     </div>
-  
-  
+
+
   </div>
 </div>
 

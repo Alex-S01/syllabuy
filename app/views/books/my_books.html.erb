@@ -10,9 +10,9 @@
 
 
        <% if book.photo.attached? %>
-       <%= cl_image_tag book.photo.key, height: 400, width: 300, crop: :fill, :style => 'border-radius: 8px;' %>
+       <%= cl_image_tag book.photo.key, height: 400, width: 300, :crop=>"fit", :style => 'border-radius: 8px;' %>
        <% else %>
-       <img src="https://picsum.photos/400/300" class="card-img-top" src="..." alt="Card image cap" style="border-radius:8px;">
+       <img src="app/assets/images/marketing-kotler.jpg" class="card-img-top" src="..." alt="Card image cap" style="border-radius:8px;">
        <% end %>
 
        <div class="card-body">
@@ -32,9 +32,9 @@
       <%= link_to 'View my book', book_path(book) %>
       <%= link_to 'Delete book', book_path(book), method: :delete, data: { confirm: "Are you sure you want to delete this book ?" } %>
 
-    
+
       <%= link_to "New book", new_book_path %>
-  
+
     </div>
     <% end %>
   </div>
