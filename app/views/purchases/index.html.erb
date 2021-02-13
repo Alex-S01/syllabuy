@@ -14,7 +14,13 @@
           <p>Purchase date & time: <%= purchase.created_at %></p>
           <p>Payment method: <%= purchase.payment_method %></p>
           <h4>Purchase ID: <%= purchase.id %></h4>
-          <%= link_to "Add a review on your purchase", new_user_purchase_review_path(current_user, purchase), class: "btn btn-primary" %>
+
+          <% if purchase.review.blank? %>
+            <%= link_to "Add a review on your purchase", new_user_purchase_review_path(current_user, purchase), class: "btn btn-primary" %>
+          <% else %>
+            <p>You have already written a review for this purchase.</p>
+          <% end %>
+
         </div>
 
       </div>
