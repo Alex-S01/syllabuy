@@ -23,33 +23,10 @@
 
 
 
-
         <br/>
-
-       <div class="row m-l-0 m-r-0">
-        <div class="col-sm-4 bg-c-lite-green user-profile">
-         <div class="card-block text-center text-white">
-          <div class="m-b-25">
-          <% if current_user.photo.attached? %>
-              <%= cl_image_tag(current_user.photo.key, :transformation=>[
-  {:width=>1000, :height=>1000, :gravity=>"face", :radius=>"max", :crop=>"crop"},
-  {:width=>200, :crop=>"scale"}
-  ]) %>
-          <% else %>
-            <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
-          <% end %>
-
-          </div>
-
-
 
 
         <div class="row">
-
-
-         </div>
-        </div>
-
 
 
           <div class="id-avatar"style="width:200px;">
@@ -110,12 +87,3 @@
 </div>
 </div>
 </div>
-
-
-
-
-
-
-
-
-
