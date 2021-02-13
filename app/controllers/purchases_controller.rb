@@ -3,11 +3,6 @@ class PurchasesController < ApplicationController
       @purchases = Purchase.all
   end
 
-  def show
-      @user = current_user
-      @purchase = Purchase.find(params[:id])
-  end
-
   def new
     # we need @restaurant in our `simple_form_for`
     @book = Book.find(params[:book_id])
