@@ -6,8 +6,12 @@
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+   z-index:4000;
+
 }
 
 .navbar-lewagon .navbar-brand img {
   width: 40px;
 }
+
+
