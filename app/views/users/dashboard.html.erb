@@ -1,81 +1,93 @@
 <div class ="dashboard" style="background:#3E64FF">
 
-   <div class="page-content page-container" id="page-content">
 
+
+
+
+
+
+<br/>
+  <div class="text-center" id="hello" style="color:white;"> Hello, <%=current_user.first_name%> <%=current_user.last_name%> </div>
+
+
+<br/>
+
+<div class="text-center" id="hello" style="color:white;font-size:25px;"> Welcome to your <i>Syllabuy</i> dashboard !</div>
 <br/><br/><br/>
+  <div class="page-content page-container" id="page-content">
 
-
-    <div class="row container d-flex justify-content-center">
+    <div class="container1">
      <div class="col-lg-12 col-md-12">
 
       <div class="profile-title">
-          <h1 style="color:#3E64FF">Welcome,
-            <p><%=current_user.first_name%></p>
-          </h1>
-           <h3 class="text-center">My profile page</h3><br/>
-
-      </div>
 
 
-       <div class="row m-l-0 m-r-0">
-        <div class="col-sm-4 bg-c-lite-green user-profile">
-         <div class="card-block text-center text-white">
-          <div class="m-b-25">
-           <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+
+        <br/>
+
+
+        <div class="row">
+
+
+          <div class="id-avatar"style="width:200px;">
+            <div class="text-center" id="avatar" style="background:red;height:150px;border-radius:150px;width:150px;margin:0 auto;"><br/><br/>AVATAR
+            </div>
+            <br/>
+            <p class="text-center" style="margin:0 auto;margin-bottom:10px;">  <i class="fas fa-user-graduate"> </i>-ID: <%=current_user.id%></p>
+
           </div>
-
-              <h6 class="f-w-600"><%=current_user.first_name%><%=current_user.last_name%></h6>
-              <p> User-ID: <%=current_user.id%></p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
-
-         </div>
-        </div>
-
-
-
-             <div class="col-sm-8">
+          <div class="infoperso">
+            <div class="col-sm-8 col-lg-12">
               <div class="card-block">
                <h6 class="m-b-20 p-b-5 b-b-default f-w-600" style="color:#3E64FF">Personal informations</h6>
                <div class="row">
-                <div class="col-sm-6">
-                 <p class="m-b-10 f-w-600">Email</p>
-                  <h6 class="text-muted f-w-400"><%=current_user.email%></h6>
-                </div>
-              </div>
+                <div class="col-sm-12 col-md-12 col-lg-12">
+                 <p class="m-b-5 f-w-600"><i class="fas fa-at"></i>-Address</p>
+                 <h5 class="text-muted f-w-400"><%=current_user.email%></h5>
+                 <p class="m-b-5 f-w-600"><i class="fas fa-mobile-alt"></i> Phone Number</p>
+                 <h6 class="text-muted f-w-400"><%=current_user.phone_number%></h6>
+                 <p class="m-b-5 f-w-600">Date of Birth</p>
+                 <h6 class="text-muted f-w-400"><%=current_user.date_of_birth%></h6>
+               </div>
              </div>
-             <%=link_to "Edit account", edit_user_registration_path %>
-            </div>
+           </div>
+
+         </div>
+       </div>
+
+
+       <div class="dashboardlinks" style="background:#ECFCFF; border-radius:10px;">
+        <h6 class="m-b-20 p-b-5 b-b-default f-w-600" style="color:#3E64FF">MySyllabuy</h6>
+        <div class="mysillabuylinks">
+
+
+          <%=link_to "Edit account", edit_user_registration_path, :class=>"btn btn-primary" %>
+
+          <div class="btn btn-info"><i class="fas fa-shopping-basket" ></i>
+            <%= link_to 'My purchases', user_purchases_path(current_user) %>
+          </div>
+
+
+          <div class="btn btn-info"><i class="fas fa-book" style="width:20px;"></i>
+           <%= link_to 'My books', user_books_path(current_user) %></td>
+         </div>
+
+         <div class="btn btn-info"><i class="fas fa-comment-dots" style="width:20px;"></i>
+          <%= link_to 'My reviews', user_reviews_path(current_user) %></td>
+        </div>
       </div>
 
-
     </div>
-   </div>
   </div>
-
-
-  <h1 class="text-center" style="font-size:25px;color:rgba(0,0,0,0.9)">
-    <br/><br/><br/><br/><br/>    My Syllabuy
- </h1> <br/>
-
-  <div class="dashboardlinks" style="background:#ECFCFF">
-
-
-   <div class="dashboardlink-mypurchases">
-      <%= link_to 'My purchases', user_purchases_path(current_user), :class =>"btn-lg btn-info" %>
-  </div>
-
-
-   <div class="dashboardlink-book"><!-- <i class="fas fa-book"></i> -->
-       <%= link_to 'My books', user_books_path(current_user) , :class =>"btn-lg btn-info"%></td>
-   </div>
-
-   <div class="dashboardlink-myreviews">
-    <%= link_to 'My reviews', user_reviews_path(current_user), :class =>"btn-lg btn-info" %></td>
-  </div>
-
-
-  </div>
-
 </div>
+<br/>
+<div id="map" style="width: 100%; height: 30vh;margin:0auto;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+</div>
+</div>
+</div>
+</div>
+
 
 
 
