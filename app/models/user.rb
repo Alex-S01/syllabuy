@@ -6,4 +6,7 @@ class User < ApplicationRecord
   has_many :books, dependent: :destroy
   has_many :purchases, dependent: :destroy
   has_many :reviews, through: :purchases
+
+  has_one_attached :photo
+  
 end
