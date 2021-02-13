@@ -1,3 +1,40 @@
+.fas fa-book {
+  height:300px;
+}
+
+.dashboard {
+background-image: asset-url('profile.jpg');
+height:600px;
+}
+
+
+
+.dashboardlinks {
+  display:flex;
+  justify-content:space-around;
+  background:white;
+  height:100px;
+  width:80%;
+  margin: 0 auto;
+  // align-items:center;
+
+
+}
+
+.dashboardlink {
+  background: white;
+  height:200px;
+  width:30%;
+  border-radius:50px;
+  border:1px solid black;
+}
+
+.dashboardlink-book {
+background-image:asset-url('Syllabuy4.png');
+width:200px;
+}
+
+
 .padding {
     padding: 3rem !important
 }
@@ -6,13 +43,13 @@
     overflow: hidden
 }
 
-.card {
-    border-radius: 5px;
-    -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-    box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
-    border: none;
-    margin-bottom: 30px
-}
+// .card {
+//     border-radius: 5px;
+//     -webkit-box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+//     box-shadow: 0 1px 20px 0 rgba(69, 90, 100, 0.08);
+//     border: none;
+//     margin-bottom: 30px
+// }
 
 .container  {
   border:10px solid white;
@@ -34,8 +71,7 @@
 }
 
 .bg-c-lite-green {
-    background: -webkit-gradient(linear, left top, right top, from(grey), to(rgba(0,35,53,1)));
-    background: linear-gradient(to right, rgba(0,35,53,1), grey)
+    background:#27496d;
 }
 
 .user-profile {

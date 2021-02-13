@@ -1,35 +1,86 @@
-<div class="container">
-  <h1>Welcome, <%= @user.first_name %></h1>
+<div class ="dashboard">
 
-  <table>
-    <tr>
-      <th>
+   <div class="page-content page-container" id="page-content">
+
+<br/><br/><br/>
+
+
+    <div class="row container d-flex justify-content-center">
+     <div class="col-lg-12 col-md-12">
+
+      <div class="profile-title">
+          <h1>Welcome,
+            <p><%=current_user.first_name%></p>
+          </h1>
+           <h3 class="text-center">My profile page</h3><br/>
+
+      </div>
+
+
+       <div class="row m-l-0 m-r-0">
+        <div class="col-sm-4 bg-c-lite-green user-profile">
+         <div class="card-block text-center text-white">
+          <div class="m-b-25">
+           <img src="https://img.icons8.com/bubbles/100/000000/user.png" class="img-radius" alt="User-Profile-Image">
+          </div>
+
+              <h6 class="f-w-600"><%=current_user.first_name%><%=current_user.last_name%></h6>
+              <p> User-ID: <%=current_user.id%></p> <i class=" mdi mdi-square-edit-outline feather icon-edit m-t-10 f-16"></i>
+
+         </div>
+        </div>
+
+
+
+             <div class="col-sm-8">
+              <div class="card-block">
+               <h6 class="m-b-20 p-b-5 b-b-default f-w-600">Personal informations</h6>
+               <div class="row">
+                <div class="col-sm-6">
+                 <p class="m-b-10 f-w-600">Email</p>
+                  <h6 class="text-muted f-w-400"><%=current_user.email%></h6>
+                </div>
+              </div>
+             </div>
+             <%=link_to "Edit account", edit_user_registration_path %>
+            </div>
+      </div>
+
+
+    </div>
+   </div>
+  </div>
+
+
+  <h1 class="text-center" style="font-size:25px;color:rgba(0,0,0,0.9)">
         My Syllabuy
-      </th>
+ </h1> <br/><br/>
 
-    </tr>
-
-    <tr>
-      <td> <%= link_to 'My profile', user_path(current_user) %></td>
-    </tr>
-
-    <tr>
-      <td> <%= link_to 'My purchases', user_purchases_path(current_user) %></td>
-    </tr>
-
-    <tr>
-      <td> <%= link_to 'My books', user_books_path(current_user) %></td>
-    </tr>
+  <div class="dashboardlinks" style="background:#00909e">
 
 
-     <tr>
-      <td> <%= link_to 'My reviews', user_reviews_path(current_user) %></td>
-    </tr>
+   <div class="dashboardlink-mypurchases">
+      <%= link_to 'My purchases', user_purchases_path(current_user), :class =>"btn-lg btn-info" %>
+  </div>
 
 
-    <td> <%= link_to "Log out", destroy_user_session_path, method: :delete %> </td>
+   <div class="dashboardlink-book"><!-- <i class="fas fa-book"></i> -->
+       <%= link_to 'My books', user_books_path(current_user) , :class =>"btn-lg btn-info"%></td>
+   </div>
 
-  </table>
+   <div class="dashboardlink-myreviews">
+    <%= link_to 'My reviews', user_reviews_path(current_user), :class =>"btn-lg btn-info" %></td>
+  </div>
+
+
+  </div>
 
 </div>
+
+
+
+
+
+
+
 
