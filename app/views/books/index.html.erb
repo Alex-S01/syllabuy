@@ -1,85 +1,76 @@
 <div class="containerindexbook" style="margin-top:50px;">
 
- <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;">
+  <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;">
 
-  <h1 id="titreindexbook" class="text-center"> Available Books </h1>
-  <p class="text-center"> Find the right book for your needs.</p>
+    <h1 id="titreindexbook" class="text-center"> Available Books </h1>
+    <p class="text-center"> Find the right book for your needs.</p>
 
-  <br/>
+    <br/>
 
+      <div class="search-fields" style="margin:0 auto;">
+        <div class="search-bar">
+          <%= form_tag books_path, method: :get do %>
+          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
+          <% end %>
+        </div>
 
-  <div class="search-fields" style="margin:0 auto;">
-   <div class="search-bar">
-    <%= form_tag books_path, method: :get do %>
-    <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
+        <div class="search-button">
+          <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
+          <br/><br/>
+        </div>
+      </div>
   </div>
-  <div class="search-button">
-    <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
-    <% end %><br/><br/>
-  </div>
-
-
 </div>
+<<<<<<< HEAD
 </div>
 
 
+=======
+>>>>>>> 773f31635453f838dedc54c741da9664a811bfda
 
 <div class="container3 justify-content-space-evenly">
   <div class="d-flex">
 
     <div class="indexbook-container" style="padding:24px;">
 
-      <div class="cards">
-        <% @books.each do |book| %>
-        <div class="card">
+        <div class="cards">
+          <% @books.each do |book| %>
+            <div class="card">
 
-          <% if book.photo.attached? %>
-          <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
-          <% else %>
-          <img src="https://picsum.photos/180/250" alt="#" height= "250px">
+              <% if book.photo.attached? %>
+                <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
+              <% else %>
+                <img src="app/assets/images/marketing-kotler.jpg" alt="#" height= "250px">
+              <% end %>
+
+              <div class="card-body">
+                <div class="card-title">
+                  <h3><%= book.title %></h3>
+                  <p>Author: <%= book.author %></p>
+                  <p>Edition year: <%= book.edition_year %></p>
+                </div>
+
+                <div>
+                  <p>Price: <%= book.price %> EUR</p>
+                  <p>Sold by: <%= book.user.email %> </p>
+                </div>
+
+                <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+                <%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+
+                <% if book.user == current_user %>
+                <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+                <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
+                <% end %>
+
+              </div>
+            </div>
           <% end %>
-
-
-
-          <div class="card-body">
-            <div class="card-title">
-              <h3><%= book.title %></h3>
-              <p>Author: <%= book.author %></p>
-              <p>Edition year: <%= book.edition_year %></p>
-            </div>
-
-            <div>
-              <p>Price: <%= book.price %> EUR</p>
-              <p>Sold by: <%= book.user.email %> </p>
-            </div>
-
-            <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-            <%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-
-            <% if book.user == current_user %>
-            <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-            <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-            <% end %>
-
-          </div>
         </div>
-        <% end %>
-      </div>
     </div>
 
+    <div id="map" style="width: 50%; height: 100vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
-
-    <div
-    id="map"
-    style="width: 50%; height: 100vh;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-
 </div>
-</div>
-</div>
-
-</div>
-
-
