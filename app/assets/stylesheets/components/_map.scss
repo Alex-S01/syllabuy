@@ -5,7 +5,7 @@
 .mapboxgl-popup-content {
   text-align: left;
   font-family: "Nunito", "sans-serif";
-} 
+}
 
 .map-info-window {
   font-weight: bold;
@@ -22,4 +22,8 @@
   height: 70px;
   width: 70px;
   border-radius: 50%;
+}
+
+#map {
+  margin-top:200px;
 }
