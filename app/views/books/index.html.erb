@@ -25,60 +25,50 @@
 </div>
 
 <div class="container3 justify-content-space-evenly">
-<div class="d-flex">
+  <div class="d-flex">
 
+    <div class="container3 justify-content-space-evenly">
+      <div class="d-flex">
+        <div class="indexbook-container" style="margin-top:175px;padding:24px;">
 
+          <div class="cards">
+            <% @books.each do |book| %>
+              <div class="card">
 
-  <div class="container3 justify-content-space-evenly">
-    <div class="d-flex">
-      <div class="indexbook-container" style="margin-top:175px;padding:24px;">
-
-        <div class="cards">
-          <% @books.each do |book| %>
-            <div class="card">
-
-              <% if book.photo.attached? %>
-                  <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
-              <% else %>
-                  <img src="https://picsum.photos/180/250" alt="#" height= "250px">
-              <% end %>
-
-              <div class="card-body">
-                <div class="card-title">
-                  <h3><%= book.title %></h3>
-                  <p>Author: <%= book.author %></p>
-                  <p>Edition year: <%= book.edition_year %></p>
-                </div>
-
-                <div>
-                  <p>Price: <%= book.price %> EUR</p>
-                  <p>Sold by: <%= book.user.first_name %> </p>
-                </div>
-
-                <% if current_user == book.user %>
-                  <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
+                <% if book.photo.attached? %>
+                    <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
                 <% else %>
-                  <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
+                    <img src="https://picsum.photos/180/250" alt="#" height= "250px">
                 <% end %>
 
+                <div class="card-body">
+                  <div class="card-title">
+                    <h3><%= book.title %></h3>
+                    <p>Author: <%= book.author %></p>
+                    <p>Edition year: <%= book.edition_year %></p>
+                  </div>
+
+                  <div>
+                    <p>Price: <%= book.price %> EUR</p>
+                    <p>Sold by: <%= book.user.first_name %> </p>
+                  </div>
+
+                  <% if current_user == book.user %>
+                    <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
+                  <% else %>
+                    <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
+                  <% end %>
+
+                </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
+
     </div>
 
+    <div id="map" style="width: 50%; height: 100vh;border:15px solid white;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
   </div>
-
-
-   <div
-     id="map"
-     style="width: 50%; height: 100vh;border:15px solid white;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
-
-</div>
-</div>
-
 </div>
