@@ -1,9 +1,47 @@
 <div class="container">
-  <% if @reviews.blank? %>
-    <p>You don't have any reviews written on you at the moment</p>
-  <% else %>
-    <% @reviews.each do |review| %>
-      <li><%= review.content%></li>
-    <% end %>
-  <% end %>
+  <div class="mt-5">
+    <h1>My reviews</h1>
+    <p>See the reviews you wrote about other your purchases.</p>
+
+  
+    <div class="review-cards">
+      <% if @reviews.blank? %>
+        <p>You don't have any reviews written on you at the moment</p>
+      <% else %>
+
+        <% @reviews.each do |review| %>
+
+            <div class="review-card">
+              <div class="seller-review">
+                <%= image_tag("books-stack.jpg", class: 'avatar') %>
+
+                <div class="review-details">
+
+                  <p><strong>Seller name:</strong> <%= review.purchase.book.user.first_name %></p>
+
+                  <div class="stars-rating">
+                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
+                  </div>
+                
+                </div>
+              </div>
+
+              <div class="review-book-details">
+                <p><strong>Book title:</strong> <%= review.purchase.book.title %></p>
+                <p><strong>Author:</strong> <%= review.purchase.book.author %></p>
+              </div>
+
+              <div class="review-text-content">
+                <p><strong>You wrote:</strong> <%= review.content%></p>
+              </div>
+              
+            </div>
+
+        <% end %>
+        
+      <% end %>
+  
+    </div>
+
+  </div>
 </div>
