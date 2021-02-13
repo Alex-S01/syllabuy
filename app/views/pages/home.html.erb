@@ -1,15 +1,18 @@
 <div class="banner">
 
-      <h1 class="text-center">Find your university textbooks from students near you.</h1>
+  <div class="home-title">
+    <h1>Find your university textbooks near you</h1>
+  </div>
 
-    <div class="search-fields">
 
-      <div class="search-bar">
-        <%= form_tag books_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
-      </div>
+  <div class="search-fields">
 
-      <div class="search-button">
+    <div class="search-bar">
+      <%= form_tag books_path, method: :get do %>
+      <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
+    </div>
+
+    <div class="search-button">
         <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
         <% end %>
       </div>
@@ -55,7 +58,7 @@
                 <% else %>
                   <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
               <% end %>
-            
+
             </div>
           </div>
         <% end %>

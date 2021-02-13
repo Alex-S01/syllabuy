@@ -18,10 +18,20 @@
   margin-bottom: 16px;
 }
 
+
+.home-title {
+  width:80%;
+  margin:0 auto;
+  text-align:center;
+}
+
+
+
 .search-fields {
   display: flex;
   margin:0 auto;
   max-width:600px;
+  width:80%;
   border-radius:50px;
 
 }
@@ -48,3 +58,37 @@
 
 //   margin-left:79px;
 // }
+
+@media(min-width: 1024px) {
+
+ .home-title h1 {
+    font-size:44px;
+
+  }
+
+.search-fields {
+  margin:0 auto;
+  width:80%;
+}
+}
+
+
+
+@media(min-width: 768px)and(max-width:1023px) {
+  .home-title h1 {
+   font-size:32px;
+  }
+}
+
+@media(max-width: 360px) {
+   .home-title h1 {
+    font-size: 28px;
+
+  }
+}
+@media(min-width: 361px)and(max-width:767px) {
+   .home-title h1 {
+  font-size: 32px;
+  }
+}
+
