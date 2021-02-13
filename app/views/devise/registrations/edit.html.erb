@@ -55,6 +55,8 @@
                   autofocus: true,
                   input_html: { autocomplete: "year of study" }%>
 
+      <%= f.input :photo, as: :file, required: false, label: "Upload a profile photo" %>
+
       <%= f.input :current_password,
                   hint: "we need your current password to confirm your changes",
                   required: true,
