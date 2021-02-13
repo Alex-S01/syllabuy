@@ -1,7 +1,0 @@
-<div class= "container">
-  <ul>
-    <li>Book title:<%= @purchase.book.title %></li>
-    <li>Payment method:<%= @purchase.payment_method %></li>
-  </ul>
-  <%= link_to "Add a review on that purchase", new_user_purchase_review_path(current_user, @purchase, @review),:class  => "btn btn-light", :style => "font-size: 20px; border-radius:10px; display:inline; width:100px"%>
-</div>
