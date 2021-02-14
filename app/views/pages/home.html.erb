@@ -1,11 +1,11 @@
 <div class="banner">
 
   <div class="home-title">
-    <h1>Find your university textbooks near you</h1>
+    <h1 class="animate__animated animate__flipInX">Find your university textbooks near you</h1>
   </div>
 
 
-  <div class="search-fields">
+  <div class="animate__animated animate__lightSpeedInLeft" id="search-fields">
 
     <div class="search-bar">
       <%= form_tag books_path, method: :get do %>
@@ -13,11 +13,11 @@
     </div>
 
     <div class="search-button">
-        <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
-        <% end %>
-      </div>
-
+      <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
+      <% end %>
     </div>
+
+  </div>
 
 
 </div>
@@ -31,72 +31,104 @@
 
 
 
-      <div class="cards">
-        <% @books.each do |book| %>
-          <div class="card" style="margin:0 auto">
+    <div class="cards">
+      <% @books.each do |book| %>
+      <div class="card" style= "margin:0 auto">
 
-            <% if book.photo.attached? %>
-              <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
-            <% else %>
-              <img src="https://picsum.photos/180/250" alt="#" height= "250px">
-            <% end %>
-
-            <div class="card-body">
-              <div class="card-title">
-                <h3><%= book.title %></h3>
-                <p>Author: <%= book.author %></p>
-                <p>Edition year: <%= book.edition_year %></p>
-              </div>
-
-              <div>
-                <p>Price: <%= book.price %> EUR</p>
-                <p>Sold by: <%= book.user.first_name %> </p>
-              </div>
-
-              <% if current_user == book.user %>
-                  <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
-                <% else %>
-                  <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
-              <% end %>
-
-            </div>
-          </div>
-        <% end %>
-      </div>
-
-
-
-     </div>
-
-
-
-    <div class="categories">
-
-      <h2>Find books on many topics</h2>
-
-      <div class="category-cards">
-
-        <%= link_to "/books?query=business" do %>
-        <div class="card-category">
-          <h3>Business</h3>
-        </div>
+        <% if book.photo.attached? %>
+        <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
+        <% else %>
+        <img src="https://picsum.photos/180/250" alt="#" height= "250px">
         <% end %>
 
-        <%= link_to "/books?query=law" do %>
-        <div class="card-category">
-          <h3>Law</h3>
+        <div class="card-body">
+          <div class="card-title" style="font-size: 32px;
+          font-family: 'Playfair Display', serif;">
+          <h3><%= book.title %></h3>
+          <p>Author: <%= book.author %></p>
+          <p>Edition year: <%= book.edition_year %></p>
         </div>
-        <% end %>
 
-
-        <%= link_to "/books?query=art" do %>
-        <div class="card-category">
-          <h3>Art</h3>
+        <div>
+          <p>Price: <%= book.price %> EUR</p>
+          <p>Sold by: <%= book.user.first_name %> </p>
         </div>
+
+        <% if current_user == book.user %>
+        <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
+        <% else %>
+        <%= link_to 'Buy now', book_path(book), class: "btn btn-primary" %>
         <% end %>
 
       </div>
+    </div>
+    <% end %>
+  </div>
+
+
+
+</div>
+<div class="padding">
+  <div class="d-flex">
+    <div class="aboutus" style="font-size:65px;font-family: 'Playfair Display', serif;">
+
+      <h1 style="font-size:65px;font-family: 'Playfair Display', serif;"> Discover <span style="color:#3E64FF;">Syllabuy</span> and create a virtuous circle</h1>
+      <p style="font-size:30px;background:white;font-family: 'Playfair Display', sans serif;font-weight:100px;">
+        You want to buy or sell textbooks ? <br/>Here is the new<span style="color:#3E64FF;"> second-hand book sales platform</span> <br/>created by three young entrepreneurs, <br/>Alex Saliba, Lucas Goretti and Sébastien Ternest,<br/> who met at a Web dev school.<br/>
+        Their common goal was to allow people get courses materials as cheap and as fast as possible.
+      </p>
 
     </div>
+
+    <div class="imageaside">
+
+    </div>
+  </div>
+</div>
+
+<div class="categories">
+
+  <h2>Find books on many topics</h2>
+
+  <div class="category-cards">
+
+    <%= link_to "/books?query=business" do %>
+    <div class="card-category">
+      <h3>Business</h3>
+    </div>
+    <% end %>
+
+    <%= link_to "/books?query=law" do %>
+    <div class="card-category">
+      <h3>Law</h3>
+    </div>
+    <% end %>
+
+
+    <%= link_to "/books?query=art" do %>
+    <div class="card-category">
+      <h3>Art</h3>
+    </div>
+    <% end %>
+
+  </div>
+
+</div>
+
+<div class="footer" style="margin:0 auto;">
+  <div class="footer-copyright">
+    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+  </div>
+
+  <div class="footer-links">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
 
 

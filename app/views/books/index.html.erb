@@ -1,75 +1,119 @@
-<div class="containerindexbook" style="margin-top:50px;">
 
-  <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1">
+<body style="background:#white;">
+<div class="containerindexbook" style="margin-top:50px;background:#3E64FF;">
 
-    <h1 id="titreindexbook" class="text-center"> Available Books </h1>
-    <p class="text-center"> Find the right book for your needs.</p>
+  <div class ="text-center" style="width:100%;padding:5px;background:#3E64FF;border-radius:10px;position:fixed;top:60px;z-index:1">
+
+    <h1 id="titreindexbook" class="text-center" style="color:white;"> Available Books </h1>
 
     <br/>
-
-      <div class="search-fields" style="margin:0 auto;">
-        <div class="search-bar">
-          <%= form_tag books_path, method: :get do %>
-          <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
-          <% end %>
-        </div>
-
-        <div class="search-button">
-          <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
-          <br/><br/>
-        </div>
+    <div id ="search-fields" style="margin:0 auto;">
+      <div class="search-bar">
+        <%= form_tag books_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
+        <% end %>
       </div>
+
+      <div class="search-button">
+        <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
+
+      </div>
+<br/>
+
+    </div>
+<br/><br/>
   </div>
-</div>
+
+
+
+  <div class="indicateurdeprix" style="position:fixed;border-radius:3px;z-index:300;margin-top:160px;width:100%;margin-bottom:100px;">
+
+   <p style="text-align:center; color:white;font-size:16px;"> Filter your search to find the most interesting deals</p>
+
+
+   <div class="d-flex justify-content-center" style="text-align:center;border-radius:50px;transform:translate(0px,-50px);">
+
+
+     <FORM ACTION="">
+     <INPUT TYPE="POST" VALUE="Price"></FORM>
+
+
+
+     <FORM ACTION="">
+     <INPUT TYPE="POST" VALUE="Location"></FORM>
+
+
+
+     <FORM ACTION="">
+     <INPUT TYPE="POST" VALUE="Condition"></FORM>
+
+
+
+
+    <br/><br/>
+  </div>
 
 </div>
 
 
+</div>
 
+<br/>
 
 <div class="container3 justify-content-space-evenly">
   <div class="d-flex">
 
     <div class="indexbook-container" style="padding:24px;">
 
-        <div class="cards" style="margin-top:207px;">
-          <% @books.each do |book| %>
-            <div class="card">
+      <div class="cards" style="margin-top:200px;">
+        <% @books.each do |book| %>
+        <div class="card" style="border-radius:20px;">
 
-              <% if book.photo.attached? %>
-                <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
-              <% else %>
-                <img src="app/assets/images/marketing-kotler.jpg" alt="#" height= "250px">
-              <% end %>
-
-              <div class="card-body">
-                <div class="card-title">
-                  <h3><%= book.title %></h3>
-                  <p>Author: <%= book.author %></p>
-                  <p>Edition year: <%= book.edition_year %></p>
-                </div>
-
-                <div>
-                  <p>Price: <%= book.price %> EUR</p>
-                  <p>Sold by: <%= book.user.email %> </p>
-                </div>
-
-                <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-                <%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-
-                <% if book.user == current_user %>
-                <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-                <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9" %>
-                <% end %>
-
-              </div>
-            </div>
+          <% if book.photo.attached? %>
+          <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
+          <% else %>
+          <img src="app/assets/images/marketing-kotler.jpg" alt="#" height= "250px">
           <% end %>
+
+          <div class="card-body" style="font-family: 'Arial,serif';line-height:10px;">
+            <div class="card-title">
+              <h3><%= book.title %></h3>
+              <p>Author: <%= book.author %></p>
+              <p>Edition year: <%= book.edition_year %></p>
+            </div>
+
+
+            <p>Price: <%= book.price %> EUR</p>
+            <p>Sold by:<br/><br/> <%= book.user.email %> </p>
+
+
+            <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
+            <%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
+
+            <% if book.user == current_user %>
+
+            <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
+            <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
+            <% end %>
+          </div>
+
         </div>
+        <% end %>
+      </div>
+
     </div>
 
-    <div id="map" style="width: 100%; height: 100vh;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-    </div>
 
+
+
+    <div id="map"
+    style="width: 40%; height: 110vh;margin-top:100px;"
+    data-markers="<%= @markers.to_json %>"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
+
 </div>
+</div>
+
+</body>
+
