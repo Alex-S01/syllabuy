@@ -1,0 +1,29 @@
+
+.footer {
+  margin: 0 auto;
+  padding: 20px;
+  background-size: cover;
+  height: 20vh;
+
+}
+
+.footer-copyright {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color:#3E64FF;
+
+}
+
+.footer-links {
+  margin-top: 8px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+
+
+}
+
+.footer-links .social-links {
+  text-decoration: none;
+}

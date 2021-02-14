@@ -1,4 +1,13 @@
-// Specific CSS for your home-page
+
+
+// .aboutus h1
+// {
+//   color:#5EDFFF;
+// }
+.imageaside {
+background-image: asset-url("profile.jpg");
+width:50%;
+}
 
 .container {
   margin-top: 80px;
@@ -23,11 +32,12 @@
   width:80%;
   margin:0 auto;
   text-align:center;
+  font-family: 'Playfair Display', serif;
 }
 
 
 
-.search-fields {
+#search-fields {
   display: flex;
   margin:0 auto;
   max-width:600px;
@@ -66,7 +76,7 @@
 
   }
 
-.search-fields {
+#search-fields {
   margin:0 auto;
   width:80%;
 }
