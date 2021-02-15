@@ -1,8 +1,10 @@
 
-<body style="background:#white;">
-<div class="containerindexbook" style="margin-top:50px;background:#3E64FF;">
+<body style="background:#ECFCFF;">
 
-  <div class ="text-center" style="width:100%;padding:5px;background:#3E64FF;border-radius:10px;position:fixed;top:60px;z-index:1">
+
+<div class="containerindexbook" style="margin-top:50px;background:#3E11AF;">
+
+  <div class ="text-center" style="width:100%;padding:5px;background: linear-gradient(0.5turn, #3f87a6, #ebf8e1, #f69d3c);border-radius:10px;position:fixed;top:60px;z-index:1">
 
     <h1 id="titreindexbook" class="text-center" style="color:white;"> Available Books </h1>
 
@@ -15,7 +17,7 @@
       </div>
 
       <div class="search-button">
-        <%= submit_tag "Search", class: "btn btn-primary", id:"search-button" %>
+        <%= submit_tag "Search", class: "btn btn-primary", id:"search-button", style: "background:#3E64FF;" %>
 
       </div>
 <br/>
@@ -72,7 +74,7 @@
           <% if book.photo.attached? %>
           <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
           <% else %>
-          <img src="app/assets/images/marketing-kotler.jpg" alt="#" height= "250px">
+        <img src="https://picsum.photos/180/250" alt="#" height= "250px">
           <% end %>
 
           <div class="card-body" style="font-family: 'Arial,serif';line-height:10px;">
@@ -114,6 +116,22 @@
 
 </div>
 </div>
+<div class="footer"style="margin:0 auto;background:white;opacity:0.7">
+  <div class="footer-copyright">
+    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+  </div>
+
+  <div class="footer-links" >
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+
 
 </body>
 

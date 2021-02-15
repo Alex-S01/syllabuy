@@ -4,9 +4,21 @@
 // {
 //   color:#5EDFFF;
 // }
+#artbook
+{
+  background-image: asset-url("artbook.png");
+
+}
+
+#lawbook
+{
+    background-image: asset-url("lawbook.png");
+
+}
+
 .imageaside {
-background-image: asset-url("profile.jpg");
-width:50%;
+background-image: asset-url("aside.png");
+width:100%;
 }
 
 .container {
@@ -57,6 +69,7 @@ width:50%;
 .search-button {
   width: 104px;
   margin-left: 8px;
+background:#3E64FF;
 }
 
 .search-button #search-button {

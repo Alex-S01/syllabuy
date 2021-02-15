@@ -1,4 +1,4 @@
-<div class ="dashboard" style="background:#3E64FF">
+<div class ="dashboard" style="background: linear-gradient(0.5turn, #3f87a6, #ebf8e1, #f69d3c);">"
 
 
 
@@ -61,7 +61,7 @@
         <div class="mysillabuylinks">
 
 
-          <%=link_to "Edit account", edit_user_registration_path, :class=>"btn btn-primary" %>
+          <%=link_to "Edit account", edit_user_registration_path, :class=>"btn btn-primary", :style=>"background:#3E64FF;" %>
 
           <div class="btn btn-info"><i class="fas fa-shopping-basket" ></i>
             <%= link_to 'My purchases', user_purchases_path(current_user) %>
@@ -87,3 +87,20 @@
 </div>
 </div>
 </div>
+
+<div class="footer"style="margin:0 auto;background:white;opacity:0.7">
+  <div class="footer-copyright">
+    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+  </div>
+
+  <div class="footer-links" >
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+    </div>
+  </div>
+</div>
+
