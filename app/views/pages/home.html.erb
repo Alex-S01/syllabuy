@@ -1,13 +1,13 @@
 <body style="background: linear-gradient(0.5turn, #3f87a6, #ebf8e1, #f69d3c);">
 
-  <div class="cover-banner" style="background:#3E64FF;opacity:0.9;">
-    <div class="banner">
+ <div class="cover-banner" style="background:#3E64FF;opacity:0.9;">
+  <div class="banner">
 
-     <div class="home-title">
+   <div class="home-title">
       <h1 class="animate__animated animate__flipInX">Find your university textbooks near you</h1>
-    </div>
+   </div>
 
-    <div class="animate__animated animate__lightSpeedInLeft" id="search-fields">
+   <div class="animate__animated animate__lightSpeedInLeft" id="search-fields">
 
       <div class="search-bar">
         <%= form_tag books_path, method: :get do %>
@@ -19,22 +19,20 @@
         <% end %>
       </div>
 
-    </div>
-
+   </div>
   </div>
-</div>
+ </div>
 
 
-<div class="container"style="background:white;">
+ <div class="container"style="background:white;">
 
   <h1 class="text-center"> <br/>Some of our Community's Books </h1>
   <p class="text-center"> Find the right book for your needs.<br/><br/></p>
 
-
-
   <div class="cards">
     <% @books.each do |book| %>
-    <div class="card" style= "margin:0 auto">
+
+   <div class="card" style= "margin:0 auto">
 
       <% if book.photo.attached? %>
       <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
@@ -42,82 +40,75 @@
       <img src="https://picsum.photos/180/250" alt="#" height= "250px">
       <% end %>
 
-      <div class="card-body">
-        <div class="card-title" style="font-size: 32px;
+     <div class="card-body">
+      <div class="card-title" style="font-size: 32px;
         font-family: 'Playfair Display', serif;">
         <h3><%= book.title %></h3>
         <p>Author: <%= book.author %></p>
         <p>Edition year: <%= book.edition_year %></p>
       </div>
-
       <div>
         <p class="btn btn-info"><%= book.price %> EUR</p>
         <p>Sold by: <%= book.user.first_name %> </p>
       </div>
+        <% if current_user == book.user %>
+        <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
+        <% else %>
+        <%= link_to 'Buy now', book_path(book), class: "btn btn-primary", style: "background:#3E64FF;" %>
+        <% end %>
+     </div>
 
-      <% if current_user == book.user %>
-      <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
-      <% else %>
-      <%= link_to 'Buy now', book_path(book), class: "btn btn-primary", style: "background:#3E64FF;" %>
-      <% end %>
-
-    </div>
-  </div>
+   </div>
   <% end %>
-</div>
-</div>
+  </div>
+ </div>
 <br/>
 
-<div class="padding">
+ <div class="padding" style="width:90%;margin:0 auto;">
   <div class="d-flex">
-    <div class="aboutus" style="font-size:65px;font-family: 'Playfair Display', serif;">
 
-      <h1 class="animate__animated animate__fadeInTopLeft" style="font-size:65px;font-family: 'Playfair Display', serif;"> Discover <span style="color:#3E64FF;">Syllabuy</span> and create a virtuous circle</h1>
-      <div style="padding:15px;font-size:30px;background:white;font-family: 'Playfair Display', sans serif;font-weight:100px;">
+   <div class="aboutus" style="font-size:65px;">
+    <h1 class="animate__animated animate__fadeInTopLeft" style="font-size:65px;font-family: 'Playfair Display', serif;"> Discover <span style="color:#3E64FF;">Syllabuy</span> and create a virtuous circle</h1>
+     <div style="padding:15px;opacity:0.8;z-index:400;font-size:24px;background:white;border-radius:5px;box-shadow:5 0 1px;font-family: 'Open Sans', sans-serif;font-weight:100px;">
         You want to buy or sell textbooks ? <br/>Here is the new<span style="color:#3E64FF;"> second-hand book sales platform</span> <br/>created by three young entrepreneurs, <br/>Alex Saliba, Lucas Goretti and Sébastien Ternest,<br/> who met at a Web dev school.<br/>
         Their common goal was to allow people get courses materials<br/> as cheap and fast as possible.
-      </div>
-    </div>
-    <div class="imageaside" style="opacity:0.9;margin: 0px 5px 0px 5px;border-radius:10px;">
+     </div>
+   </div>
 
-      <%=link_to 'Sign up', new_user_registration_path, :class=>"btn btn-primary", :style=> "margin:0auto;align-items:center;margin-top:300px; font-size:40px;with:700px;border-radius:50px; height:120px;padding:25px;background:#3E64FF;opacity:1;"%>
-
-
-    </div>
+   <div class="imageaside" style="opacity:1;margin: 0px 5px 0px 5px;border-radius:5px;box-shadow:0 0 5px;"></div>
   </div>
-</div>
+ </div>
 
 <br/>
-<div class="categories" style="background:white;height:300px;width:80%;margin:0 auto;border-radius:10px;">
 
+ <div class="categories" style="background:white;height:300px;width:80%;margin:0 auto;border-radius:10px;">
   <h2><br/>Find books on many topics</h2>
 
   <div class="category-cards">
-
-    <%= link_to "/books?query=business" do %>
+   <%= link_to "/books?query=business" do %>
     <div class="card-category">
       <h3>Business</h3>
     </div>
-    <% end %>
+   <% end %>
 
-    <%= link_to "/books?query=law" do %>
+   <%= link_to "/books?query=law" do %>
     <div class="card-category" id="lawbook">
       <h3>Law</h3>
     </div>
-    <% end %>
+   <% end %>
 
 
-    <%= link_to "/books?query=art" do %>
+   <%= link_to "/books?query=art" do %>
     <div class="card-category" id="artbook";>
       <h3>Art</h3>
     </div>
-    <% end %>
+   <% end %>
 
-  </div>
+ </div>
 
-</div>
 
-<div class="footer"style="margin:0 auto;background:white;opacity:0.7">
+<br/><br/>
+<div class="footer"style="margin:0 auto;background:white;opacity:0.7;">
   <div class="footer-copyright">
     <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
   </div>
@@ -131,8 +122,7 @@
       <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-</div>
-
+ </div>
 
 </body>
 
