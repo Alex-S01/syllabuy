@@ -1,21 +1,11 @@
-
-<body style="background:#ECFCFF;">
-
-
 <div class="containerindexbook" style="margin-top:50px;background:#3E11AF;">
 
   <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1">
 
     <h1 class="text-center" style="color:#3E64FF;"> Available Books </h1>
-<h3 class="text-center" style="color:black;"> Find the books of your needs</h3>
+<h3 class="text-center" style="color:black;"> Find the books you need.</h3>
 
     <br/>
-
-
-
-
-
-
 
 <br/><br/>
   </div>
@@ -28,23 +18,6 @@
 
 
    <div class="d-flex justify-content-center" style="text-align:center;border-radius:50px;transform:translate(0px,-50px);">
-
-
-     <FORM ACTION="">
-     <INPUT TYPE="POST" VALUE="Price"></FORM>
-
-
-
-     <FORM ACTION="">
-     <INPUT TYPE="POST" VALUE="Location"></FORM>
-
-
-
-     <FORM ACTION="">
-     <INPUT TYPE="POST" VALUE="Condition"></FORM>
-
-
-
 
     <br/><br/>
   </div>
@@ -71,7 +44,7 @@
         <img src="https://picsum.photos/180/250" alt="#" height= "250px">
           <% end %>
 
-          <div class="card-body" style="font-family: 'Arial,serif';line-height:10px;">
+          <div class="card-body">
             <div class="card-title">
               <h3><%= book.title %></h3>
               <p>Author: <%= book.author %></p>
@@ -80,17 +53,12 @@
 
 
             <p>Price: <%= book.price %> EUR</p>
-            <p>Sold by:<br/><br/> <%= book.user.email %> </p>
+            <p>Sold by:<br/><br/> <%= book.user.first_name %> </p>
 
 
             <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
             <%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
 
-            <% if book.user == current_user %>
-
-            <%= link_to 'Edit', edit_book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
-            <%= link_to 'Destroy', book, method: :delete, data: {confirm: 'Are you sure?'}, :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
-            <% end %>
           </div>
 
         </div>
@@ -98,8 +66,6 @@
       </div>
 
     </div>
-
-
 
 
     <div id="map"
@@ -125,7 +91,4 @@
     </div>
   </div>
 </div>
-
-
-</body>
 
