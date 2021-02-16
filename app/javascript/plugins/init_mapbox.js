@@ -44,3 +44,4 @@ const addMarkersToMap = (map, markers) => {
 
 export { initMapbox };
 export { addMarkersToMap };
+

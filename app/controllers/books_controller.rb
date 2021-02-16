@@ -18,7 +18,7 @@ class BooksController < ApplicationController
           lng: book.longitude,
           infoWindow: { content: render_to_string(partial: "/books/map_info_window", locals: { book: book }) }
         }
-        en
+        end
       else
         @books = Book.all
         @markers = @books.geocoded.map do |book|
@@ -33,6 +33,7 @@ class BooksController < ApplicationController
 
     def show
       @book = Book.find(params[:id])
+      @markers = [{ lat: @book.latitude, lng: @book.longitude }]
     end
 
     def new
@@ -61,6 +62,7 @@ class BooksController < ApplicationController
       if @book.update(book_params)
 
         redirect_to books_path, notice: 'Book was successfully updated.'
+
 
       else
 

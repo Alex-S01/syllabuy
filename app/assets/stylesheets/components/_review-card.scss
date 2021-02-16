@@ -1,0 +1,34 @@
+.review-cards {
+  margin-top: 50px;
+
+}
+
+.review-card {
+background-color:rgb(242,242,242);
+width: 100%;
+padding: 32px;
+
+}
+
+.seller-review {
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  padding: 8px 0 16px 0;
+}
+
+.review-details {
+  padding-left: 16px;
+}
+
+.review-details > p {
+  margin-bottom: 8px;
+}
+
+.review-book-details p {
+  margin: 0;
+}
+
+.review-text-content p {
+  margin: 8px 0 8px 0;
+}
