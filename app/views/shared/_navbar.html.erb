@@ -11,6 +11,19 @@
     <ul class="navbar-nav mr-auto">
       <% if user_signed_in? %>
 
+
+    <div id ="search-fields" style="margin:0 auto;transform:translate(-400px,0px);">
+      <div class="search-bar">
+        <%= form_tag books_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
+        <% end %>
+      </div>
+
+
+      <br/>
+
+    </div>
+
 <li class="nav-item active">
   <span class="nav-link"><%=current_user.email%></span></li>
 
