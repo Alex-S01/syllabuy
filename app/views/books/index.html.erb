@@ -4,25 +4,19 @@
 
 <div class="containerindexbook" style="margin-top:50px;background:#3E11AF;">
 
-  <div class ="text-center" style="width:100%;padding:5px;background: linear-gradient(0.5turn, #3f87a6, #ebf8e1, #f69d3c);border-radius:10px;position:fixed;top:60px;z-index:1">
+  <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1">
 
-    <h1 id="titreindexbook" class="text-center" style="color:white;"> Available Books </h1>
+    <h1 class="text-center" style="color:#3E64FF;"> Available Books </h1>
+<h3 class="text-center" style="color:black;"> Find the books of your needs</h3>
 
     <br/>
-    <div id ="search-fields" style="margin:0 auto;">
-      <div class="search-bar">
-        <%= form_tag books_path, method: :get do %>
-        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
-        <% end %>
-      </div>
 
-      <div class="search-button">
-        <%= submit_tag "Search", class: "btn btn-primary", id:"search-button", style: "background:#3E64FF;" %>
 
-      </div>
-<br/>
 
-    </div>
+
+
+
+
 <br/><br/>
   </div>
 
