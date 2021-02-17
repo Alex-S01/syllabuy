@@ -3,92 +3,69 @@
   <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1">
 
     <h1 class="text-center" style="color:#3E64FF;"> Available Books </h1>
-<h3 class="text-center" style="color:black;"> Find the books you need.</h3>
-
-    <br/>
-
-<br/><br/>
+    <h3 class="text-center" style="color:black;"> Find the books you need.</h3>
   </div>
 
 
 
   <div class="indicateurdeprix" style="position:fixed;border-radius:3px;z-index:300;margin-top:160px;width:100%;margin-bottom:100px;">
 
-   <p style="text-align:center; color:white;font-size:16px;"> Filter your search to find the most interesting deals</p>
+    <div class="d-flex justify-content-center" style="text-align:center;border-radius:50px;transform:translate(0px,-50px);"></div>
 
-
-   <div class="d-flex justify-content-center" style="text-align:center;border-radius:50px;transform:translate(0px,-50px);">
-
-    <br/><br/>
   </div>
 
 </div>
 
+<div class="container-books">
+    <div style="padding:24px;">
 
-</div>
-
-<br/>
-
-<div class="container3 justify-content-space-evenly">
-  <div class="d-flex">
-
-    <div class="indexbook-container" style="padding:24px;">
-
-      <div class="cards" style="margin-top:200px;">
+      <div class="cards" style="margin-top:100px;">
         <% @books.each do |book| %>
-        <div class="card" style="border-radius:20px;">
+        
+        <div class="card books-card">
 
           <% if book.photo.attached? %>
-          <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
+          <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 8px;' %>
           <% else %>
-        <img src="https://picsum.photos/180/250" alt="#" height= "250px">
+            <%= image_tag('books-stack', height: "231", width: "154") %> 
           <% end %>
 
           <div class="card-body">
+
             <div class="card-title">
-              <h3><%= book.title %></h3>
-              <p>Author: <%= book.author %></p>
-              <p>Edition year: <%= book.edition_year %></p>
+              <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
+              <p>Author: <%= book.author.capitalize %></p>
             </div>
-
-
-            <p>Price: <%= book.price %> EUR</p>
-            <p>Sold by:<br/><br/> <%= book.user.first_name %> </p>
-
-
-            <%= link_to 'More details', book_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
-            <%= link_to 'Buy this book', new_book_purchase_path(book), :class  => "btn btn-info", :style => "font-size: 12px; border-radius:10px; width: 120px; background:white;opacity:0.9;"%>
-
           </div>
+          
+            <div class="selling-details">
+              <%= link_to 'Buy now', book_path(book), class: "btn btn-primary", style: "background-color: #3e64ff; width: 60%; color: white;"%>
+              <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
+            </div>
 
         </div>
         <% end %>
       </div>
 
     </div>
-
-
-    <div id="map"
-    style="width: 40%; height: 110vh;margin-top:100px;"
-    data-markers="<%= @markers.to_json %>"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-
-</div>
-</div>
-<div class="footer"style="margin:0 auto;background:white;opacity:0.7">
-  <div class="footer-copyright">
-    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
-  </div>
-
-  <div class="footer-links" >
-    <div class="social-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+    <div id="map" style="width: 100%; height: 110vh;margin-top:100px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
-  </div>
 </div>
+
+    <div class="footer"style="margin:0 auto;background:white;opacity:0.7">
+      <div class="footer-copyright">
+        <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex
+        </div>
+      </div>
+
+      <div class="footer-links" >
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
 

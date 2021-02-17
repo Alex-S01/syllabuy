@@ -1,8 +1,9 @@
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
   grid-gap: 18px;
   padding:0px;
+  flex-grow: 1;
 }
 
 .card {
@@ -11,11 +12,56 @@
   margin:0 auto;
 }
 
+.card-body {
+  padding: 8px 0 0 8px;
+}
+
+.card-title {
+  font-size: 0.75rem;
+}
+
 .card-category {
   margin:0 auto;
   margin-top:5px;
-  margin-bottom:5px;
 }
+
+.books-card {
+  height: 390px;
+  width: 154px;
+  margin-bottom: 12px;
+}
+  
+.books-card p {
+  margin: 4px;
+}
+
+.card-title h3 {
+  font-size: 1rem;
+}
+
+.container-books {
+  display: flex;
+}
+
+
+.selling-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.5rem;
+  padding-right: 4px;
+}
+
+// Book Card Button
+
+.book-button {
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 18px;
+  background-color: #3e64ff; 
+}
+
+
+
 
 // media queries
 
