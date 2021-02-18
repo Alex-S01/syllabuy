@@ -11,9 +11,14 @@
 
 }
 
+#image-books-home-page {
+  border-radius:5px;
+}
+
 .imageaside {
-background-image: asset-url("aside.png");
-width:100%;
+// background-image: asset-url("books-stack.png");
+  width:100%;
+  border-radius: 5px;
 }
 
 .container {
