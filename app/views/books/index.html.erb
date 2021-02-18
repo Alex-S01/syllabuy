@@ -1,5 +1,6 @@
 <div class="containerindexbook" style="margin-top:50px;background:#3E11AF;">
 
+
   <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1; padding-bottom: 30px;">
 
     <h1 class="text-center" style="color:#3E64FF;"> Available Books </h1>
@@ -21,57 +22,47 @@
 
     </div>
   </div>
-
-
-
   <div class="indicateurdeprix" style="position:fixed;border-radius:3px;z-index:300;margin-top:160px;width:100%;margin-bottom:100px;">
-
     <div class="d-flex justify-content-center" style="text-align:center;border-radius:50px;transform:translate(0px,-50px);"></div>
-
   </div>
-
 </div>
-
 <div class="container-books">
     <div style="padding:24px;">
       <div class="cards" style="margin-top:180px;">
         <% @books.each do |book| %>
           <%= link_to book_path(book) do %>
 
+
             <div class="books-card">
 
               <% if book.photo.attached? %>
               <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
               <% else %>
-                <%= image_tag('books-stack', height: "231", width: "154", style: "border-radius: 4px;") %> 
+
+                <%= image_tag('books-stack', height: "231", width: "154", style: "border-radius: 4px;") %>
               <% end %>
-
               <div class="card-body">
-
                 <div class="card-title" style="color: black; text-decoration: none;">
                   <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
                   <p>Author: <%= book.author.capitalize %></p>
                   <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
                 </div>
               </div>
-              
-            </div>
 
+
+            </div>
           <% end %>
         <% end %>
       </div>
-
     </div>
     <div id="map" style="width: 100%; height: 110vh;margin-top:100px;" data-markers="<%= @markers.to_json %>" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 </div>
-
     <div class="footer"style="margin:0 auto;background:white;opacity:0.7">
       <div class="footer-copyright">
         <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex
         </div>
       </div>
-
       <div class="footer-links" >
         <div class="social-links">
           <a href="#"><i class="fab fa-github"></i></a>
@@ -82,4 +73,3 @@
         </div>
       </div>
     </div>
-
