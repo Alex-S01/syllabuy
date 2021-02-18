@@ -8,7 +8,6 @@
 
 .card {
   height: auto;
-  width:15rem;
   margin:0 auto;
 }
 
@@ -26,9 +25,15 @@
 }
 
 .books-card {
-  height: 390px;
+  height: 350px;
   width: 154px;
   margin-bottom: 12px;
+}
+
+
+
+.card-body:hover a {
+  text-decoration: none;
 }
   
 .books-card p {

@@ -18,32 +18,32 @@
 
 <div class="container-books">
     <div style="padding:24px;">
-
       <div class="cards" style="margin-top:100px;">
         <% @books.each do |book| %>
-        
-        <div class="card books-card">
+          <%= link_to book_path(book) do %>
 
-          <% if book.photo.attached? %>
-          <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 8px;' %>
-          <% else %>
-            <%= image_tag('books-stack', height: "231", width: "154") %> 
+            <div class="card books-card">
+
+              <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 8px;' %>
+              <% else %>
+                <%= image_tag('books-stack', height: "231", width: "154") %> 
+              <% end %>
+
+              <div class="card-body">
+
+                <div class="card-title" style="color: black; text-decoration: none;">
+                  <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
+                  <p>Author: <%= book.author.capitalize %></p>
+                </div>
+              </div>
+              
+              <div class="selling-details">
+                <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
+              </div>
+            </div>
+
           <% end %>
-
-          <div class="card-body">
-
-            <div class="card-title">
-              <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
-              <p>Author: <%= book.author.capitalize %></p>
-            </div>
-          </div>
-          
-            <div class="selling-details">
-              <%= link_to 'Buy now', book_path(book), class: "btn btn-primary", style: "background-color: #3e64ff; width: 60%; color: white;"%>
-              <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
-            </div>
-
-        </div>
         <% end %>
       </div>
 
