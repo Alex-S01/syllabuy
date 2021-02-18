@@ -1,7 +1,7 @@
 .cards {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-gap: 18px;
+  grid-gap: 24px;
   padding:0px;
   flex-grow: 1;
 }
@@ -30,6 +30,10 @@
   margin-bottom: 12px;
 }
 
+.books-card:hover {
+  opacity: 0.8;
+}
+
 
 
 .card-body:hover a {
@@ -48,13 +52,6 @@
   display: flex;
 }
 
-
-.selling-details {
-  display: flex;
-  justify-content: space-between;
-  font-size: 0.5rem;
-  padding-right: 4px;
-}
 
 // Book Card Button
 
