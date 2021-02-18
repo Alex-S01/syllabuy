@@ -3,11 +3,11 @@
 
 <body style="background: linear-gradient(0.5turn, #ECFCFF);">
 
- <div class="cover-banner" style="background:#3E64FF;opacity:0.9;">
+ <div class="cover-banner" style="opacity:0.9;">
   <div class="banner">
 
    <div class="home-title">
-      <h1 class="animate__animated animate__flipInX">Find your university textbooks near you</h1>
+      <h1 class="animate__animated animate__flipInX">Find your university textbooks near you.</h1>
    </div>
 
    <div class="animate__animated animate__lightSpeedInLeft" id="search-fields">
@@ -32,38 +32,37 @@
   <h1 class="text-center"> <br/>Some of our Community's Books </h1>
   <p class="text-center"> Find the right book for your needs.<br/><br/></p>
 
-  <div class="cards">
-    <% @books.each do |book| %>
+  <div class="books-home">
+    <div style="padding-bottom: 48px;">
+      <div class="cards-home">
+        <% @books.each do |book| %>
+          <%= link_to book_path(book) do %>
 
-   <div class="card" style= "margin:0 auto">
+            <div class="books-card card-home">
 
-      <% if book.photo.attached? %>
-      <%= cl_image_tag book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
-      <% else %>
-      <img src="https://picsum.photos/180/250" alt="#" height= "250px">
-      <% end %>
+              <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
+              <% else %>
+                <%= image_tag('books-stack', height: "231", width: "154", style: "border-radius: 4px;") %> 
+              <% end %>
 
-     <div class="card-body">
-      <div class="card-title" style="font-size: 32px;
-        font-family: 'Playfair Display', serif;">
-        <h3><%= book.title %></h3>
-        <p>Author: <%= book.author %></p>
-        <p>Edition year: <%= book.edition_year %></p>
-      </div>
-      <div>
-        <p class="btn btn-info"><%= book.price %> EUR</p>
-        <p>Sold by: <%= book.user.first_name %> </p>
-      </div>
-        <% if current_user == book.user %>
-        <%= link_to 'View my book', book_path(book), class: "btn btn-primary" %>
-        <% else %>
-        <%= link_to 'Buy now', book_path(book), class: "btn btn-primary", style: "background:#3E64FF;" %>
+              <div class="card-body">
+
+                <div class="card-title" style="color: black; text-decoration: none;">
+                  <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
+                  <p>Author: <%= book.author.capitalize %></p>
+                  <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
+                </div>
+              </div>
+              
+            </div>
+
+          <% end %>
         <% end %>
-     </div>
-
-   </div>
-  <% end %>
+      </div>
+    </div>
   </div>
+
  </div>
 <br/>
 
@@ -71,8 +70,8 @@
   <div class="d-flex">
 
    <div class="aboutus" style="font-size:65px;">
-    <h1 class="animate__animated animate__fadeInTopLeft" style="font-size:65px;font-family: 'Playfair Display', serif;"> Discover <span style="color:#3E64FF;">Syllabuy</span> and create a virtuous circle</h1>
-     <div style="padding:15px;opacity:0.8;z-index:400;font-size:24px;background:white;border-radius:5px;box-shadow:5 0 1px;font-family: 'Open Sans', sans-serif;font-weight:100px;">
+    <h1 class="animate__animated animate__fadeInTopLeft" style="font-size:65px;font-family: 'Playfair Display', serif;"> Discover <span style="color:#3E64FF;">Syllabuy</span> and be part of a virtuous circle.</h1>
+     <div style="padding:15px;opacity:0.8;font-size:24px;background:white;border-radius:5px;box-shadow:5 0 1px;font-weight:100px; margin-right: 32px;">
         You want to buy or sell textbooks ? <br/>Here is the new<span style="color:#3E64FF;"> second-hand book sales platform</span> <br/>created by three young entrepreneurs, <br/>Alex Saliba, Lucas Goretti and Sébastien Ternest,<br/> who met at a Web dev school.<br/>
         Their common goal was to allow people get courses materials<br/> as cheap and fast as possible.
      </div>

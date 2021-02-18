@@ -62,14 +62,24 @@ width:100%;
 }
 
 .search-button {
-  width: 104px;
   margin-left: 8px;
-background:#3E64FF;
 }
 
 .search-button #search-button {
   height: 50px;
 
+}
+
+
+// Cards home
+
+.cards-home {
+  display: flex;
+  justify-content: center;
+}
+
+.card-home {
+  margin: 0 32px 0 32px;
 }
 
 // .categories {

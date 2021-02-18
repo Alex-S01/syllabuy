@@ -2,16 +2,13 @@
 <div class="map-info-window">
 
   <%= link_to book_path(book) do %>
-  <h5 style="font-weight: bold;">Title: <%= book.title %></h5>
+  <h5 style="font-weight: bold;"><%= book.title.capitalize %></h5>
   <% end %>
 
-  <p>Pick-up this book at: <%= book.selling_address %> (<%= book.author %>)</p>
+  <p>Pick-up this book at: <%= book.selling_address %> (<%= book.author.capitalize %>)</p>
 
   <div class="seller-info">
-      <p>Sold by: <%= book.user.first_name  %></p>
-    <div class="avatar-map">
-      <%= image_tag("books-curved") %>
-    </div>
+      <p>Sold by: <%= book.user.first_name.capitalize %></p>
   </div>
 
 </div>

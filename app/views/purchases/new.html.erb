@@ -22,7 +22,7 @@
     <div class="col-12 col-md-6 col-lg-4 mt-5">
       <div class="book-image px-5 mb-5">
       <% if @book.photo.attached? %>
-        <%= cl_image_tag book.photo.key, height: 250, width: 230, crop: :fill, :style => 'border-radius: 8px;' %>
+        <%= cl_image_tag @book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
       <% else %>
         <img src="https://picsum.photos/180/250" alt="#" height= "250px">
       <% end %>

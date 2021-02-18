@@ -1,7 +1,26 @@
 <div class="containerindexbook" style="margin-top:50px;background:#3E11AF;">
-  <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1">
+
+
+  <div class ="text-center" style="width:100%;padding:5px;background:white;border-radius:10px;position:fixed;top:60px;z-index:1; padding-bottom: 30px;">
+
     <h1 class="text-center" style="color:#3E64FF;"> Available Books </h1>
     <h3 class="text-center" style="color:black;"> Find the books you need.</h3>
+
+    <div id ="search-fields" style="margin:0 auto; ">
+      <div class="search-bar">
+        <%= form_tag books_path, method: :get do %>
+        <%= text_field_tag :query, params[:query], class: "form-control", placeholder: "Search for a book, author, university, ... " %>
+      </div>
+
+      <div class="search-button">
+        <%= submit_tag "Search", class: "btn btn-primary", id:"search-button", style:" border-radius: 16px; width: 100px;" %>
+        <% end %>
+      </div>
+
+
+      <br/>
+
+    </div>
   </div>
   <div class="indicateurdeprix" style="position:fixed;border-radius:3px;z-index:300;margin-top:160px;width:100%;margin-bottom:100px;">
     <div class="d-flex justify-content-center" style="text-align:center;border-radius:50px;transform:translate(0px,-50px);"></div>
@@ -9,24 +28,28 @@
 </div>
 <div class="container-books">
     <div style="padding:24px;">
-      <div class="cards" style="margin-top:100px;">
+      <div class="cards" style="margin-top:180px;">
         <% @books.each do |book| %>
           <%= link_to book_path(book) do %>
-            <div class="card books-card">
+
+
+            <div class="books-card">
+
               <% if book.photo.attached? %>
-              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 8px;' %>
+              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
               <% else %>
-                <%= image_tag('books-stack', height: "231", width: "154") %>
+
+                <%= image_tag('books-stack', height: "231", width: "154", style: "border-radius: 4px;") %>
               <% end %>
               <div class="card-body">
                 <div class="card-title" style="color: black; text-decoration: none;">
                   <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
                   <p>Author: <%= book.author.capitalize %></p>
+                  <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
                 </div>
               </div>
-              <div class="selling-details">
-                <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
-              </div>
+
+
             </div>
           <% end %>
         <% end %>
