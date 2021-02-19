@@ -14,7 +14,7 @@ Book.destroy_all
 User.destroy_all
 puts "database is clean"
 
-15.times do
+5.times do
     user = User.create!(
         email: Faker::Internet.email,
         password: "123456",
@@ -44,7 +44,7 @@ puts "database is clean"
   'Gebroeders de Smetstraat 6, 9000 Gent'
 ]
 
-  20.times do |i|
+  5.times do |i|
       book = Book.create!(
         # user: User.find(rand(1..10)),
           user: user,
@@ -52,6 +52,7 @@ puts "database is clean"
           author: Faker::Book.author,
           summary: Faker::Lorem.paragraph(sentence_count: 10),
           pages: Faker::Number.between(from: 150, to: 500),
+          correct_price_cents: Faker::Number.between(from: 10, to: 500),
           price: Faker::Number.between(from: 10, to: 500),
           ISBN: Faker::Code.isbn(base: 13),
           edition_year: Faker::Number.between(from: 1950, to: 2021),
@@ -71,7 +72,7 @@ end
 
 
 
-15.times do |i|
+3.times do |i|
     purchase = Purchase.create!(
       # user: User.find(rand(1..10)),
         user: User.find(rand((User.first.id)..(User.last.id))),
@@ -81,7 +82,7 @@ end
     puts "Purchase #{purchase.id} is created"
 end
 
-10.times do |i|
+2.times do |i|
     review = Review.create!(
       # user: User.find(rand(1..10)),
         purchase: Purchase.find(rand((Purchase.first.id)..(Purchase.last.id))),
