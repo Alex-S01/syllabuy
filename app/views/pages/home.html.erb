@@ -41,9 +41,9 @@
             <div class="books-card card-home">
 
               <% if book.photo.attached? %>
-              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
+                <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
               <% else %>
-                <%= image_tag('books-stack', height: "231", width: "154", style: "border-radius: 4px;") %>
+                <%= image_tag('books-stack.jpg', height: "231", width: "154", style: "border-radius: 4px;") %>
               <% end %>
 
               <div class="card-body">
