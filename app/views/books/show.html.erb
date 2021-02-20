@@ -21,7 +21,7 @@
           <% if @book.photo.attached? %>
             <%= cl_image_tag @book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %>
           <% else %>
-            <img src="app/assets/images/marketing-kotler.jpg" alt="#" height= "250px">
+            <%= image_tag('books-stack.jpg', height: "250", width: "230", style: "border-radius: 8px;") %>
           <% end %>
         </div>
 
