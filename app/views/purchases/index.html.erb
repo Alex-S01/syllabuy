@@ -10,9 +10,7 @@
       <div class="card w-100 p-3">
         <div class="card-text">
           <h3><%= purchase.book.title %></h3>
-          <h5><%= purchase.book.author %></h5>
-          <p>Purchase date & time: <%= purchase.created_at %></p>
-          <p>Payment method: <%= purchase.payment_method %></p>
+          <p>Author: <%= purchase.book.author %></p>
           <h4>Purchase ID: <%= purchase.id %></h4>
 
           <% if purchase.review.blank? %>

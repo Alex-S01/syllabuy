@@ -24,6 +24,7 @@
 
         <div>
           <p>Price: <%= book.price %> EUR</p>
+          <p>Amount: <%= humanized_money_with_symbol(book.correct_price) %></p>
           <p>Sold by: <%= book.user.email %> </p>
         </div>
 

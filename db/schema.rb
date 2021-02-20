@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_09_180209) do
+ActiveRecord::Schema.define(version: 2021_02_19_192640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_02_09_180209) do
     t.string "subtopic"
     t.float "latitude"
     t.float "longitude"
+    t.integer "correct_price_cents", default: 0, null: false
     t.index ["user_id"], name: "index_books_on_user_id"
   end
 
@@ -65,8 +66,11 @@ ActiveRecord::Schema.define(version: 2021_02_09_180209) do
     t.date "closing_date_time"
     t.bigint "user_id", null: false
     t.bigint "book_id", null: false
+    t.integer "amount_cents", default: 0, null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "state"
+    t.string "checkout_session_id"
     t.index ["book_id"], name: "index_purchases_on_book_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end

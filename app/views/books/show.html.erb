@@ -104,14 +104,17 @@
         <p>Delivery method: <%= @book.delivery_method %></p>
         <p>Delivery address: <%= @book.selling_address %></p>
 
-        <h2>Price: <%= @book.price %> EUR</h2>
+        <h2>Price: <%= humanized_money_with_symbol(@book.correct_price) %></h2>
 
       <% if @book.user == current_user %>
         <%= link_to 'Edit my book', edit_book_path %>
 
       <% else %>
-        <%= link_to 'Buy Now', new_book_purchase_path(@book), class: 'btn btn-primary w-100' %>
-
+        <%= form_tag purchases_path do %>
+          <%= hidden_field_tag 'book_id', @book.id %>
+          <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+        <% end %>
+        
       <% end %>
 
       </div>

@@ -6,6 +6,7 @@ class CreatePurchases < ActiveRecord::Migration[6.0]
       t.date :closing_date_time
       t.references :user, null: false, foreign_key: true
       t.references :books, null: false, foreign_key: true
+      t.monetize :amount, currency: { present: false }
 
       t.timestamps
     end
