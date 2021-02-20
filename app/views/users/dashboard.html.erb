@@ -11,12 +11,21 @@
    <div class="row justify-content-center">
 
      <div class="dashboardcard">                   <br/>
-      <div class="animate__animated animate__fadeIn" class="text-center" id="avatar">
 
 
 
-<br/><br/>
-      </div>   <br/>
+
+      <div class="animate__animated animate__fadeIn" class="text-center" id="avatar" style="text-align:center;">
+        <% if current_user.photo == true %>
+                <%= cl_image_tag current_user.photo.key, height: 150, width: 150, crop: :fill %>
+        <% else %>
+        <%= image_tag('books-stack.jpg', height: "150", width: "150", style: "border-radius: 100px;") %>
+
+        <% end %>
+
+      </div>
+      <br/>
+
           <p class="graduateicon"><i class="fas fa-user-graduate"> </i>-ID: <%=current_user.id%> </p>
        <div class="infoperso"> * * *  <br/>
         <div class="m-b-20 p-b-5 b-b-default f-w-600" style="color:black"> PERSONAL INFOS<br/>
