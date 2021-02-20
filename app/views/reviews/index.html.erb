@@ -1,47 +1,45 @@
-<div class="container">
-  <div class="mt-5">
-    <h1>My reviews</h1>
-    <p>See the reviews you wrote about other your purchases.</p>
+<div class="dashboard1">
 
-  
-    <div class="review-cards">
-      <% if @reviews.blank? %>
-        <p>You don't have any reviews written on you at the moment</p>
-      <% else %>
+  <div class="container" style="padding:25px;margin:200 0px 0 0px;">
 
-        <% @reviews.each do |review| %>
+    <h1 class="text-center">My sellers reviews</h1>
+    <div class="text-center"><p>See the reviews you wrote about your books sellers.</p>
 
-            <div class="review-card">
-              <div class="seller-review">
-                <%= image_tag("books-stack.jpg", class: 'avatar') %>
+      <br/>
 
-                <div class="review-details">
+    </div>
 
-                  <p><strong>Seller name:</strong> <%= review.purchase.book.user.first_name %></p>
 
-                  <div class="stars-rating">
-                    <i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i>
-                  </div>
-                
-                </div>
-              </div>
 
-              <div class="review-book-details">
-                <p><strong>Book title:</strong> <%= review.purchase.book.title %></p>
-                <p><strong>Author:</strong> <%= review.purchase.book.author %></p>
-              </div>
+    <div class="d-flex container justify-content-around" >
+      <div class="row row-cols-1 row-cols-md-3">
+       <% @reviews.each do |review| %>
+       <% if @reviews.blank? %>
+       <p>You don't have any reviews written on you at the moment</p>
+       <% else %>
 
-              <div class="review-text-content">
-                <p><strong>You wrote:</strong> <%= review.content%></p>
-              </div>
-              
+       <div class="col-lg-4 col-md-6 col-sm-12">
+         <div class="container3">
+          <div class="card h-100" style="padding:10px;margin-bottom:10px;">
+            <div class="avatarreview"><%= image_tag("books-stack.jpg", class: 'avatar') %></div>
+            <div class="card-body">
+              <p style="font-size:20px;font-family: 'Playfair Display';"><strong>Book title:<br/></strong> <%= review.purchase.book.title %></p>
+              <p><strong>Author:<br/></strong> <%= review.purchase.book.author %></p>
+              <p><strong>Seller name:<br/></strong> <%= review.purchase.book.user.first_name %></p>
+              <p><strong>Your rating:<br/></strong> <%= review.content%></p>
+
             </div>
-
-        <% end %>
-        
+            <br/>
+          </div>
+        </div>
+      </div>
       <% end %>
-  
+      <% end %>
     </div>
 
   </div>
+
+
+
+</div>
 </div>

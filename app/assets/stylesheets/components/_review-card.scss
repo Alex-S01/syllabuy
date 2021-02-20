@@ -1,34 +1,123 @@
-.review-cards {
-  margin-top: 50px;
+
+
+
+.fas fa-book {
+  height:300px;
+}
+
+.dashboard1 {
+  width:100%;
+  background-image:asset-url('artbook.png');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-size: cover;
+// background:linear-gradient(217deg, #ECFCFF, rgba(255,0,0,0) 70.71%),
+//             linear-gradient(12deg, #B2FCFF, rgba(0,255,0,0) 70.71%),
+//             linear-gradient(336deg, #3E64FF, rgba(0,0,255,0) 70.71%);
+}
+.avatar {
+  margin:0 auto;
+
+}
+.avatarreview {
+  background: #ECFCFF;
+  text-align:center;
+}
+.Square
+{
+  background: white;
+ width:400px;
+  height:400px;
+}
+
+@keyframes fadein {
+              from {
+                  opacity:0;
+              }
+              to {
+                  opacity:1;
+              }
+          }
+          @-moz-keyframes fadein { /* sur Firefox */
+              from {
+                  opacity:0;
+              }
+              to {
+                  opacity:1;
+              }
+          }
+          @-webkit-keyframes fadein { /* sur Safari et Chrome */
+              from {
+                  opacity:0;
+              }
+              to {
+                  opacity:1;
+              }
+          }
+          @-o-keyframes fadein { /* sur Opera */
+              from {
+                  opacity:0;
+              }
+              to {
+                  opacity: 1;
+              }
+          }
+
+
+
+
+@media screen and (max-width: 360px) {
+.card-body {
+  text-align:center;
+}
 
 }
 
-.review-card {
-background-color:rgb(242,242,242);
-width: 100%;
-padding: 32px;
+@media only screen and (min-width: 361px)  and (max-width: 767px) {
+
+.card-body {
+  text-align:center;
+}
+
+.Square
+{
+
+  display:none;
+}
+
+
 
 }
 
-.seller-review {
-  display: flex;
-  justify-content: left;
-  align-items: flex-start;
-  padding: 8px 0 16px 0;
+
+@media screen and (min-width: 768px) and(max: 1439px) {
+
+.Square
+{
+  background: white;
+  width:400px;
+  height:400px;
 }
 
-.review-details {
-  padding-left: 16px;
+
 }
 
-.review-details > p {
-  margin-bottom: 8px;
+@media only screen and (min-width: 144Opx) {
+
+.Square
+{
+  background: white;
+  width:400px;
+  height:400px;
+}
 }
 
-.review-book-details p {
-  margin: 0;
-}
 
-.review-text-content p {
-  margin: 8px 0 8px 0;
-}
+
+
+
+
+
+
