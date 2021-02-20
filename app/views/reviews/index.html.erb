@@ -5,7 +5,7 @@
     <h1 class="text-center">My sellers reviews</h1>
     <div class="text-center"><p>See the reviews you wrote about your books sellers.</p>
 
-      <br/>
+
 
     </div>
 
@@ -19,13 +19,13 @@
        <% else %>
 
        <div class="col-lg-4 col-md-6 col-sm-12">
-         <div class="container" style="min-width:300px;">
+         <div class="container" style="min-width:300px;text-align:center;">
 
 
           <div class="card h-100" style="padding:10px;margin-bottom:10px;box-shadow: 0 0 5px;">
             <div class="avatarreview"><%= image_tag("books-stack.jpg", class: 'avatar') %></div>
             <div class="card-body">
-              <p style="font-size:20px;font-family: 'Playfair Display';"><strong>Book title:<br/></strong> <%= review.purchase.book.title %></p>
+              <p style="font-size:20px;font-family: 'Playfair Display';"><strong></strong> <%= review.purchase.book.title %></p>
               <p><strong>Author:<br/></strong> <%= review.purchase.book.author %></p>
               <p><strong>Seller name:<br/></strong> <%= review.purchase.book.user.first_name %></p>
               <p><strong>Your rating:<br/></strong> <%= review.content%></p>
