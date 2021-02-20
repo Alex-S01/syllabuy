@@ -19,8 +19,10 @@
        <% else %>
 
        <div class="col-lg-4 col-md-6 col-sm-12">
-         <div class="container3">
-          <div class="card h-100" style="padding:10px;margin-bottom:10px;">
+         <div class="container" style="min-width:300px;">
+
+
+          <div class="card h-100" style="padding:10px;margin-bottom:10px;box-shadow: 0 0 5px;">
             <div class="avatarreview"><%= image_tag("books-stack.jpg", class: 'avatar') %></div>
             <div class="card-body">
               <p style="font-size:20px;font-family: 'Playfair Display';"><strong>Book title:<br/></strong> <%= review.purchase.book.title %></p>
