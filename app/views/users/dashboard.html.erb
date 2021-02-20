@@ -1,17 +1,21 @@
 <div class ="dashboard">
-  <br/>
-<div>
-    <h1 class="text-left" id="hello"> Hello, <%=current_user.first_name%> <%=current_user.last_name%> !</h1>
-</div>
+  <br/><br/>
+<!-- <div>
+    <h1 class="text-left" id="hello"> Hello, <%=current_user.first_name %> <%=current_user.last_name %> !</h1>
+</div> -->
   <br/><br/><br/>
 
 
 
-  <div class="container1">
+  <div class="container1" style="background:white;">
    <div class="row justify-content-center">
 
      <div class="dashboardcard">                   <br/>
-      <div class="animate__animated animate__fadeIn" class="text-center" id="avatar">  <br/><br/>
+      <div class="animate__animated animate__fadeIn" class="text-center" id="avatar">
+
+
+
+<br/><br/>
       </div>   <br/>
           <p class="graduateicon"><i class="fas fa-user-graduate"> </i>-ID: <%=current_user.id%> </p>
        <div class="infoperso"> * * *  <br/>
@@ -33,7 +37,7 @@
      </div>
 
 
-       <div class="dashlinksetmoney">
+      <!--  <div class="dashlinksetmoney"> -->
 
         <div class="dashboardlinks">
 
@@ -46,23 +50,23 @@
 
         <div class="mysillabuylinks">
 
-         <div class="boutonprb" style="background:#ECFCFF;"><i class="fas fa-shopping-basket" ></i>
+         <div class="boutonprb" style="background:#ECFCFF;margin-bottom:10px;box-shadow:  0 0 5px;"><i class="fas fa-shopping-basket" ></i>
             <%= link_to 'My purchases', purchases_path, :style => "color:black;" %>
          </div>
 
-         <div class="boutonprb" style="color:white;background:#B2FCFF;"><i class="fas fa-comment-dots" style="width:20px;"></i>
-            <%= link_to 'My reviews', user_reviews_path(current_user) %></td>
+         <div class="boutonprb" style="background:#ECFCFF;margin-bottom:10px;box-shadow:  0 0 5px;"><i class="fas fa-comment-dots" style="width:20px;"></i>
+            <%= link_to 'My reviews', user_reviews_path(current_user), :style => "color:black;" %></td>
          </div>
 
-         <div class="boutonprb"style="opacity:0.9;color:white;background:#3E64FF;"><i class="fas fa-book" style="width:20px;"></i>
-           <%= link_to 'My books', user_books_path(current_user),:style => "color:white;" %></td>
+         <div class="boutonprb" style="background:#ECFCFF;margin-bottom:10px;box-shadow:  0 0 5px;"><i class="fas fa-book" style="width:20px;"></i>
+           <%= link_to 'My books', user_books_path(current_user), :style => "color:black;"%></td>
          </div>
        </div>
 
        </div>
 
 
-      <div class="moneyetplus">
+<!--       <div class="moneyetplus">
        <div class="d-flex justify-content-center">
 
         <div class="money" style="padding:0px;">
@@ -99,11 +103,13 @@
         </div>
 
        </div>
-      </div> <br/>
-    </div>
+      </div> <br/> -->
 
+
+ <!--    </div> -->
+<!--
 <br/><br/><br/><br/>
-<div class="dashboardcard">
+<div class="dashboardcard" style="visibility:hidden;">
   <div class="d-flex justify-content-around">
       <div class="averagerating">
 
@@ -203,7 +209,7 @@
        </div>
 
 
-    </div>
+    </div> -->
    </div>
   </div>
  </div>
