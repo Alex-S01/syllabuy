@@ -49,10 +49,7 @@
       <%= f.label :selling_address, "*Only in case of pick-up: After payment, where can the buyer pick up this book?"%>
       <%= f.text_field :selling_address, :class => "form-control", :id => "selling_address" %>
 
-      <%= f.label :price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
-      <%= f.number_field :price, :class => "form-control" %>
-
-      <%= f.label :correct_price, "Book Correct price (this is the price for which your book will be listed for sale on the platform):"%>
+      <%= f.label :correct_price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
       <%= f.number_field :correct_price, :class => "form-control" %>
       
       <%= f.button :submit, class: "btn-lg btn-primary", :style =>"margin:0 auto;" %>

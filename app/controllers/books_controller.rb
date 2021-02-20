@@ -45,7 +45,7 @@ class BooksController < ApplicationController
       @book.user = current_user
 
       if @book.save
-        redirect_to books_path, notice: 'Book was successfully created.'
+        redirect_to book_path(@book), notice: 'Book was successfully created.'
 
       else
         render :new
@@ -61,7 +61,7 @@ class BooksController < ApplicationController
 
       if @book.update(book_params)
 
-        redirect_to books_path, notice: 'Book was successfully updated.'
+        redirect_to book_path(@book), notice: 'Book was successfully updated.'
 
 
       else
@@ -91,7 +91,7 @@ class BooksController < ApplicationController
 end
 
 def book_params
-  params.require(:book).permit(:title, :author, :summary, :topic, :subtopic, :language, :edition_year, :publisher, :pages, :ISBN, :delivery_method, :selling_address, :price, :created_at, :updated_at, :photo)
+  params.require(:book).permit(:title, :author, :summary, :topic, :subtopic, :language, :edition_year, :publisher, :pages, :ISBN, :delivery_method, :selling_address, :price, :correct_price, :created_at, :updated_at, :photo)
 end
 
 end
