@@ -3,7 +3,7 @@ class Book < ApplicationRecord
   validates :edition_year, presence: true
   validates :author, presence: true
   belongs_to :user
-  has_one :purchase
+  has_one :purchase, dependent: :destroy
   has_one_attached :photo
   geocoded_by :selling_address
   after_validation :geocode, if: :will_save_change_to_selling_address?
