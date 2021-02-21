@@ -1,4 +1,13 @@
 
+div.et_pb_section.et_pb_section_0 {
+
+  height:300px;
+    background-image: linear-gradient(
+170deg
+,#002e4f 1%,rgba(8,70,102,0.8) 100%),asset-url('artbook.png');
+}
+
+
 html {
   // background:linear-gradient(217deg, #ECFCFF, rgba(255,0,0,0) 70.71%),
   //           linear-gradient(12deg, #B2FCFF, rgba(0,255,0,0) 70.71%),
@@ -39,27 +48,33 @@ html {
 
 .boutonprb
 {
+
   margin:0 auto;
-  width:240px;
-  border-radius:10px;
+  box-shadow:  0 0 0px;
+  text-align:center;
+  width:120px;
+  height:120px;
+  border-radius:0px;
   color:black;padding:25px;
-  font-size:20px;
-  background:#ECFCFF;
+  font-size:16px;
   padding:25px;
+  background-image:asset-url('book.png');
+  background-size:cover;
+
 }
 
 .container1 {
 
-  min-height:650px;
+
   border:10px solid white;
   margin:0 auto;
   border-radius:10px;
   margin-top:80px;
   width:80%;
-  background: #ECFCFF;
-  // border-bottom: 520px solid #ECFCFF;
+  background: white;
   box-shadow: 0 0 20px;
   padding: 0px 10px 0 10px;
+  min-height:650px;
 }
 
 .fas fa-book {
@@ -67,16 +82,6 @@ html {
 }
 
 .dashboard {
-
-
-  height:360px;
-  width:100%;
-  margin:0px 0px 0px 0px;
-  background-image:asset-url('artbook.png');
-  background-size: cover;
-// background:linear-gradient(217deg, #ECFCFF, rgba(255,0,0,0) 70.71%),
-//             linear-gradient(12deg, #B2FCFF, rgba(0,255,0,0) 70.71%),
-//             linear-gradient(336deg, #3E64FF, rgba(0,0,255,0) 70.71%);
 }
 
 .dashboardcard {
@@ -87,22 +92,50 @@ html {
   border:10px solid white;
 }
 
+.iconmypurchases {
+  background-image:asset-url('iconespurchases.png');
+  background-size:cover;
+  height:70px;
+  width:70px;
+  margin: 0 auto;
+}
+
+.iconmyreviews,{
+   background-image:asset-url('myreviews.png');
+  background-size:cover;
+  height:70px;
+  width:70px;
+  margin: 0 auto;
+}
+.iconmybooks {
+  background-image:asset-url('mybooks.png');
+  background-size:cover;
+  height:70px;
+  width:70px;
+  margin: 0 auto;
+}
+
 
 .dashboardlinks {
-border:10px solid white;
-  width:360px;
-  margin-top:0px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content:space-around;
+  margin-top:30px;
+  border:0px solid black;
+  width:300px;
+
   line-height:20px;
-  height:390px;
   background: #FFF;
-  padding:20px;
   text-align:center;
   color:black;
   border-radius:10px;
+  padding : 20px 0px 20px 0px;
+  box-shadow: 0 0 4px;
 }
-.dashlinksetmoney {
-
-  height:400px;
+.containerlink {
+width:140px;
+margin:0 auto;
+margin-bottom:10px;
 }
 
 
@@ -118,6 +151,7 @@ border:10px solid white;
 }
 .dashlinksetmoney {
   margin:0 auto;
+  width:340px;
 }
 
 .graduateicon
@@ -129,21 +163,21 @@ border:10px solid white;
 
 #headdash
 {
-  background-image:asset-url('mini-syllabuy.png');
-  margin-left:30px;
+  background-image:asset-url('mysyllabuy.png');
+  background-size:cover;
+
   text-shadow:20 0 0px;
   font-size:56px;
-  width:180px;
+  width:300px;
   height:60px;
+
 }
 
 #hello {
 
   text-align:center;
-  width:auto;margin-left:20px;
-  z-index:500;
-  transform:translate(30px,20px);
-  font-family:Roboto;
+
+  font-family:Roboto,serif;
   font-weight:800;
   opacity:0.9px;
   color:black;
@@ -189,10 +223,10 @@ border:10px solid white;
 
 .moneyetplus {
 
- transform:translate(0px,-5px);
+margin-top:50px;
  opacity:0.8;
-  box-shadow:0 0 0px;
-  width:360px;
+  box-shadow:0 0 5px;
+  width:340px;
   background:white;
   border-radius:10px;
   font-family:Nunito,700;
@@ -206,10 +240,6 @@ border:10px solid white;
 }
 
 
-.mysyllabuy
-{
-  background-image:asset-url('mini-syllabuy.png');
-}
 
 .mysillabuylinks {
   margin-top:40px;color:black;font-family:Nunito, sans-serif;
