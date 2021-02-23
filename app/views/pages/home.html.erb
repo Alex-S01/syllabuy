@@ -27,9 +27,9 @@
  </div>
 
 
- <div class="container"style="background:white;">
+ <div class="container-somebooks"style="background:white; margin:0 auto;">
 
-  <h1 class="text-center"> <br/>Some of our Community's Books </h1>
+  <h2 class="text-center"> <br/>Some of our Community's Books </h2>
   <p class="text-center"> Find the right book for your needs.<br/><br/></p>
 
   <div class="books-home">
@@ -40,9 +40,10 @@
 
             <div class="books-card card-home">
 
-              <% if book.photo.attached? %>
-                <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
+             <% if book.photo.attached? %>
+              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
               <% else %>
+
                 <%= image_tag('books-stack.jpg', height: "231", width: "154", style: "border-radius: 4px;") %>
               <% end %>
 
@@ -66,6 +67,8 @@
  </div>
 <br/>
 
+
+
 <div class="container" id="about" style="margin-top: 30px; margin-bottom: 30px">
 
    <div class="aboutus" style="margin-right: 30px">
@@ -74,11 +77,20 @@
    </div>
 
    <div id="image-books-home-page">
+
       <%= image_tag("books-stack.jpg",height: '450px', width: '570px', style: "border-radius:5px; box-shadow: 0 10px 30px rgba(0,0,0,.1)" ) %>
    </div>
 
+
 </div>
-<br/>
+
+
+<div class="d-flex" id="about">
+
+     <div class="container2"> <%= link_to "View Our Community's Books", books_path, class: "btn btn-primary" %></div>
+     </div>
+
+     <br/> <br/> <br/>
 
  <div class="categories" style="background:white;height:300px;width:80%;margin:0 auto;border-radius:10px;">
   <h2><br/>Find books on many topics</h2>

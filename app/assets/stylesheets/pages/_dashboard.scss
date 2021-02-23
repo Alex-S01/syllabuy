@@ -1,8 +1,10 @@
 
-html {
-  // background:linear-gradient(217deg, #ECFCFF, rgba(255,0,0,0) 70.71%),
-  //           linear-gradient(12deg, #B2FCFF, rgba(0,255,0,0) 70.71%),
-  //           linear-gradient(336deg, #3E64FF, rgba(0,0,255,0) 70.71%);
+div.et_pb_section.et_pb_section_0 {
+
+  height:300px;
+    background-image: linear-gradient(
+170deg
+,#002e4f 1%,rgba(8,70,102,0.8) 100%),asset-url('artbook.png');
 }
 
 
@@ -15,7 +17,7 @@ html {
 }
 .averagerating {
 
-  width:145px;
+  width:140px;
   height:200px;
   z-index:400;
   font-size:22px;
@@ -39,27 +41,33 @@ html {
 
 .boutonprb
 {
+
   margin:0 auto;
-  width:240px;
-  border-radius:10px;
+  box-shadow:  0 0 0px;
+  text-align:center;
+  width:120px;
+  height:120px;
+  border-radius:0px;
   color:black;padding:25px;
-  font-size:20px;
-  background:#ECFCFF;
+  font-size:16px;
   padding:25px;
+  background-image:asset-url('book.png');
+  background-size:cover;
+
 }
 
 .container1 {
 
-  min-height:650px;
+  display:flex;
+  justify-content:space-around;
   border:10px solid white;
   margin:0 auto;
   border-radius:10px;
   margin-top:80px;
-  width:80%;
-  background: #ECFCFF;
-  // border-bottom: 520px solid #ECFCFF;
+  background: white;
   box-shadow: 0 0 20px;
   padding: 0px 10px 0 10px;
+  min-height:650px;
 }
 
 .fas fa-book {
@@ -67,16 +75,6 @@ html {
 }
 
 .dashboard {
-
-
-  height:360px;
-  width:100%;
-  margin:0px 0px 0px 0px;
-  background-image:asset-url('artbook.png');
-  background-size: cover;
-// background:linear-gradient(217deg, #ECFCFF, rgba(255,0,0,0) 70.71%),
-//             linear-gradient(12deg, #B2FCFF, rgba(0,255,0,0) 70.71%),
-//             linear-gradient(336deg, #3E64FF, rgba(0,0,255,0) 70.71%);
 }
 
 .dashboardcard {
@@ -84,25 +82,58 @@ html {
   height:540px;
 
   border-radius:10px;
-  border:10px solid white;
+
+  margin-bottom:90px;
+}
+
+.iconmypurchases {
+  background-image:asset-url('iconespurchases.png');
+  background-size:cover;
+  height:70px;
+  width:75px;
+  margin: 0 auto;
+  transform:translate(-3px,0px);
+  border-radius:10px;
+}
+
+.iconmyreviews,{
+   background-image:asset-url('myreviews.png');
+  background-size:cover;
+  height:70px;
+  width:75px;
+  margin: 0 auto;
+   transform:translate(-1px,0px);
+   border-radius:10px;
+}
+.iconmybooks {
+  background-image:asset-url('mybooks.png');
+  background-size:cover;
+  height:70px;
+  width:70px;
+  margin: 0 auto;
+  border-radius:10px;
 }
 
 
 .dashboardlinks {
-border:10px solid white;
-  width:360px;
-  margin-top:0px;
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content:center;
+  margin-top:30px;
+  width:300px;
+  font-family:"Playfair Display", "Helvetica", "sans-serif";
   line-height:20px;
-  height:390px;
   background: #FFF;
-  padding:20px;
   text-align:center;
   color:black;
   border-radius:10px;
-}
-.dashlinksetmoney {
+  padding : 20px 0px 20px 0px;
 
-  height:400px;
+}
+.containerlink {
+width:140px;
+margin:0 auto;
+margin-bottom:10px;
 }
 
 
@@ -116,9 +147,7 @@ border:10px solid white;
 .dashboardlink-book {
   width:200px;
 }
-.dashlinksetmoney {
-  margin:0 auto;
-}
+
 
 .graduateicon
 {
@@ -129,21 +158,21 @@ border:10px solid white;
 
 #headdash
 {
-  background-image:asset-url('mini-syllabuy.png');
-  margin-left:30px;
+  // background-image:asset-url('mysyllabuy.png');
+  // background-size:cover;
+font-family:"Playfair Display", "Helvetica", "sans-serif";
   text-shadow:20 0 0px;
   font-size:56px;
-  width:180px;
+  width:300px;
   height:60px;
+
 }
 
 #hello {
 
   text-align:center;
-  width:auto;margin-left:20px;
-  z-index:500;
-  transform:translate(30px,20px);
-  font-family:Roboto;
+
+  font-family:Roboto,serif;
   font-weight:800;
   opacity:0.9px;
   color:black;
@@ -189,10 +218,10 @@ border:10px solid white;
 
 .moneyetplus {
 
- transform:translate(0px,-5px);
+margin-top:50px;
  opacity:0.8;
-  box-shadow:0 0 0px;
-  width:360px;
+  box-shadow:0 0 5px;
+  width:327px;
   background:white;
   border-radius:10px;
   font-family:Nunito,700;
@@ -206,10 +235,6 @@ border:10px solid white;
 }
 
 
-.mysyllabuy
-{
-  background-image:asset-url('mini-syllabuy.png');
-}
 
 .mysillabuylinks {
   margin-top:40px;color:black;font-family:Nunito, sans-serif;
@@ -287,14 +312,22 @@ border:10px solid white;
   }
 
   .container1 {
-    width:100%;
+    width:90%;
+    border:10px solid black;
+
   }
 
   .dashboard {
     width:100%;
     margin:0 auto;
 
+
   }
+
+  .dashlinksetmoney {
+  margin:0 auto;
+  width:340px;
+}
 }
 
 @media only screen and (min-width: 361px)  and (max-width: 767px) {
@@ -303,11 +336,11 @@ border:10px solid white;
     background-size:cover;
     width:360px;
     text-align:center;
-    margin-bottom: 80px;
-    margin:0 auto;
+    margin-top:100px;
+
   }
   .container1 {
-    width:100%;
+    width:90%;
     height:auto;
     transform:translate(0px,-109px);
   }
@@ -332,10 +365,19 @@ padding:10px;
 .dashboardlinks {
     margin-bottom:0px;
   }
+
+  .dashlinksetmoney {
+  margin:0 auto;
+  width:340px;
+   margin-top:100px;
+}
 }
 
 
 @media screen and (min-width: 768px) and(max: 1439px){
+
+
+
   .averageratingetsocial {
   display:flex;
   background:white;
@@ -344,15 +386,23 @@ padding:10px;
   font-size:20px;
 }
 
- .dashboardcard {
+ .dashboardcard2 {
     background-size:cover;
     width:450px;
     text-align:center;
     margin-bottom: 80px;
     display:flex;
   }
+.dashboardcard2 {
+    background-size:cover;
+    width:300px;
+
+
+
+  }
+
   .container1 {
-    width:60%;
+    width:100%;
     height:auto;
 
 
@@ -368,28 +418,35 @@ padding:10px;
 font-size:10px;
 padding:12px;
 }
-
+.dashlinksetmoney {
+   margin-top:100px;
+}
 
 }
 
+@media only screen and (min-width: 1010px) {
+.dashboardcard2 {
+    background-size:cover;
+    width:300px;
+    margin-left:50px;
 
 
-@media only screen and (min-width: 144Opx) {
+  }
+
+  }
+@media only screen and (min-width: 1288px) {
+ .dashboardlinks {
+    text-align:center;
+   border-radius:10px;
+}
   p {
     font-size: 14px;
   }
-  .container1 {
-    text-align:center;
-    width:60%;
 
-  }
+.container1{
+  width:80%
+}
 
-  .dashboardcard {
-    background-size:cover;
-    width:300px;
-
-
-  }
 
   .averageratingetsocial {
     margin:30px;
