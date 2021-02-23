@@ -39,6 +39,8 @@
       <%= f.label :ISBN, "Book ISBN number:"%>
       <%= f.text_field :ISBN, :class => "form-control" %>
 
+      <%= f.input :condition, label: 'Condition of the book:', collection: ['As New', 'Excellent', 'Very Good', 'Good', 'Fair', 'Poor'] %>
+
       <%= f.label :photo, "Picture of your book:"%>
       <%= f.input :photo, as: :file, :class => "form-control" %>
 
