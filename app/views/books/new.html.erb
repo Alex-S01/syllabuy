@@ -1,59 +1,52 @@
-<div  class="container">
-  <h1 class="text-center">Add a new book to the platform!</h1>
-  <%= link_to "Go back", books_path, class: "btn btn-primary" %>
-  <br>
-  <br>
-       
-  <div class="add-form">
-
+<div  class="addabook-container" style="margin-top:100px;height:auto;">
+  <h1 class="text-center">Fill the form to add a new book to the platform!</h1>
+  <div class="container5" style="margin:0 auto;background: ;text-align:center;transform:translate(0px,-35px);line-height: 20px;padding:2%;">
+<br/><br/>
     <%= simple_form_for(@book) do |f| %>
 
       <%= f.error_notification %>
 
-      <%= f.label :title, "Title of your book (required):"%>
-      <%= f.text_field :title, :class => "form-control" %>
 
-      <%= f.label :author, "Author(s) of this book (required):"%>
-      <%= f.text_field :author, :class => "form-control" %>
+      <%= f.text_field :title, :class => "form-control", :placeholder => "Title*"%><br/>
 
-      <%= f.label :summary, "Enter the book's bio or short summary:"%>
-      <%= f.text_field :summary, :class => "form-control" %>
 
-      <%= f.input :topic, label: 'Book topic:', collection: ['Business', 'Science', 'History', 'Art', 'Engineering', 'Law', 'Economics'].sort %>
+      <%= f.text_field :author, :class => "form-control" ,:placeholder => "Author*"%><br/>
 
-      <%= f.label :subtopic, "Book subtopic:"%>
-      <%= f.text_field :subtopic, :class => "form-control" %>
 
-      <%= f.label :language, "Enter the book's language:"%>
-      <%= f.text_field :language, :class => "form-control" %>
+      <%= f.text_field :summary, :class => "form-control" ,:placeholder => "Short summary"%>
 
-      <%= f.label :edition_year, "Book edition year (required):"%>
-      <%= f.text_field :edition_year, :class => "form-control" %>
+      <%= f.input :topic,collection: ['Business', 'Science', 'History', 'Art', 'Engineering', 'Law', 'Economics'].sort %>
 
-      <%= f.label :publisher, "Name of book publisher:"%>
-      <%= f.text_field :publisher, :class => "form-control" %>
 
-      <%= f.label :pages, "Number of Book pages:"%>
-      <%= f.text_field :pages, :class => "form-control" %>
+      <%= f.text_field :subtopic, :class => "form-control", :style => "text-align:center;width:180px;display:inline;",:placeholder => "Subtopic" %>
 
-      <%= f.label :ISBN, "Book ISBN number:"%>
-      <%= f.text_field :ISBN, :class => "form-control" %>
 
-      <%= f.label :photo, "Picture of your book:"%>
-      <%= f.input :photo, as: :file, :class => "form-control" %>
+      <%= f.text_field :language, :class => "form-control", :style => "width:100px;display:inline;", :placeholder => "Language" %>
 
-      <h2>Your selling details </h2>
 
-      <%= f.input :delivery_method, label: 'Book delivery method:', collection: ['Pickup on location', 'Send by Post'].sort %>
+      <%= f.text_field :edition_year, :class => "form-control", :style => "width:67px;display:inline;", :placeholder => "Year*" %>
+
+
+      <%= f.text_field :publisher, :class => "form-control",:style => "text-align:center;width:180px;display:inline;",:placeholder => "Publisher" %>
+
+
+      <%= f.text_field :pages, :class => "form-control", :style => "width:120px;display:inline;",:placeholder => "N° of pages" %>
+
+
+      <%= f.text_field :ISBN, :class => "form-control", :style => "display:inline;width:130px;", :placeholder => "ISBN number" %><br/><br/>
+      <%= f.input :photo, as: :file, :class => "form-control"%>
+
+      <%= f.input :delivery_method, label: 'Delivery method:', collection: ['Pickup on location', 'Send by Post'].sort %>
 
       <%= f.label :selling_address, "*Only in case of pick-up: After payment, where can the buyer pick up this book?"%>
       <%= f.text_field :selling_address, :class => "form-control", :id => "selling_address" %>
+<br/><br/>
+      <%= f.number_field :correct_price, :class => "form-control", :style => "margin:0 auto;width:100px;",:placeholder => "Price" %>
+<br/>
 
-      <%= f.label :correct_price, "Book price (this is the price for which your book will be listed for sale on the platform):"%>
-      <%= f.number_field :correct_price, :class => "form-control" %>
-      
-      <%= f.button :submit, class: "btn-lg btn-primary", :style =>"margin:0 auto;" %>
+      <%= f.button :submit, class: "btn-lg btn-primary" %>
+
     <% end %>
-
-  </div>
 </div>
+  </div>
+

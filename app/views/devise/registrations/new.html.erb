@@ -1,72 +1,95 @@
-<div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-xs-12 col-sm-12 col-sm-offset-4" style="margin:0 auto;">
-  <h2 class="text-center">Sign up</h2>
+<body style="background:white;">
+
+  <div class="container" id="container-signup">
+
+ <div class="arrow-left">
+          <%= link_to "<<", root_path,:class=>"btn btn-primary"  %>
+        </div>
 
 
+          <div class="wrapper">
 
-  <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-    <%= f.error_notification %>
+           <div class="title">Sign up</div>
 
-    <div class="form-inputs">
+           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+           <%= f.error_notification %>
 
+           <div class="form-inputs">
 
-
-<div class="form-group">
+<!-- <div class="form-group">
     <label for="exampleFormControlSelect1">Gender</label>
     <select class="form-control" id="exampleFormControlSelect1">
       <option>Mr</option>
       <option>Mrs</option>
       <option>Ms</option>
     </select>
-  </div>
+  </div> -->
 
-
-
-
-      <%= f.input :first_name,
+                  <%= f.input :first_name,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "first_name" }%>
 
-      <%= f.input :last_name,
+                  <%= f.input :last_name,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "last_name" }%>
 
-      <%= f.input :phone_number,
+                  <%= f.input :phone_number,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "phone_number" }%>
-      <%= f.input :email,
+                  <%= f.input :email,
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-
+<!--
       <%= f.input :university,
                   required: true,
                   autofocus: true,
-                  input_html: { autocomplete: "university" }%>
+                  input_html: { autocomplete: "university" }%> -->
 
-      <%= f.input :password,
+                  <%= f.input :password,
                   required: true,
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "new-password" } %>
-      <%= f.input :password_confirmation,
+                  <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
 
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+                  <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-    </div>
+                </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, "Sign up" %>
-    </div>
-  <% end %>
+                <div class="text-center">
+                  <%= f.button :submit, "Create account", :style => "border-radius:20px;margin:0 auto;color:white;width:200px;background:linear-gradient(-135deg, #3E64FF, #5EDFFF);" %>
+                </div>
+                <% end %>
 
-  <%= render "devise/shared/links" %>
 
-</div>
-</div>
-</div>
+
+              </div>
+
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 col-sm-offset-4" style="text-align:center;">
+
+
+              <div class="container" id="signupaside">
+                <p>
+                  Sign up here so that you can quickly buy or add second-hand books on the platform.
+                </p>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </body>
+
+
+
+
