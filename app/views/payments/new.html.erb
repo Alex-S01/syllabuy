@@ -1,21 +1,43 @@
-<div class="container">
-  <div class="row py-4">
-    
-    <div class="col">
-      <h1>Checkout summary</h1>
-      <p>Purchase of <strong><%= @purchase.book.title %></strong> for <strong><%= humanized_money_with_symbol @purchase.amount %></strong></p>
-      <button id="pay" class="btn btn-primary">Pay</button>
+<div class="container" style="margin-top: 120px;background: white; padding: 30px;border-radius: 4px;box-shadow: 0 10px 30px rgba(0,0,0,.1);width:800px">
 
-      <script src="https://js.stripe.com/v3/"></script>
-      <script>
-        const paymentButton = document.getElementById('pay');
-        paymentButton.addEventListener('click', () => {
-          const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
-          stripe.redirectToCheckout({
-            sessionId: '<%= @purchase.checkout_session_id %>'
-          });
-        });
-      </script>
+  <div class="col-12 col-md-12 col-lg-12">
+
+    <div id="buy-form" class=" p-3 my-3">
+          <h1>Checkout summary:</h1>
+          <h2 style="font-size: 20px; margin-bottom: 35px">Purchase of <strong><%= @purchase.book.title %> by <%= @purchase.book.author%></strong> for <strong><%= humanized_money_with_symbol @purchase.amount %></strong></h2>
+            <% if @purchase.book.photo.attached? %>
+              <p style="text-align:center"><%= cl_image_tag @book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %> </p>
+            <% else %>
+              <p style="text-align:center"><%= image_tag('books-stack.jpg', height: "250", width: "230", style: "border-radius: 8px;") %></p>
+            <% end %>
+
+          <h2 style="margin-top: 35px">About the book:</h2>
+          <p><strong>Title:</strong> <%= @purchase.book.title %> </p>
+          <p><strong>Author(s):</strong> <%= @purchase.book.author %></p>
+          <p><strong>Edition:</strong> <%= @purchase.book.edition_year %></p>
+          <p><strong>Language:</strong> <%= @purchase.book.language %></p>
+
+          <p><strong>Delivery method:</strong> <%= @purchase.book.delivery_method %></p>
+          <p><strong>Delivery address:</strong> <%= @purchase.book.selling_address %></p>
+
+          <h2 style="margin-bottom:0">Price: <%= humanized_money_with_symbol(@purchase.book.correct_price) %></h2>
+          <br><button id="pay" class="btn btn-primary">Pay</button>
+
+            <script src="https://js.stripe.com/v3/"></script>
+            <script>
+            const paymentButton = document.getElementById('pay');
+            paymentButton.addEventListener('click', () => {
+              const stripe = Stripe('<%= ENV['STRIPE_PUBLISHABLE_KEY'] %>');
+              stripe.redirectToCheckout({
+                sessionId: '<%= @purchase.checkout_session_id %>'
+              });
+            });
+            </script>
+          <%= link_to 'Go back to the previous page', book_path(@purchase.book), class: 'btn btn-primary' %>
+
+
     </div>
+
   </div>
+
 </div>
