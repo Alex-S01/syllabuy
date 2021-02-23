@@ -57,6 +57,7 @@ puts "database is clean"
           ISBN: Faker::Code.isbn(base: 13),
           edition_year: Faker::Number.between(from: 1950, to: 2021),
           language: %w[English French Dutch].sample,
+          condition: ['As New', 'Excellent', 'Very Good', 'Good', 'Fair', 'Poor'].sample,
           publisher: Faker::Book.publisher,
           status: Faker::Boolean.boolean,
           delivery_method: %w[F2F Post].sample,
