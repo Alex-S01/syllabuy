@@ -6,7 +6,7 @@
           <h1>Checkout summary:</h1>
           <h2 style="font-size: 20px; margin-bottom: 35px">Purchase of <strong><%= @purchase.book.title %> by <%= @purchase.book.author%></strong> for <strong><%= humanized_money_with_symbol @purchase.amount %></strong></h2>
             <% if @purchase.book.photo.attached? %>
-              <p style="text-align:center"><%= cl_image_tag @book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %> </p>
+              <p style="text-align:center"><%= cl_image_tag @purchase.book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %> </p>
             <% else %>
               <p style="text-align:center"><%= image_tag('books-stack.jpg', height: "250", width: "230", style: "border-radius: 8px;") %></p>
             <% end %>
