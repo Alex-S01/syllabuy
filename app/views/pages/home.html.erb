@@ -52,7 +52,7 @@
                 <div class="card-title" style="color: black; text-decoration: none;">
                   <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
                   <p>Author: <%= book.author.capitalize %></p>
-                  <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">€ <%= book.price %></p>
+                  <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;"><%= humanized_money_with_symbol(book.correct_price) %></p>
                 </div>
               </div>
 
