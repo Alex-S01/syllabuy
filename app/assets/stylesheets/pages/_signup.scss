@@ -10,37 +10,72 @@
   transition: all 0.3s ease;
 }
 
-  .signup-body {
-    background-image: asset-url("artbook.png");
-  }
 
+
+  .wrapper .title {
+  color:#3E64FF;
+  font-family: "'Work Sans', "Helvetica", "sans-serif;
+  font-size: 35px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 50px;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background:#3E64FF;
+
+}
+.wrapper {
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+  background:white;
+  border-radius:10px;
+  z-index:3000;
+
+}
 
 @media screen and(max-width: 414px){
   #container-signup {
    display:block;
    font-size:10px;
-   padding:10px;
+   padding:0px 40px 15px 40px;
+    background: #5EDFFF;
+     transform:translate(0px,-20px);
+     height:600px;
+     position:fixed;
 
   }
+ .signup-body {
+ height:600px;
+  }
+.wrapper {
 
-
+  height:580px;
+   transform:translate(0px,10px);
+}
 .wrapper .title{
   font-size: 35px;
   font-weight: 600;
   text-align: center;
   line-height: 50px;
-  color:#fff;
+  color:#3E64FF;
+  margin-bottom:20px;
   user-select: none;
   border-radius: 15px 15px 0 0;
-  background:#3E64FF;
+background:transparent;
+  opacity:0.9;
 }
 
 .arrow-left {
-  // background:linear-gradient(-135deg, #3E64FF, #5EDFFF);
+  background:linear-gradient(-135deg, #3E64FF, #5EDFFF);
 display:none;
 }
 .form-inputs {
   line-height:5px;
+  margin-top:40px;
+  width:80%;
+  margin:0 auto;
+}
+ #signupaside {
+display:none;
 }
 
   }
@@ -55,6 +90,26 @@ width:80%;
 }
   #signupaside {
 display:none;
+}
+
+
+
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 50px;
+  color:#fff;
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background:#3E64FF;
+}
+
+.form-inputs {
+  line-height:5px;
+  margin-top:20px;
+  width:80%;
+  margin:0 auto;
 }
 
   }
@@ -83,18 +138,20 @@ opacity:0.5;
 
     }
 
+
     #signupaside {
       display:block;
       width:540px;
-
       text-align:left;
       padding:30px;
       font-size:32px;
       font-weight:600;
       opacity:0.8;
+      color:#3E64FF;
     }
     .wrapper {
       width:640px;
+      padding:20px;
     }
 
   }

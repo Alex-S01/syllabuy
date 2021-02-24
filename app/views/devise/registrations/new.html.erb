@@ -24,7 +24,7 @@
       <option>Ms</option>
     </select>
   </div> -->
-
+<br/>
                   <%= f.input :first_name,
                   required: true,
                   autofocus: true,
@@ -56,14 +56,14 @@
                   <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+                  <br/>
 
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-                </div>
 
-                <div class="text-center">
-                  <%= f.button :submit, "Create account", :style => "border-radius:20px;margin:0 auto;color:white;width:200px;background:linear-gradient(-135deg, #3E64FF, #5EDFFF);" %>
-                </div>
+<div class="text-center"><br/><br/><br/>
+                  <%= f.button :submit, "Create account", :style => "border-radius:10px;margin:0 auto;color:white;width:150px;opacity:0.9;background:#3E64FF;" %>
+</div>
                 <% end %>
 
 
