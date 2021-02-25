@@ -27,7 +27,7 @@
           <p><strong>Delivery address:</strong> <%= @purchase.book.selling_address %></p>
 
           <h2 style="margin-bottom:0">Price: <%= humanized_money_with_symbol(@purchase.book.correct_price) %></h2>
-          <br><button id="pay" class="btn btn-primary">Pay</button>
+          <br><button id="pay" class="btn btn-primary" style="width:200px">Pay</button>
 
             <script src="https://js.stripe.com/v3/"></script>
             <script>
@@ -39,7 +39,7 @@
               });
             });
             </script>
-          <%= link_to 'Go back to the previous page', book_path(@purchase.book), class: 'btn btn-primary' %>
+          <%= link_to 'Go back', book_path(@purchase.book), class: 'btn btn-primary', style: "width:100px" %>
 
 
     </div>
