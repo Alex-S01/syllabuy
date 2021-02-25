@@ -1,10 +1,11 @@
-<body style="background:#ECFCFF;border-radius: 3px;box-shadow: 1px 1px 2px rgba(0,0,0,0.1);">
+<body style="background:#ECFCFF;">
 
 
 
 <br/><br/><br/>
-  <h2 class="text-center" style="font-size: 32px;font-family: 'Playfair Display', serif;font-weight: bold;margin-bottom: 30px;text-align: center;">log in</h2>
-<div class="container"style="height:400px;width:320px;background:white;">
+
+  <div class="Login-title">log in</div>
+<div class="login-container">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <div class="form-inputs" style="margin:0 auto;font-family: 'Playfair Display', serif;">
       <%= f.input :email,
@@ -13,7 +14,7 @@
                   input_html: { autocomplete: "email" } %>
       <%= f.input :password,
                   required: true,
-                  input_html: { autocomplete: "current-password" },:style=>"width:320px;background:#ECFCFF;"%>
+                  input_html: { autocomplete: "current-password" }%>
       <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
     </div>
 
@@ -21,7 +22,7 @@
       <%= f.button :submit, "Log in", :class =>"btn btn-primary" %>
     </div>
   <% end %>
-  <div class="signup-link">Not a member ? <%= render "devise/shared/links" %></div>
+  <div class="signup-link">Not a member ? <%= render "devise/shared/links"%></div>
 
 
 

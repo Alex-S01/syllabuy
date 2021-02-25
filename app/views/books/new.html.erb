@@ -36,6 +36,8 @@
       <%= f.text_field :ISBN, :class => "form-control", :style => "display:inline;width:130px;", :placeholder => "ISBN number" %><br/><br/>
       <%= f.input :photo, as: :file, :class => "form-control"%>
 
+      <%= f.input :condition, label: 'Condition of the book:', collection: ['As New', 'Excellent', 'Very Good', 'Good', 'Fair', 'Poor'] %>
+
       <%= f.input :delivery_method, label: 'Delivery method:', collection: ['Pickup on location', 'Send by Post'].sort %>
 
       <%= f.label :selling_address, "*Only in case of pick-up: After payment, where can the buyer pick up this book?"%>

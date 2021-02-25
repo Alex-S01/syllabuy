@@ -101,6 +101,13 @@
         <p><strong>Edition:</strong> <%= @book.edition_year %></p>
         <p><strong>Language:</strong> <%= @book.language %></p>
 
+        <% if @book.condition.blank? %>
+          <p><strong>Condition:</strong> Excellent</p>
+        <% else %>
+          <p><strong>Condition:</strong> <%= @book.condition %></p>
+        <% end %>
+        
+
         <p><strong>Delivery method:</strong> <%= @book.delivery_method %></p>
         <p><strong>Pickup address:</strong> <%= @book.selling_address %></p>
 
@@ -112,7 +119,7 @@
       <% else %>
         <%= form_tag purchases_path do %>
           <%= hidden_field_tag 'book_id', @book.id %>
-          <%= submit_tag 'Purchase', class: 'btn btn-primary' %>
+          <%= submit_tag 'Purchase', class: 'btn btn-primary w-100 my-3' %>
         <% end %>
 
       <% end %>

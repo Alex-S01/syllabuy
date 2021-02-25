@@ -30,6 +30,11 @@
       <%= f.text_field :publisher, :class => "form-control",:style => "text-align:center;width:180px;display:inline;",:placeholder => "Publisher" %>
 
 
+      <%= f.input :condition, label: 'Condition of the book:', collection: ['As New', 'Excellent', 'Very Good', 'Good', 'Fair', 'Poor'] %>
+
+      <%= f.label :photo, "Picture of your book:"%>
+      <%= f.input :photo, as: :file, :class => "form-control" %>
+
       <%= f.text_field :pages, :class => "form-control", :style => "width:120px;display:inline;",:placeholder => "N° of pages" %>
 
 

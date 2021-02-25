@@ -2,7 +2,7 @@
   <div class="row py-4">
 
     <div class="col">
-      <h1 style="text-align: center; margin-bottom: 30px">Congratulations, you have made a purchase on Syllabuy!</i></h1>
+      <h1 style="text-align: center; margin-bottom: 30px">Congratulations <%= current_user.first_name %>, your purchase has been made successfully.</i></h1>
        <% if @purchase.book.photo.attached? %>
         <p style="text-align:center"><%= cl_image_tag @purchase.book.photo.key, height: 250, width: 230, :crop=>"fit", :style => 'border-radius: 8px;' %></p>
        <% else %>
@@ -12,11 +12,21 @@
       <ul class="list-unstyled">
         <li><strong>Bought on:</strong> <%= @purchase.created_at.to_date %></li>
         <li><strong>Book:</strong> <%= @purchase.book.title %></li>
+
+        <% if @purchase.book.condition.blank? %>
+            <li><strong>Condition:</strong> Excellent</li>
+          <% else %>
+            <li><strong>Condition:</strong> <%= @purchase.book.condition %></li>
+        <% end %>
+
         <li><strong>Total:</strong> <%= humanized_money_with_symbol @purchase.amount %></li>
         </li>
+
+
       </ul>
       <p>The seller will contact you soon to confirm the sale.</p>
-       <%= link_to 'Go back to the search page', books_path, class: 'btn btn-primary' %>
+       <%= link_to 'Search for another book', books_path, class: 'btn btn-primary' %>
+       <%= link_to 'Go to my purchases', purchases_path, class: 'btn btn-primary' %>
     </div>
   </div>
 </div>

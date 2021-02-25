@@ -17,6 +17,12 @@
           <p><strong>Edition:</strong> <%= @purchase.book.edition_year %></p>
           <p><strong>Language:</strong> <%= @purchase.book.language %></p>
 
+          <% if @purchase.book.condition.blank? %>
+            <p><strong>Condition:</strong> Excellent</p>
+          <% else %>
+            <p><strong>Condition:</strong> <%= @purchase.book.condition %></p>
+          <% end %>
+
           <p><strong>Delivery method:</strong> <%= @purchase.book.delivery_method %></p>
           <p><strong>Delivery address:</strong> <%= @purchase.book.selling_address %></p>
 
