@@ -1,20 +1,20 @@
-<body id="signup-body">
 
-  <div class="container" id="container-signup">
+
+<div class="container" id="container-signup">
 
  <div class="arrow-left">
-          <%= link_to "<<", root_path,:class=>"btn btn-primary"  %>
-        </div>
+  <%= link_to "<<", root_path,:class=>"btn btn-primary"  %>
+</div>
 
 
-          <div class="wrapper">
+<div class="wrapper">
 
-           <div class="title">Sign up</div>
+ <div class="title">Sign up</div>
 
-           <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-           <%= f.error_notification %>
+ <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+ <%= f.error_notification %>
 
-           <div class="form-inputs">
+ <div class="form-inputs">
 
 <!-- <div class="form-group">
     <label for="exampleFormControlSelect1">Gender</label>
@@ -24,7 +24,7 @@
       <option>Ms</option>
     </select>
   </div> -->
-
+                  <br/>
                   <%= f.input :first_name,
                   required: true,
                   autofocus: true,
@@ -43,7 +43,7 @@
                   required: true,
                   autofocus: true,
                   input_html: { autocomplete: "email" }%>
-<!--
+                <!--
       <%= f.input :university,
                   required: true,
                   autofocus: true,
@@ -56,40 +56,50 @@
                   <%= f.input :password_confirmation,
                   required: true,
                   input_html: { autocomplete: "new-password" } %>
+                  <br/>
 
                   <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
 
-                </div>
 
-                <div class="text-center">
-                  <%= f.button :submit, "Create account", :style => "border-radius:20px;margin:0 auto;color:white;width:200px;background:linear-gradient(-135deg, #3E64FF, #5EDFFF);" %>
-                </div>
-                <% end %>
+                  <div class="text-center"><br/><br/><br/>
+                    <%= f.button :submit, "Create account", :style => "border-radius:10px;margin:0 auto;color:white;width:150px;opacity:0.9;background:#3E64FF;" %>
+                  </div>
+                  <% end %>
 
+
+
+                </div>
 
 
               </div>
 
 
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 col-sm-offset-4" style="text-align:center;">
-
-
-              <div class="container" id="signupaside">
-                <p>
+              <div class="container" id="signupaside1">
+                <h2>
                   Sign up here so that you can quickly buy or add second-hand books on the platform.
-                </p>
-                <p class="text-1440pixels"> </p>
+                </h2>
+
 
               </div>
             </div>
-          </div>
-        </div>
 
-      </div>
-    </body>
+            <div class="footer">
+              <br/><br/><br/>
+              <div class="footer-copyright">
+                <div class="text-center">Made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex ||
+                </div>
+              </div>
+              <div class="footer-links" >
+                <div class="social-links">
+                  <a href="#"><i class="fab fa-github"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                  <a href="#"><i class="fab fa-facebook"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+
 
 
 
