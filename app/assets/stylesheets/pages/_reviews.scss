@@ -15,3 +15,22 @@ margin-left:50px;
 .container-review {
 width:80%;
 }
+
+.avatarreview {
+  padding:5px 0px 5px 0px;
+}
+
+#card-reviews{
+  min-width:300px;text-align:center;
+  }
+
+@media screen and(max-width: 414px){
+
+#card-reviews{
+transform:translate(0px,-140px);
+padding:10px;
+margin-bottom:0px 10px 0px 10px;
+
+}
+}
+

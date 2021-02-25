@@ -1,4 +1,4 @@
-<div class="dashboard1">
+<div class="container">
 
   <div class="container" style="padding:25px;margin:200 0px 0 0px;">
 
@@ -11,18 +11,18 @@
 
 
 
-    <div class="d-flex container justify-content-around" >
+    <div class="d-flex container justify-content-around">
       <div class="row row-cols-1 row-cols-md-3">
        <% @reviews.each do |review| %>
        <% if @reviews.blank? %>
        <p>You don't have any reviews written on you at the moment</p>
        <% else %>
 
-       <div class="col-lg-4 col-md-6 col-sm-12">
-         <div class="container" style="min-width:300px;text-align:center;">
+       <div class="col-lg-6 col-md-6 col-sm-12">
+         <div class="container" id="card-reviews">
 
 
-          <div class="card h-100" style="padding:10px;margin-bottom:10px;box-shadow: 0 0 5px;">
+          <div class="card h-100" style="box-shadow: 0px 15px 20px rgba(0,0,0,0.1);">
             <div class="avatarreview"><%= image_tag("books-stack.jpg", class: 'avatar') %></div>
             <div class="card-body">
               <p style="font-size:20px;font-family: 'Playfair Display';"><strong></strong> <%= review.purchase.book.title %></p>
