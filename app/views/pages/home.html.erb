@@ -1,9 +1,4 @@
-
-
-
-<body style="background: linear-gradient(0.5turn, #ECFCFF);">
-
- <div class="cover-banner" style="opacity:0.9;">
+<div class="cover-banner" style="opacity:0.9;">
   <div class="banner">
 
    <div class="home-title">
@@ -36,19 +31,20 @@
     <div style="padding-bottom: 48px;">
       <div class="cards-home">
         <% @books.each do |book| %>
-          <%= link_to book_path(book) do %>
+        <%= link_to book_path(book) do %>
 
-            <div class="books-card card-home">
+        <div class="books-card card-home">
 
-             <% if book.photo.attached? %>
-              <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
-              <% else %>
+         <% if book.photo.attached? %>
+         <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
+         <% else %>
 
-                <%= image_tag('books-stack.jpg', height: "231", width: "154", style: "border-radius: 4px;") %>
-              <% end %>
+         <%= image_tag('books-stack.jpg', height: "231", width: "154", style: "border-radius: 4px;") %>
+         <% end %>
 
-              <div class="card-body">
+         <div class="card-body">
 
+           
                 <div class="card-title" style="color: black; text-decoration: none;">
                   <h3><%= book.title.truncate(20).capitalize %> (<%= book.edition_year %>)</h3>
                   <p>Author:<br/> <%= book.author.capitalize %></p>
@@ -61,10 +57,12 @@
           <% end %>
         <% end %>
       </div>
+
     </div>
   </div>
+</div>
 
- </div>
+</div>
 <br/>
 
 
@@ -91,14 +89,15 @@
 </div><br/>
 
 
-<div class="d-flex text-center">
+    <div class="d-flex text-center">
 
-     <div class="container2" style="margin:0 auto;"> <%= link_to "View Our Community's Books", books_path, class: "btn btn-primary" %></div>
+     <div class="container2" style="margin:0 auto;"> <%= link_to "View Our Community's Books", books_path, class: "btn btn-primary" %>
      </div>
+    </div>
 
      <br/> <br/> <br/>
-
- <div class="categories">
+<div class="content" style="padding-bottom:25px;">
+ <div class="categories"style="padding-bottom:25px;">
   <h2><br/>Find books on many topics</h2>
 
   <div class="category-cards">
@@ -120,28 +119,31 @@
     <h3>Art</h3>
   </div>
   <% end %>
-
+</div>
 </div>
 
+ <div class="footer">
+      <div class="footer-copyright">
+        <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+      </div>
 
-<br/><br/>
-
-<div class="footer">
-  <div class="footer-copyright">
-    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
-  </div>
-
-  <div class="footer-links" >
-    <div class="social-links">
-      <a href="#"><i class="fab fa-github"></i></a>
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-twitter"></i></a>
-      <a href="#"><i class="fab fa-linkedin"></i></a>
+      <div class="footer-links">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
     </div>
-  </div>
- </div>
 
-</body>
+
+
+
+
+
+
+
 
 

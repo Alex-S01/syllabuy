@@ -1,4 +1,4 @@
-<body style="background:white;">
+
 <div class="container" id="container-signup">
 
 <!--  <div class="arrow-left">
@@ -6,48 +6,59 @@
 </div> -->
 
 
-<div class="wrapper" style= "padding:0 0px 20px 0px;width:340px;">
+<div class="wrapper" style= "padding:0 0px 20px 0px;width:340px;height:550px;">
 
-  <div class="title" style="padding:20px 10px 0px 10px;line-height:30px;height:120px;font-weight:400;font-size:18px;">How was your experience ? Leave a comment and rate the seller !
+  <div class="title" style="padding:20px 10px 0px 10px;line-height:30px;height:120px;font-weight:400;font-size:18px;">How was your experience ? <br/>Leave a comment and rate the seller !
+  </div>
+
+  <br/>  <br/>  <br/>
+
+
+  <div class="form-inputs">
+
+
+
+
+    <%= simple_form_for([@purchase, @review]) do |f| %>
+    <%= f.input :content, label: "Comment" %>
+    <%= f.input :rating, value: 1, min: 1, max: 5 %>
+
+
+    <div class="text-center create-review-button" style="margin-top:120px;">
+      <%= f.button :submit, "Create review", :class => "btn btn-primary"%>
+    </div>
+    <% end %>
   </div>
 
 
- <div class="form-inputs">
 
-
-  <%= simple_form_for([@purchase, @review]) do |f| %>
-  <%= f.input :content, label: "Comment" %>
-  <%= f.input :rating, value: 1, min: 1, max: 5 %>
-
-
-
-  <%= f.button :submit, "Create review", :style => "border-radius:20px;margin:0 auto;color:white;width:200px;background:linear-gradient(-135deg, #3E64FF, #5EDFFF);" %>
-
-<% end %>
 </div>
 
-
+<div class="container" id="signupaside1">
+ <h2>It is important for our Community to know the quality of our members. </h2>
+</div>
 
 </div>
 
 
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-lg-6 col-md-6 col-xs-12 col-sm-12 col-sm-offset-4" style="text-align:center;">
 
 
-      <div class="container" id="signupaside">
-        <p>
-          Sign up here so that you can quickly buy or add second-hand books on the platform.
-        </p>
+<div class="footer">
+  <div class="footer-copyright">
+    <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+  </div>
 
-      </div>
+  <div class="footer-links">
+    <div class="social-links">
+      <a href="#"><i class="fab fa-github"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
     </div>
   </div>
-</div> -->
-
 </div>
-</body>
+
 
 
