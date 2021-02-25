@@ -37,5 +37,4 @@ class PurchasesController < ApplicationController
     @purchase = current_user.purchases.find(params[:id])
   end
 
-
 end
