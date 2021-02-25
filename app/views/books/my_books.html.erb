@@ -6,8 +6,8 @@
   <div class="indexbook-container">
     <div class="cards mt-5">
       <% @books.each do |book| %>
-      
-         
+
+
 
             <div class="books-card">
 
@@ -34,21 +34,35 @@
 
 
             </div>
-        
+
       <% end %>
 
       <%= link_to new_book_path do %>
        <div>
         <p style="text-decoration: none;">Add a new book <i class="fas fa-plus-circle"></i></p>
        </div>
-      
-      <% end %>
-       
-      
-        
-    </div>
 
+      <% end %>
+    </div>
   </div>
 </div>
+
+<div class="footer">
+      <div class="footer-copyright">
+        <div>This website is made with <i class="fas fa-heart"></i> by Lucas, Sebastien and Alex </div>
+      </div>
+
+      <div class="footer-links">
+        <div class="social-links">
+          <a href="#"><i class="fab fa-github"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+
+
 
 
