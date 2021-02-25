@@ -29,13 +29,12 @@ class PurchasesController < ApplicationController
   purchase.update(checkout_session_id: session.id)
   redirect_to new_purchase_payment_path(purchase)
 
-
+  book.update(status: "true")
 
   end
 
   def show
     @purchase = current_user.purchases.find(params[:id])
   end
-
 
 end

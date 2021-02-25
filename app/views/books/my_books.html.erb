@@ -4,9 +4,17 @@
   <p class="text-center"> See which books you added to the platform.</p>
 
   <div class="indexbook-container">
-    <div class="cards mt-5">
-      <% @books.each do |book| %>
 
+    <h3>Your books waiting to be sold</h3>
+
+    <div class="cards mt-5">
+
+
+
+
+
+      <% @books_pending.each do |book| %>
+      
 
 
             <div class="books-card">
@@ -45,6 +53,56 @@
       <% end %>
     </div>
   </div>
+
+  <div class="indexbook-container" style="margin-top: 120px;">
+
+      <h3>Your sold books</h3>
+
+      <% if @books_sold.empty? %>
+      
+        <div style="margin-bottom: 120px;">
+          <p>You do not yet have any books sold.</p>
+        </div>
+
+      <% else %>
+        <div class="cards mt-5">
+
+          <% @books_sold.each do |book| %>
+          
+                <div class="books-card">
+
+                  <% if book.photo.attached? %>
+                  <%= cl_image_tag book.photo.key, height: 231, width: 154, crop:"fill", style: 'border-radius: 4px;' %>
+                  <% else %>
+
+                    <%= image_tag('books-stack.jpg', height: "231", width: "154", style: "border-radius: 4px;") %>
+                  <% end %>
+
+                  <div class="card-body">
+                    <div class="card-title" style="color: black; text-decoration: none;">
+                      <h3><%= book.title.capitalize %> (<%= book.edition_year %>)</h3>
+                      <p>Author: <%= book.author.capitalize %></p>
+                      <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold;">Amount: <%= humanized_money_with_symbol(book.correct_price) %></p>
+
+                      <%= link_to 'View book', book_path(book) %>
+                      <br>
+
+                    </div>
+                  </div>
+
+
+                </div>
+            
+          <% end %>
+        </div>
+      
+      <% end %>
+      
+
+  </div>
+
+
+
 </div>
 
 <div class="footer">

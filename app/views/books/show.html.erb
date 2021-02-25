@@ -1,3 +1,9 @@
+<!-- dynamic meta tage for each book page -->
+
+<% content_for :meta_title, "#{@book.title} by #{@book.author} - Available on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, @book.summary %>
+<% content_for :meta_image, cl_image_path(@book.photo.key) %>
+
 <div class="container">
   <div class="row">
     <%= link_to "Back to homepage", books_path %>
