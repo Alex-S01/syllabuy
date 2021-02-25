@@ -1,6 +1,6 @@
 class PurchasesController < ApplicationController
   def index
-      @purchases = Purchase.where(user_id: current_user)
+      @purchases = Purchase.where(user_id: current_user).reverse
   end
 
   def new
