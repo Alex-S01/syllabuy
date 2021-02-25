@@ -1,6 +1,6 @@
 # config/meta.yml
 
-meta_product_name: "Syllabuy App"
+meta_product_name: "Syllabuy.be"
 meta_title: "Syllabuy - Find your university textbooks near you."
 meta_description: "Syllabuy.be's official site. Find university textbooks for your courses from other students near you. With Syllabuy you can also sell your old textbooks to other members of our community!"
 meta_image: "books-stack.jpg" # should exist in `app/assets/images/`
