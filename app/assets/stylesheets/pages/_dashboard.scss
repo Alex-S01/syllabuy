@@ -2,19 +2,64 @@
 div.et_pb_section.et_pb_section_0 {
 
   height:300px;
-    background-image: linear-gradient(
-170deg
-,#002e4f 1%,rgba(8,70,102,0.8) 100%),asset-url('artbook.png');
+  background-image: linear-gradient(
+    170deg
+    ,#002e4f 1%,rgba(8,70,102,0.8) 100%),asset-url('artbook.png');
+}
+
+.dashboard {
+  font-family:'Playfair Display', 'Helvetica', sans-serif;
+
+}
+
+.container1 {
+  background:white;
 }
 
 
 #avatar {
-
-
-
-
   margin:0 auto;
+  text-align:center;
 }
+
+.info-title {
+  font-weight:600;
+  text-align:center;
+  margin-bottom:10px;
+  color:black;
+}
+
+.info1 {
+  padding:15px;
+  border:0px solid black;
+}
+.info2 {
+  padding:15px;
+  border:0px solid black;
+}
+
+.dashlinksetmoney{
+  padding:15px;
+  border:0px solid black;
+  margin-bottom:10px;
+}
+
+.text-dashlink {
+  text-align:left;
+  width:140px;
+  padding:10px;
+  line-height:30px;
+  font-size:23px;
+}
+
+.dashboardcard2 {
+margin:0 auto;
+text-align:center;
+padding:5px;
+border:0px solid black;
+}
+
+
 .averagerating {
 
   width:140px;
@@ -32,10 +77,15 @@ div.et_pb_section.et_pb_section_0 {
   display:flex;
   background:white;
   height:200px;
-   margin: 30px 30px 0px 10px;
-   border-radius:10px;
+  margin: 30px 30px 0px 10px;
+  border-radius:10px;
 
-   background:#ECFCFF;
+  background:#ECFCFF;
+}
+
+.containerlink{
+  width:140px;
+  margin:0 auto;
 }
 
 
@@ -43,12 +93,12 @@ div.et_pb_section.et_pb_section_0 {
 {
 
   margin:0 auto;
-  box-shadow:  0 0 0px;
   text-align:center;
   width:120px;
   height:120px;
   border-radius:0px;
-  color:black;padding:25px;
+  color:black;
+  padding:15px;
   font-size:16px;
   padding:25px;
   background-image:asset-url('favicon.png');
@@ -56,35 +106,13 @@ div.et_pb_section.et_pb_section_0 {
 
 }
 
-.container1 {
 
-  display:flex;
-  justify-content:space-around;
-  border:10px solid white;
-  margin:0 auto;
-  border-radius:10px;
-  margin-top:80px;
-  background: white;
-  box-shadow: 0 0 20px;
-  padding: 0px 10px 0 10px;
-  min-height:650px;
-}
 
 .fas fa-book {
   height:300px;
 }
 
-.dashboard {
-}
 
-.dashboardcard {
-  width:360px;
-  height:540px;
-
-  border-radius:10px;
-
-  margin-bottom:90px;
-}
 
 .iconmypurchases {
   background-image:asset-url('iconespurchases.png');
@@ -97,13 +125,13 @@ div.et_pb_section.et_pb_section_0 {
 }
 
 .iconmyreviews,{
-   background-image:asset-url('myreviews.png');
-  background-size:cover;
-  height:70px;
-  width:75px;
-  margin: 0 auto;
-   transform:translate(-1px,0px);
-   border-radius:10px;
+ background-image:asset-url('myreviews.png');
+ background-size:cover;
+ height:70px;
+ width:75px;
+ margin: 0 auto;
+ transform:translate(-1px,0px);
+ border-radius:10px;
 }
 .iconmybooks {
   background-image:asset-url('mybooks2.png');
@@ -114,41 +142,6 @@ div.et_pb_section.et_pb_section_0 {
   border-radius:10px;
 }
 
-
-.dashboardlinks {
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  justify-content:center;
-  margin-top:30px;
-  width:300px;
-  font-family:"Playfair Display", "Helvetica", "sans-serif";
-  line-height:20px;
-  background: #FFF;
-  text-align:center;
-  color:black;
-  border-radius:10px;
-  padding : 20px 0px 20px 0px;
-
-}
-.containerlink {
-width:140px;
-margin:0 auto;
-margin-bottom:10px;
-}
-
-
-.dashboardlink {
-  background: white;
-  height:200px;
-  border:1px solid black;
-  text-align:center;
-}
-
-.dashboardlink-book {
-  width:200px;
-}
-
-
 .graduateicon
 {
   text-align:center;
@@ -156,48 +149,7 @@ margin-bottom:10px;
   margin-bottom:10px;
 }
 
-#headdash
-{
-  // background-image:asset-url('mysyllabuy.png');
-  // background-size:cover;
-font-family:"Playfair Display", "Helvetica", "sans-serif";
-  text-shadow:20 0 0px;
-  font-size:56px;
-  width:300px;
-  height:60px;
 
-}
-
-#hello {
-
-  text-align:center;
-
-  font-family:Roboto,serif;
-  font-weight:800;
-  opacity:0.9px;
-  color:black;
-  font-size:24px;
-}
-
-
-.infoperso {
-  margin:0 auto;
-  text-align:center;
-  font-size:16px;
-  background:white;
-}
-
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 50% }
-}
-
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: white; }
-}
 
 .logodashboard
 {
@@ -218,10 +170,9 @@ font-family:"Playfair Display", "Helvetica", "sans-serif";
 
 .moneyetplus {
 
-margin-top:50px;
- opacity:0.8;
+  margin-top:50px;
+  opacity:0.8;
   box-shadow:0 0 5px;
-  width:327px;
   background:white;
   border-radius:10px;
   font-family:Nunito,700;
@@ -235,32 +186,8 @@ margin-top:50px;
 }
 
 
-
-.mysillabuylinks {
-  margin-top:40px;color:black;font-family:Nunito, sans-serif;
-}
-
-
-.profit {
-  margin-left:20px;
-}
-
-.socialnetworks
-{
-
-  margin:0 auto;
-  height:auto;
-  font-size:40px;
-  margin: 15px 0px 0px 0px;
-  background:white;
-  width:100%;
-}
-
 #noteglobale {
   margin-top:10px;
-}
-#noteglobale
-{
   font-size: 48px;
   color:white;
   text-align:center;
@@ -273,196 +200,152 @@ margin-top:50px;
   width:100px;
   margin:0 auto;
 }
+
 .profit
 {
   width:100px;
   margin:0 auto;
-}
-.textgauche h1{
-
-  margin-top:400px;
-  text-align:left;
-  z-index:4000;
-  margin-left:10px;
-  font-family:Roboto;
-  font-weight:800;
-  opacity:0.9px;
-  color:white;
-  font-size:16px;
-}
-
-.typewriter h1 {
-
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid white; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0px 0px 0px 0px; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation:
-  typing 1.5s steps(40, end),
-  blink-caret .75s step-end infinite;
+  margin-left:20px;
 }
 
 
 
-@media screen and (max-width: 360px) {
-
- .averageratingetsocial {
-
-  }
-
-  .container1 {
-    width:90%;
-    border:10px solid black;
-
-  }
-
-  .dashboard {
-    width:100%;
-    margin:0 auto;
 
 
-  }
 
-  .dashlinksetmoney {
-  margin:0 auto;
-  width:340px;
-}
-}
 
-@media only screen and (min-width: 361px)  and (max-width: 767px) {
 
-  .dashboardcard {
-    background-size:cover;
-    width:360px;
-    text-align:center;
-    margin-top:100px;
-
-  }
-  .container1 {
-    width:90%;
-    height:auto;
-    transform:translate(0px,-109px);
-  }
-
-  .dashboardlinks {
-    text-align:center;
-  }
-  .averageratingetsocial {
+@media(min-width: 1440px) {
+.container1 {
   display:flex;
-  background:white;
-  height:200px;
-   border-radius:10px;
-   border:1px solid #7E94FF;
-
-}
-
-.averagerating {
-font-size:10px;
-padding:10px;
-}
-
-.dashboardlinks {
-    margin-bottom:0px;
-  }
-
-  .dashlinksetmoney {
+  width:80%;
   margin:0 auto;
-  width:340px;
-   margin-top:100px;
+  transform:translate(0px,-200px);
+
 }
+.dashboardcard {
+  width:400px;
+  margin:0 auto;
 }
-
-
-@media screen and (min-width: 768px) and(max: 1439px){
-
-
-
-  .averageratingetsocial {
+.infoperso {
   display:flex;
-  background:white;
-  height:200px;
-  width:200px;
-  font-size:20px;
 }
 
- .dashboardcard2 {
-    background-size:cover;
-    width:450px;
-    text-align:center;
-    margin-bottom: 80px;
-    display:flex;
-  }
+.dashboardlinks{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  width:400px;
+}
+
+.dashboardcard2{
+  width:400px;
+  height:500px;
+  margin-top:200px;
+}
+
+#headdash {
+  font-size:64px;
+  text-align:center;
+  margin-bottom:100px;
+}
+.moneyetplus{
+  display:none;
+}
+
+}
+
+@media(min-width: 768px)and(max-width:1439px) {
+
+.container1 {
+  display:flex;
+  transform:translate(0px,-240px);
+}
+.infoperso {
+  font-size:12px;
+  width:220px;
+}
+
+.dashboardcard {
+  width:220px;
+  margin:0 auto;
+}
+.dashboardlinks{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  width:350px;
+}
+
 .dashboardcard2 {
-    background-size:cover;
-    width:300px;
+  width:180px;
+  margin:0 auto;
+  height:300px;
+  margin-top:200px;
+}
+.moneyetplus{
+  display:none;
+}
 
+#headdash {
+  font-size:56px;
+  text-align:center;
+  margin-bottom:100px;
+}
 
+}
 
-  }
+@media(min-width: 416px)and(max-width:767px) {
 
+.container1 {
+  transform:translate(0px,-240px);
+}
+.infoperso {
+  display:flex;
+  justify-content:center;
+}
+.dashboardlinks{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  width:350px;
+  margin:0 auto;
+}
+#headdash {
+  margin-top:30px;
+  font-size:50px;
+  text-align:center;
+  margin-bottom:20px;
+}
+.moneyetplus{
+  display:none;
+}
+
+}
+
+@media(max-width: 415px) {
   .container1 {
-    width:100%;
-    height:auto;
-
-
-  }
-
-  .dashboardlinks {
-    text-align:center;
-   border-radius:10px;
-
+  transform:translate(0px,-240px);
 }
-
-.averagerating {
-font-size:10px;
-padding:12px;
+.infoperso {
+  display:flex;
+  justify-content:center;
+  width:280px;
+  font-size:8px;
+  margin:0 auto;
 }
-.dashlinksetmoney {
-   margin-top:100px;
+.dashboardlinks{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  width:300px;
+  margin:0 auto;
 }
-
+#headdash {
+  font-size:32px;
+  text-align:center;
+  margin-bottom:20px;
 }
-
-@media only screen and (min-width: 1010px) {
-.dashboardcard2 {
-    background-size:cover;
-    width:300px;
-    margin-left:50px;
-
-
-  }
-
-  }
-@media only screen and (min-width: 1288px) {
- .dashboardlinks {
-    text-align:center;
-   border-radius:10px;
+.moneyetplus{
+  display:none;
 }
-  p {
-    font-size: 14px;
-  }
-
-.container1{
-  width:80%
 }
-
-
-  .averageratingetsocial {
-    margin:30px;
-  }
-
-  .dashboard {
-    justify-content:center;
-  }
-
-
-}
-
-
-
-
-
 
 
 
