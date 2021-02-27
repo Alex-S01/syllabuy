@@ -68,7 +68,7 @@ border:0px solid black;
   font-size:22px;
   border-radius:10px;
   background:white;
-  border-bottom: 100px solid #7E94FF;
+  border-bottom: 70px solid #7E94FF;
   margin: 10px 0px 0px 0px;
 
 }
@@ -124,7 +124,7 @@ border:0px solid black;
   border-radius:10px;
 }
 
-.iconmyreviews,{
+.iconmyreviews {
  background-image:asset-url('myreviews.png');
  background-size:cover;
  height:70px;
@@ -133,6 +133,7 @@ border:0px solid black;
  transform:translate(-1px,0px);
  border-radius:10px;
 }
+
 .iconmybooks {
   background-image:asset-url('mybooks2.png');
   background-size:cover;
@@ -142,8 +143,7 @@ border:0px solid black;
   border-radius:10px;
 }
 
-.graduateicon
-{
+.graduateicon {
   text-align:center;
   margin:0 auto;
   margin-bottom:10px;
@@ -151,8 +151,7 @@ border:0px solid black;
 
 
 
-.logodashboard
-{
+.logodashboard {
   background:asset-url('LogoSyllabuy2.png');
   width:200px;
 }
@@ -195,14 +194,12 @@ border:0px solid black;
   height:100px;
 }
 
-.signeuro
-{
+.signeuro {
   width:100px;
   margin:0 auto;
 }
 
-.profit
-{
+.profit {
   width:100px;
   margin:0 auto;
   margin-left:20px;
