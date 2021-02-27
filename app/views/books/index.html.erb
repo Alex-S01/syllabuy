@@ -46,7 +46,7 @@
                   <h3><%= book.title.truncate(20).capitalize %> (<%= book.edition_year %>)</h3>
                   <p>Author: <%= book.author.capitalize %></p>
 
-                    <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold; position: absolute; bottom: 1px;">Amount: <%= humanized_money_with_symbol(book.correct_price) %></p>
+                    <p style="font-family: Playfair Display; font-size: 18px; font-weight: bold; position: absolute; bottom: 1px;">Price: <%= humanized_money_with_symbol(book.correct_price) %></p>
 
                 </div>
               </div>
